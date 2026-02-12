@@ -1,0 +1,79 @@
+\babel@toc {brazil}{}\relax 
+\contentsline {chapter}{\numberline {1.}Introdução}{23}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Importância das Variáveis Climáticas Analisadas}{25}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Temperatura}{25}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Precipitação}{26}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Radiação Solar Incidente na Superfície}{26}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Revisão de Estudos Anteriores}{28}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Justificativa}{31}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Objetivos}{32}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Objetivo Geral}{32}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Objetivos Específicos}{32}{subsection.1.4.2}%
+\contentsline {chapter}{\numberline {2.}Área de Estudo}{33}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Caracterização Climática}{33}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Localização Geográfica e Caracterização Fisiográfica}{35}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Biomas e Uso e Cobertura da Terra}{36}{section.2.3}%
+\contentsline {chapter}{\numberline {3.}Metodologia}{39}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Aquisição dos dados}{40}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Fonte de dados}{40}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Tratamento e qualidade dos dados}{42}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Precipitação (ANA e CHIRPS)}{42}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Temperatura média (INMET e ERA5-Land)}{42}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Radiação solar global incidente (INMET, GOES e CLARA-A3)}{43}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Filtros aplicados}{43}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Estimativa das incertezas}{43}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Regressão Ortogonal (ODR) como forma de validação}{44}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Teste de Mann-Kendall e estimador Sen}{46}{subsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.2.8}Cálculo das Normais Climatológicas}{46}{subsection.3.2.8}%
+\contentsline {subsection}{\numberline {3.2.9}Relação entre cobertura vegetal e variáveis climáticas}{47}{subsection.3.2.9}%
+\contentsline {chapter}{\numberline {4.}Resultados}{49}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Análise de correlão entre os dados observacionais e produtos de Satélite e Reanálise}{50}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Correlação entre precipitação observada (ANA) e estimada por satélite (CHIRPS)}{51}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Correlação entre temperatura média observada (INMET) e reanálise (ERA5-Land)}{54}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Correlação entre radiação solar média observada (INMET) e produtos de satélite (CLARA-A3 e GOES-16)}{56}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Validação por correlação: resultados e implicações}{59}{subsection.4.1.4}%
+\contentsline {section}{\numberline {4.2}Análise climática em pontos de grade para o estado de São Paulo}{59}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Temperatura}{60}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Radiação}{62}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Precipitação}{63}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Análise climática no estado de São Paulo}{64}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Tendências espaciais da temperatura média}{64}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Tendências espaciais da precipitação}{66}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Tendências espaciais da radiação solar}{68}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Análise climática em pontos de grade para o estado do Rio Grande do Norte}{70}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Temperatura}{71}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Radiação}{72}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}precipitação}{74}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}Análise climática no estado do Rio Grande do Norte}{75}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Tendências espaciais da temperatura}{75}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Tendências espaciais da precipitação}{78}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Tendências espaciais de radiação solar}{81}{subsection.4.5.3}%
+\contentsline {section}{\numberline {4.6}Normais climatológicas e suas implicações}{82}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Caracterização climatológica no estado de São Paulo}{82}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Caracterização climatológica no estado do Rio Grande do Norte}{88}{subsection.4.6.2}%
+\contentsline {section}{\numberline {4.7}Implicações da cobertura de superfície no clima}{92}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Transformações no uso da terra em São Paulo e Rio Grande do Norte}{93}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Avaliação e extremos de cobertura de solo no estado de São Paulo}{96}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Avaliação e extremos de cobertura de solo no estado do Rio Grande do Norte}{98}{subsection.4.7.3}%
+\contentsline {section}{\numberline {4.8}Variáveis climáticas em áreas de extremos de mudança de cobertura}{100}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}São Paulo: Formação Florestal}{100}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Rio Grande do Norte: Formação Savânica}{103}{subsection.4.8.2}%
+\contentsline {subsection}{\numberline {4.8.3}Evolução espaciotemporal das variáveis climáticas e uso da terra}{106}{subsection.4.8.3}%
+\contentsline {section}{\numberline {4.9}Avaliação quantitativa sobre a influência da cobertura de superfície sobre variáveis climáticas}{109}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Abordagem metodológica}{109}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Influência da Formação Florestal em São Paulo}{110}{subsection.4.9.2}%
+\contentsline {subsection}{\numberline {4.9.3}Influência da Área Urbanizada em São Paulo}{111}{subsection.4.9.3}%
+\contentsline {subsection}{\numberline {4.9.4}Influência da Formação Savânica no Rio Grande do Norte}{113}{subsection.4.9.4}%
+\contentsline {subsection}{\numberline {4.9.5}Influência da Área Urbanizada no Rio Grande do Norte}{115}{subsection.4.9.5}%
+\contentsline {subsection}{\numberline {4.9.6}Síntese estatística comparativa}{116}{subsection.4.9.6}%
+\contentsline {chapter}{\numberline {5.}Conclusões}{121}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Tendências Climáticas Observadas}{121}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Validação de Produtos de Satélite e Reanálise}{122}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Influência da Cobertura da Terra sobre o Clima Local}{122}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Transformações no Uso e Cobertura da Terra}{123}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Limitações e Incertezas}{124}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Implicações e Recomendações}{124}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Perspectivas para Trabalhos Futuros}{125}{section.5.7}%
+\contentsline {chapter}{Refer\^encias}{127}{chapter*.28}%
+\contentsline {part}{Ap\^endice}{135}{part*.29}%
+\contentsline {chapter}{\numberline {A.}Análise Integrada de Variáveis Climáticas: Tendências (Mann-Kendall), Séries Filtradas (1-2-1) e Anomalias por Localidade}{137}{appendix.A}%

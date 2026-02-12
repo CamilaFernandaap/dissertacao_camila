@@ -1,0 +1,232 @@
+\chapter{Metodologia}
+\label{cap:metodologia}
+
+A metodologia foi estruturada para combinar dados pontuais de estações meteorológicas com dados de satélite, visando ampliar a cobertura espacial e temporal das variáveis de interesse, conforme recomendado pelas diretrizes internacionais de observação meteorológica \citep{wmo2025}.
+
+As variáveis meteorológicas analisadas compreendem temperatura média diária, precipitação acumulada e radiação solar global média diária, obtidas tanto de fontes observacionais em superfície e de estimativas por satélite/reanálise.
+
+Organizando-se nas seguintes partes:
+\begin{enumerate}
+    \item Aquisição e compilação de dados de diferentes fontes, incluindo estações automáticas do INMET \citep{BDMEP}, rede pluviométrica da ANA \citep{Hidroweb} e produtos de satélite e reanálise (GOES, CHIRPS e ERA5-Land);
+    \item Tratamento, padronização e controle de qualidade das séries temporais, filtragem de valores inconsistentes e estruturação em formato tabular unificado, segundo protocolos de qualidade de dados meteorológicos \citep{wmo2025};
+    \item Validação cruzada entre fontes por meio de análises estatísticas, incluindo regressão ortogonal (ODR), para avaliar a compatibilidade entre dados observacionais e estimados.
+\end{enumerate}
+
+Após a etapa de validação, os conjuntos de dados considerados consistentes foram utilizados para análises temporais de longo prazo, cujos resultados são apresentados e discutidos no Capítulo~\ref{cap:resultados}.
+
+\section{Aquisição dos dados}
+
+Foram utilizados dados observacionais e estimados de variáveis meteorológicas e hidrológicas com cobertura espacial nos estados de São Paulo e Rio Grande do Norte. A aquisição foi realizada a partir de diferentes meios, cada um com métodos e resoluções próprias, visando garantir a abrangência e a qualidade dos dados analisados.
+
+\subsection{Fonte de dados}
+
+\begin{enumerate}
+    \item \textbf{INMET (Instituto Nacional de Meteorologia):} Os dados meteorológicos foram extraídos da plataforma oficial do INMET, no Banco de Dados Meteorológicos, considerando o período entre 2004 e 2025. Foram utilizados dados diários de temperatura média e, para a radiação solar global, dados horários integrados em intervalos de uma hora, organizados por município e data.
+        
+    \item \textbf{ANA (Agência Nacional de Águas e Saneamento Básico):} 
+    Os dados de precipitação diária observada foram obtidos a partir da plataforma Hidroweb (2025), complementados pela extensão \textit{ANA Data Acquisition} (QGIS), que possibilita a incorporação de informações detalhadas sobre a localização geográfica das estações (latitude e longitude), bem como a identificação do município e do órgão responsável pela operação.
+    
+    A escolha da base de dados da ANA em detrimento da rede do INMET fundamenta-se, principalmente, na maior densidade espacial de estações pluviométricas disponibilizadas. Enquanto a rede de estações automáticas do INMET apresenta cobertura mais restrita, com 43 estações no estado de São Paulo e apenas 9 no Rio Grande do Norte, a rede da ANA conta com 2.166 estações em São Paulo e 321 no Rio Grande do Norte.
+    Essa diferença expressiva na distribuição espacial das estações é ilustrada na Figura~\ref{fig:comparacao_estacoes}, evidenciando a superior cobertura da rede da ANA.
+    \newpage
+    
+    \begin{figure}[htbp]
+        \centering
+        \fbox{%
+        \includegraphics[width=0.8\textwidth]{inmet_ana.png}}
+        \caption[Comparação da distribuição espacial das estações pluviométricas, ANA e INMET]{Comparação da distribuição espacial das estações pluviométricas do INMET (direita) e da ANA (esquerda) no estado do Rio Grande do Norte, evidenciando a maior densidade de estações da rede da ANA. 
+        Fonte: \url{https://mapas.inmet.gov.br/} e \url{https://www.snirh.gov.br/hidroweb/mapa}.}
+        \label{fig:comparacao_estacoes}
+    \end{figure}
+    
+
+    \item \textbf{GOES (Geostationary Operational Environmental Satellite):} 
+    A variável de irradiância solar global horizontal (GHI) foi obtida a partir de estimativas derivadas dos satélites GOES-13, GOES-16 e GOES-19, produzidas pelo sistema GOES-R Series Advanced Baseline Imager (ABI) e disponibilizadas pela NOAA/NESDIS/STAR por meio do produto Surface and Insolation Product (EPS v2.0). O produto fornece dados horários, com resolução espacial nominal de aproximadamente $0{,}05^\circ \times 0{,}05^\circ$, cobrindo o período de janeiro de 2014 a fevereiro de 2025.
+    
+    \item \textbf{CERES CLARA-A3:} 
+    Para complementar as estimativas de radiação solar global, foram utilizados dados do produto CLARA-A3, que integra medições do instrumento CERES com informações de albedo de superfície e propriedades de nuvens derivadas do sensor AVHRR. Os dados foram adquiridos por meio do portal do CM SAF/EUMETSAT, com resolução espacial de $0{,}25^\circ \times 0{,}25^\circ$, resolução temporal diária e cobertura global, sendo posteriormente recortados para as áreas dos estados de São Paulo (SP) e Rio Grande do Norte (RN).
+    
+    \item \textbf{CHIRPS (Climate Hazards Group InfraRed Precipitation with Station Data):} 
+    Para ampliar a cobertura espacial da precipitação, especialmente em regiões com escassez de estações pluviométricas da rede da ANA, utilizou-se a coleção diária do produto CHIRPS. O conjunto de dados combina estimativas por sensoriamento remoto infravermelho com observações em superfície, apresentando resolução espacial de aproximadamente $0{,}05^\circ \times 0{,}05^\circ$ (cerca de 5 km) e cobertura quase global. Os dados foram acessados por meio da plataforma Google Earth Engine (GEE).
+    
+    \item \textbf{ERA5-Land:} 
+    Como fonte complementar para validação da temperatura média do ar, foram utilizados dados da reanálise ERA5-Land, produzida pelo European Centre for Medium-Range Weather Forecasts (ECMWF) no âmbito do programa Copernicus Climate Change Service (C3S). A base fornece estimativas horárias, com resolução espacial de aproximadamente $0{,}1^\circ \times 0{,}1^\circ$ (cerca de 9 km), cobrindo o período de 1981 até o presente.
+    
+\end{enumerate}
+
+\section{Tratamento e qualidade dos dados}
+
+Nesta seção descrevem-se os procedimentos adotados para o tratamento, a padronização e qualidade dos dados meteorológicos abordados em pontos anteriores.
+
+De modo geral, o processamento envolveu a harmonização espacial e temporal das séries, a conversão de unidades quando necessário e a aplicação de critérios de qualidade específicos para cada variável. As subseções a seguir apresentam, os procedimentos aplicados à precipitação, à temperatura média do ar e à radiação solar global, considerando as particularidades físicas e instrumentais de cada conjunto de dados.
+
+\subsection{Precipitação (ANA e CHIRPS)}
+
+As séries de precipitação foram comparadas por município e período em comum. Os dados do CHIRPS foram extraídos para pontos correspondentes às coordenadas das estações da ANA e posteriormente atribuídos aos municípios com base na interseção espacial com os limites municipais do IBGE. A compatibilidade entre as fontes foi avaliada por meio da Regressão Ortogonal (ODR).
+
+\subsection{Temperatura média (INMET e ERA5-Land)}
+
+Os dados observacionais de temperatura média do ar provenientes do INMET foram organizados por município e data, considerando apenas estações com séries temporais suficientemente contínuas.
+
+Os dados do ERA5-Land foram extraídos na resolução horária para os pontos de grade mais próximos às coordenadas geográficas das estações do INMET. Posteriormente, os valores horários foram agregados em médias diárias.
+
+\subsection{Radiação solar global incidente (INMET, GOES e CLARA-A3)}
+
+Os dados do INMET foram obtidos em kJ/m$^2$, representando a energia acumulada durante a última hora integrada. Os dados do GOES, fornecidos em W/m$^2$, foram convertidos para compatibilização com os dados observacionais, conforme:
+\begin{equation}
+W/m^2 = \frac{J/m^2}{3{,}6 \, s}
+\end{equation}
+
+Para garantir compatibilidade entre as fontes, adotou-se a média diária da irradiância solar global a partir da soma dos valores horários dividida pelo número de observações válidas:
+\begin{equation}
+\overline{R}_{dia} = \frac{1}{n}\sum_{i=1}^{n} R_{h,i}
+\end{equation}
+
+\subsection{Filtros aplicados}
+
+Foram aplicados filtros para assegurar a qualidade das séries temporais, incluindo:
+\begin{itemize}
+    \item Precipitação acumulada: manutenção apenas de valores diários $\geq 0$ mm;
+    \item Radiação solar global: Considerando valores horários positivos em ambas as fontes (GOES, CLARA-A3 e INMET).
+\end{itemize}
+
+\subsection{Estimativa das incertezas}
+
+Para incorporação das incertezas nas análises estatísticas, especialmente na regressão ODR, adotaram-se as seguintes estimativas:
+
+\begin{itemize}
+    \item \textbf{Precipitação (ANA e CHIRPS):} Incerteza instrumental de $\pm 1$ mm para a ANA e incerteza relativa de 15\% para o CHIRPS, \citep{funk2015}.
+    
+    \item \textbf{Temperatura média (INMET e ERA5-Land):} 
+    Para os dados observacionais do INMET, adotou-se uma incerteza instrumental padrão de $\pm 0{,}1^\circ$C, conforme recomendações da \cite{wmo2025}. Para o ERA5-Land, considerou-se uma incerteza representativa associada ao processo de assimilação e à resolução espacial da reanálise, estimada em $\pm 0{,}5^\circ$C.  
+    
+    \item \textbf{Radiação solar global:} 
+    Para os dados observacionais do INMET, adotou-se uma incerteza relativa de 3\% associada à medição da radiação solar global, valor compatível com as especificações típicas de piranômetros utilizados na rede, em conformidade à \cite{wmo2025}. Assim, a incerteza foi expressa como:
+    \begin{equation}
+    \sigma_{\text{INMET}} = 0{,}03 \cdot \text{RAD}_{\text{GLOBAL}}.
+    \end{equation}
+    
+    Para as estimativas de irradiância solar global horizontal (GHI) derivadas do satélite GOES, a incerteza total foi tratada como a combinação quadrática de diferentes fontes independentes de erro. Consideraram-se: (i) a incerteza associada à faixa de irradiância (\(\sigma_{\text{faixa}}\)), conforme documentado no \textit{Algorithm Theoretical Basis Document} (ATBD), \citep{laszlo2020}, do produto EPS v2.0; (ii) um termo representativo da incerteza instrumental e de calibração (2\% da GHI); e (iii) um termo adicional relacionado às incertezas do algoritmo de recuperação e à influência de nuvens e aerossóis (17\% da GHI). A incerteza combinada foi então estimada por:
+    \begin{equation}
+    \sigma_{\text{GOES}} = \sqrt{\sigma^2_{\text{faixa}} + \left(0{,}02 \cdot \text{GHI}\right)^2 + \left(0{,}17 \cdot \text{GHI}\right)^2}.
+    \end{equation}
+    
+    Para o produto CLARA-A3, a incerteza da irradiância solar global incidente na superfície (SIS) foi estimada com base nas especificações técnicas dos relatórios de validação do CM SAF, \cite{nao_aguento_mais}, que descrevem o desempenho do algoritmo de recuperação e os limites de precisão do produto. 
+    
+    Considerou-se uma componente relativa de 3\%, associada às incertezas do algoritmo e à calibração dos sensores AVHRR, combinada a uma componente absoluta fixa de 5~W/m$^2$, conforme adotado na documentação oficial do produto e consistente com as avaliações apresentadas por \cite{karlsson2023claraA3}. A incerteza total foi então calculada como:
+    \begin{equation}
+    \sigma_{\text{CLARA}} = \sqrt{\left(0{,}03 \cdot \text{SIS}\right)^2 + 5^2}.
+    \end{equation}
+
+
+\subsection{Regressão Ortogonal (ODR) como forma de validação}
+
+A compatibilidade entre dados de estação e estimativas por satélite ou reanálise foi feita por meio da Regressão Ortogonal (\textit{Orthogonal Distance Regression} -- ODR), método estatístico adequado quando ambas as variáveis envolvidas (x e y) apresentam incertezas mensuráveis.
+
+Diferentemente da regressão linear ordinária (OLS), que minimiza apenas os resíduos verticais em relação à variável dependente, a regressão ODR considera explicitamente os erros associados tanto à variável independente quanto à variável dependente. Assim, o ajuste é realizado pela minimização das distâncias ortogonais entre os pontos observados e a reta ajustada, como adotado por \cite{boggs1990odr}. Vide Figura \ref{fig:odr}.
+
+\begin{figure}[h!]
+    \centering
+    \fbox{%
+        \includegraphics[width=0.5\linewidth]{tex/odr.png}
+    }
+    \caption[Representação esquemática do ajuste de regressão ortogonal (ODR)]
+    {Representação esquemática do ajuste de regressão ortogonal (ODR). 
+    Fonte: \cite{cornbleet1979}, adaptado.}
+    \label{fig:odr}
+\end{figure}
+
+O modelo linear empregado pode ser expresso por:
+\begin{equation}
+y = \beta_0 + \beta_1 x,
+\end{equation}
+em que $y$ representa a variável estimada (satélite ou reanálise), $x$ a variável observacional em superfície, $\beta_0$ o coeficiente linear e $\beta_1$ o coeficiente angular da regressão.
+
+A função a ser minimizada pelo ajuste ODR é dada por:
+\begin{equation}
+S(\beta_0,\beta_1) = \sum_{i=1}^{n} 
+\frac{\left(y_i - \beta_0 - \beta_1 x_i\right)^2}
+{\sigma_{y,i}^2 + \beta_1^2 \sigma_{x,i}^2},
+\end{equation}
+onde $\sigma_{x,i}$ e $\sigma_{y,i}$ representam as incertezas associadas, respectivamente, às variáveis $x$ e $y$ para cada observação $i$.
+
+A incorporação das incertezas de todas as fontes permite obter resultados com maior confiabilidade, tornando os parâmetros estimados fisicamente mais consistentes.
+\end{itemize}
+
+\subsection{Teste de Mann-Kendall e estimador Sen}
+
+Para detectar tendências temporais nas séries climatológicas sazonais, foi aplicado
+o teste não-paramétrico de Mann-Kendall \citep{Mann1945, Kendall1975}, geralmente aplicados em séries temporais que não seguem 
+distribuição normal e podem conter valores atípicos \citep{yue2002, wilks2011}. 
+A magnitude das tendências foi estimada pelo estimador de Sen \citep{Sen1968}, 
+que calcula a mediana das inclinações entre todos os pares de pontos:
+
+\begin{equation}
+	\beta = \text{mediana}\left(\frac{x_j - x_i}{j - i}\right), \quad \forall j > i
+	\label{eq:sen_slope}
+\end{equation}
+
+\noindent onde $x_i$ e $x_j$ são os valores da variável nos tempos $i$ e $j$, 
+respectivamente, e $\beta$ representa a tendência estimada por ano.
+
+A significância estatística das tendências foi avaliada pelo teste de Mann-Kendall, 
+que considera a estatística $S$:
+
+\begin{equation}
+	S = \sum_{i=1}^{n-1} \sum_{j=i+1}^{n} \text{sgn}(x_j - x_i)
+	\label{eq:mann_kendall_s}
+\end{equation}
+
+\noindent onde $\text{sgn}(x)$ é a função sinal ($+1$ se $x>0$, $0$ se $x=0$, 
+$-1$ se $x<0$) e $n$ é o número de observações. O valor de $S$ é então 
+normalizada para calcular o $p_\text{valor}$ assumindo distribuição normal sob a 
+hipótese nula de ausência de tendência \citep{Kendall1975}.
+
+Foram adotados três níveis de significância estatística: $p < 0{,}05$ (*), 
+$p < 0{,}01$ (**), e $p < 0{,}001$ (***). Tendências com $p \geq 0{,}05$ 
+foram consideradas estatisticamente não significativas.
+
+\subsection{Cálculo das Normais Climatológicas}
+
+As normais climatológicas foram calculadas como a média aritmética simples de 
+cada variável climática para o período 1990-2024:
+
+\begin{equation}
+	\bar{X}_s = \frac{1}{n}\sum_{i=1}^{n} X_{s,i}
+	\label{eq:normal_climatologica}
+\end{equation}
+
+\noindent onde $\bar{X}_s$ representa a normal climatológica da variável na 
+estação do ano $s$ (DJF, MAM, JJA ou SON), $X_{s,i}$ é o valor sazonal da 
+variável no ano $i$, e $n$ é o número total de anos (35 anos, de 1990 a 2024).
+
+Adicionalmente às médias climatológicas, foram calculadas medidas de variabilidade 
+incluindo desvio padrão, valores mínimos e máximos observados ao longo do período, 
+e percentis (25\% e 75\%) para caracterizar a distribuição estatística completa 
+de cada variável.
+
+\subsection{Relação entre cobertura vegetal e variáveis climáticas}
+\label{subsec:teoria_cobertura_clima}
+
+A relação entre cobertura de superfície e precipitação é mais complexa e envolve mecanismos indiretos e não lineares. A vegetação pode atuar como fonte de umidade para a atmosfera por meio da evapotranspiração, contribuindo para o aumento da umidade específica e assim favorecer processos convectivos em determinadas condições atmosféricas \citep{eagleson1978}.
+
+Para quantificar essas relações, é comum modelar a dependência entre uma variável climática $Y$ e a cobertura vegetal $C$ por meio de um modelo linear, assumindo que, em escalas locais e para variações moderadas, a resposta média pode ser aproximada por uma relação linear \citep{wilks2011}:
+
+\begin{equation}
+	Y = \alpha + \beta C + \varepsilon,
+	\label{eq:reg_cobertura_teorica}
+\end{equation}
+
+\noindent onde $\alpha$ é o termo independente, $\beta$ representa o coeficiente de sensibilidade da variável climática em relação à cobertura vegetal, e $\varepsilon$ é o termo de erro aleatório, assumido com média nula.
+
+O coeficiente $\beta$ pode ser interpretado como uma medida da taxa média de variação da variável climática em resposta a mudanças incrementais na cobertura vegetal:
+
+\begin{equation}
+	\beta = \frac{\partial Y}{\partial C}.
+\end{equation}
+
+Valores negativos de $\beta$ indicam que o aumento da cobertura vegetal está associado à redução da variável climática analisada, enquanto valores positivos indicam o oposto. A magnitude de $\beta$ reflete a intensidade dessa influência, sendo dependente das condições climáticas, do tipo de vegetação e da escala espacial considerada.
+
+A significância estatística da relação é geralmente avaliada por meio de testes paramétricos associados ao coeficiente angular, sob a hipótese nula de ausência de relação linear entre as variáveis \citep{wilks2011}. Contudo, devido à heterogeneidade espacial e à presença frequente de distribuições assimétricas e valores extremos em dados utilizados, a interpretação dos resultados deve privilegiar medidas como a mediana e os intervalos interquartis dos coeficientes estimados, bem como a consistência espacial do sinal observado \citep{cressie1993}.
+
+Adicionalmente, a estratificação da cobertura vegetal em classes discretas permite investigar diferenças sistemáticas no comportamento das variáveis climáticas associadas a distintos regimes de uso e cobertura da terra. A comparação entre classes pode ser realizada por testes não paramétricos, como o teste de Kruskal--Wallis \citep{kruskal1952}, adequado para amostras independentes e distribuições não gaussianas. Esse teste avalia a hipótese nula de igualdade das medianas entre os grupos, fornecendo uma medida complementar da influência da cobertura vegetal sobre o clima de superfície. Partindo disso, com base na Tabela \ref{tab:mapbiomas_classes} serão utilizadas as classes (códigos) 3 (Formação Florestal), 4 (Formação Savânica) e 24 (Área Urbanizada) para justamente avaliar a relação da cobertura em relação aos perfis das variáveis climáticas aqui estudadas.

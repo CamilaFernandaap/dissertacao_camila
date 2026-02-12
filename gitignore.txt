@@ -1,0 +1,9 @@
+*.pdf
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.nc
+*.zarr
+*.parquet
+data/

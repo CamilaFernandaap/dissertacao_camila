@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: tese.aux
+The style file: iag.bst
+Database file #1: tex/bibliografia.bib
+Warning--entry type for "sudene2024desertificacao" isn't style-file defined
+--line 843 of file tex/bibliografia.bib
+Warning--I didn't find a database entry for "teuling2017contrasting"
+Warning--I didn't find a database entry for "li2020asymmetric"
+Warning--empty journal in Nobre2011
+You've used 71 entries,
+            2768 wiz_defined-function locations,
+            988 strings with 17436 characters,
+and the built_in function-call counts, 29199 in all, are:
+= -- 2827
+> -- 1941
+< -- 93
++ -- 677
+- -- 657
+* -- 2811
+:= -- 5437
+add.period$ -- 0
+call.type$ -- 71
+change.case$ -- 497
+chr.to.int$ -- 71
+cite$ -- 72
+duplicate$ -- 830
+empty$ -- 1234
+format.name$ -- 754
+if$ -- 5304
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 65
+newline$ -- 224
+num.names$ -- 285
+pop$ -- 344
+preamble$ -- 1
+purify$ -- 565
+quote$ -- 0
+skip$ -- 947
+stack$ -- 0
+substring$ -- 1415
+swap$ -- 136
+text.length$ -- 53
+text.prefix$ -- 219
+top$ -- 0
+type$ -- 618
+warning$ -- 1
+while$ -- 267
+width$ -- 0
+write$ -- 782
+(There were 4 warnings)
