@@ -1317,6 +1317,36 @@
   \usepackage[OscarVinicius]{fncychap}  
   \input{colordvi}
   \usepackage[linktocpage=true,breaklinks=true]{hyperref}
+  \usepackage[table]{xcolor}
+
+% Paleta ajustada para coincidir com as figuras
+\definecolor{mb3}{RGB}{0,100,0}
+\definecolor{mb4}{RGB}{124,196,118}
+\definecolor{mb5}{RGB}{0,70,0}
+\definecolor{mb9}{RGB}{181,101,29}
+\definecolor{mb11}{RGB}{102,205,170}
+\definecolor{mb12}{RGB}{189,183,107}
+\definecolor{mb15}{RGB}{255,215,0}
+\definecolor{mb20}{RGB}{255,105,180}
+\definecolor{mb21}{RGB}{186,186,186}
+\definecolor{mb23}{RGB}{255,178,102}
+\definecolor{mb24}{RGB}{255,0,0}
+\definecolor{mb25}{RGB}{200,0,0}
+\definecolor{mb29}{RGB}{139,69,19}
+\definecolor{mb30}{RGB}{120,60,20}
+\definecolor{mb31}{RGB}{138,43,226}
+\definecolor{mb32}{RGB}{128,128,0}
+\definecolor{mb33}{RGB}{0,0,255}
+\definecolor{mb39}{RGB}{255,140,0}
+\definecolor{mb40}{RGB}{255,182,193}
+\definecolor{mb41}{RGB}{255,204,229}
+\definecolor{mb46}{RGB}{34,139,34}
+\definecolor{mb47}{RGB}{255,255,102}
+\definecolor{mb48}{RGB}{186,85,211}
+\definecolor{mb49}{RGB}{148,0,211}
+\definecolor{mb50}{RGB}{216,191,216}
+\definecolor{mb75}{RGB}{200,200,200}
+
 
 %  \textwidth=460pt
 %  \textheight=680pt

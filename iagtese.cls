@@ -1317,7 +1317,32 @@
   \usepackage[linktocpage=true,breaklinks=true]{hyperref}
   \usepackage[table]{xcolor}
   \usepackage{colortbl}
-  
+  \usepackage[dvipsnames]{xcolor}
+  \usepackage{xcolor}
+    \usepackage{colortbl}
+    \definecolor{mb_forest}{RGB}{0,100,0}           % Verde escuro - Formação Florestal
+    \definecolor{mb_savanna}{RGB}{178,223,138}      % Verde claro - Formação Savânica
+    \definecolor{mb_mangrove}{RGB}{0,100,100}       % Verde azulado - Mangue
+    \definecolor{mb_grassland}{RGB}{255,178,102}    % Laranja claro - Formação Campestre
+    \definecolor{mb_wetland}{RGB}{102,205,170}      % Turquesa - Campo Alagado
+    \definecolor{mb_pasture}{RGB}{255,255,153}      % Amarelo claro - Pastagem
+    \definecolor{mb_sugarcane}{RGB}{170,0,102}      % Magenta escuro - Cana
+    \definecolor{mb_mosaic}{RGB}{255,235,175}       % Bege claro - Mosaico de Usos
+    \definecolor{mb_beach}{RGB}{255,204,153}        % Laranja muito claro - Praia
+    \definecolor{mb_urban}{RGB}{255,0,0}            % Vermelho - Área Urbanizada
+    \definecolor{mb_other_nonveg}{RGB}{204,51,0}    % Vermelho escuro - Outras Áreas não Vegetadas
+    \definecolor{mb_mining}{RGB}{153,0,0}           % Vermelho muito escuro - Mineração
+    \definecolor{mb_aquaculture}{RGB}{153,204,255}  % Azul claro - Aquicultura
+    \definecolor{mb_water}{RGB}{0,0,255}            % Azul - Rio, Lago e Oceano
+    \definecolor{mb_soy}{RGB}{255,153,204}          % Rosa claro - Soja
+    \definecolor{mb_rice}{RGB}{170,0,102}           % Magenta - Arroz
+    \definecolor{mb_temp_crops}{RGB}{255,204,229}   % Rosa muito claro - Outras Lavouras Temporárias
+    \definecolor{mb_coffee}{RGB}{102,51,153}        % Roxo escuro - Café
+    \definecolor{mb_citrus}{RGB}{153,102,204}       % Roxo médio - Citrus
+    \definecolor{mb_perennial}{RGB}{204,153,255}    % Roxo claro - Outras Lavouras Perenes
+    \definecolor{mb_planted_forest}{RGB}{102,68,34} % Marrom - Floresta Plantada
+    \definecolor{mb_restinga}{RGB}{180,150,120}     % Marrom claro - Restinga
+    
     
 %  \textwidth=460pt
 %  \textheight=680pt

@@ -14,50 +14,46 @@ método de Regressão de Distância Ortogonal, seguindo os passos empregados no 
 
 Em seguida, foi feito o processo de caracterização espacial das tendências climáticas 
 através de análises estatísticas aplicadas aos dados de satélite e reanálise.
-Para obtenção das tendências temporais, aplicou-se o teste 
-de Mann-Kendall, e para quantificação da magnitude destas tendências, 
-utilizou-se o estimador de Sen.
+Para a obtenção das tendências temporais, aplicou-se o teste de Mann-Kendall, e para a quantificação da magnitude destas tendências, utilizou-se o estimador de Sen.
 
 Na terceira parte é apresentada a caracterização das normais climatológicas calculadas 
 para o período completo de análise (1990-2024), que contextualizam os valores 
 médios e a variabilidade de cada variável climática. 
 
-Após compreender as implicações dos resultados anteriores e que a partir daqui sucedem, foram aplicados métodos de identificação da magnitude relativa das tendências observadas juntamente com as transformações documentadas no uso e 
+Após compreender as implicações dos resultados anteriores e o que a partir daqui sucede, foram aplicados métodos de identificação da magnitude relativa das tendências observadas juntamente com as transformações documentadas no uso e 
 cobertura da terra ao longo do período analisado.
 
 Adicionalmente, foram investigadas as respostas das variáveis climáticas em áreas caracterizadas por extremos de mudança no uso e cobertura da terra, com base nos percentis superiores e inferiores de variação das classes dominantes em cada estado.
 
-Para o estado de São Paulo, a análise concentrou-se principalmente na classe de Formação Florestal, enquanto no Rio Grande do Norte o foco voltou-se sobre a Formação Savânica (Caatinga), refletindo as características predominantes de cada bioma. A evolução temporal das variáveis climáticas nessas áreas foi avaliada de forma integrada, permitindo identificar diferenças sistemáticas associadas às transformações da superfície.
+Para o estado de São Paulo, a análise se concentrou principalmente na classe de Formação Florestal, devido, originalmente, à predominância de vegetação de Mata Atlântica e cerrado, enquanto no Rio Grande do Norte o foco voltou-se sobre a Formação Savânica (Caatinga), refletindo as características vegetais naturais predominantes de cada estado. A evolução temporal das variáveis climáticas nessas áreas foi avaliada de forma integrada, permitindo identificar diferenças sistemáticas associadas às transformações da superfície.
 
 Em uma etapa subsequente, realizou-se uma avaliação quantitativa da relação entre as mudanças na cobertura da superfície e as variáveis climáticas, por meio de ajustes estatísticos aplicados às séries temporais agregadas em pontos de grade. Essa análise teve como objetivo estimar a magnitude relativa da influência das diferentes classes de uso da terra sobre as tendências observadas de temperatura, precipitação e radiação solar, considerando a variabilidade espacial e temporal dos dados.
 
 Por fim, os resultados foram sintetizados de forma comparativa entre os estados de São Paulo e Rio Grande do Norte, destacando semelhanças e contrastes nos padrões de resposta climática associados às mudanças de uso e cobertura da terra.
 
 
-\section{Análise de correlão entre os dados observacionais e produtos de Satélite e Reanálise}
+\section{Análise de correlação entre os dados observacionais e produtos de Satélite e Reanálise}
 
-Antecedento ao procedimento de análise de tendências climáticas, considerou-se um processo de validação cruzada entre dados observacionais de estações meteorológicas (INMET e ANA) e produtos derivados de satélite e reanálise (CHIRPS, CLARA-A3, GOES-16 e ERA5-Land) para o período comum de sobreposição 2004-2024. Esta validação foi utilizada com o objetivo de cobrir as seguintes questões: primeiro, para confirmar que os produtos de sensoriamento remoto reproduzem adequadamente a variabilidade climática observada localmente pelas estações físicas; segundo, para quantificar as incertezas associadas aos diferentes produtos que serão posteriormente utilizados nas análises de tendências espaciais; e terceiro, para identificar eventuais vieses sistemáticos que possam requerer correção ou que devam ser considerados na interpretação dos resultados. Além disso, vale salientar a importância da agregação de diversas fontes justamente pela limitação encontrada em diversos pontos do Brasil, principalmente pela falta de manutenção e acompanhamento de equipamentos de monitoramento em terra.
+Antecedendo ao procedimento de análise de tendências climáticas, considerou-se um processo de validação cruzada entre dados observacionais de estações meteorológicas (INMET e ANA) e produtos derivados de satélite e reanálise (CHIRPS, CLARA-A3, GOES-16 e ERA5-Land) para o período comum de sobreposição 2004-2024. Esta validação foi utilizada para confirmar que os produtos de sensoriamento remoto e reanálise reproduzem adequadamente a variabilidade observada localmente a partir dos dados coletados pelas estações meteorológicas de superfície, para quantificar as incertezas associadas aos diferentes produtos que serão posteriormente utilizados nas análises de tendências espaciais e para identificar eventuais vieses sistemáticos que possam requerer correção ou que devam ser considerados na interpretação dos resultados. Além disso, vale salientar a importância da agregação de diversas fontes justamente pela limitação encontrada em diversos pontos do Brasil, principalmente pela falta de manutenção e acompanhamento de equipamentos de monitoramento em superfície.
 
-A metodologia de validação empregou regressão ortogonal por distância (Orthogonal Distance Regression, ODR) \cite{boggs1990odr}, técnica essa que como mencionada em Metodologias visa descrever a primeiramente mesmo que de forma indireta a diferença quando comparada a regressão linear ordinária por considerar explicitamente as incertezas em ambas as variáveis (observações e estimativas satelitais), ao invés de assumir que apenas a variável dependente possui erro significativo. Como já destacado em outros pontos deste estudo, esta abordagem é particularmente apropriada no presente contexto, onde tanto as medições de estações quanto as estimativas de satélite estão sujeitas a incertezas não desprezíveis e por também ser um método pouco usado em estudos na área de meteorologia, que em geral utiliza-se o ajuste linear para a validação de diferentes fontes.
-
-Os ajustes foram avaliados com base em múltiplos indicadores estatísticos complementares: o coeficiente de correlação de Pearson ($R$) que quantifica a intensidade da associação linear entre as variáveis; o qui-quadrado reduzido ($\chi^2_r$) que avalia a qualidade do ajuste considerando as incertezas estimadas, com valores próximos a 1 indicando consistência estatística adequada entre modelo e dados \citep{press2007numerical}; e o número de pares de dados ($N$) que estabelece a significância estatística dos resultados. Os parâmetros de regressão (coeficiente angular e linear) foram reportados com suas incertezas estimadas pelo método ODR.
+A metodologia de validação empregou regressão ortogonal por distância (Orthogonal Distance Regression, ODR). Os ajustes foram avaliados com base em múltiplos indicadores estatísticos complementares: o coeficiente de correlação de Pearson ($R$) que quantifica a intensidade da associação linear entre as variáveis; o qui-quadrado reduzido ($\chi^2_r$) que avalia a qualidade do ajuste considerando as incertezas estimadas, com valores próximos a 1 indicando consistência estatística adequada entre modelo e dados \citep{press2007numerical}; e o número de pares de dados ($N$) que estabelece a significância estatística dos resultados. Os parâmetros de regressão (coeficiente angular e linear) foram reportados com suas incertezas estimadas pelo método ODR.
 
 \subsection{Correlação entre precipitação observada (ANA) e estimada por satélite (CHIRPS)}
 
-A validação da precipitação baseou-se na comparação entre dados pluviométricos acumulados anuais provenientes de estações convencionais da Agência Nacional de Águas (ANA) e estimativas do produto CHIRPS (Climate Hazards Group InfraRed Precipitation with Station data), combinando os dados de observações de satélite infravermelho com dados de estações para produzir campos espacialmente contínuos de precipitação \citep{funk2015}.
+A validação da precipitação baseou-se na comparação entre dados pluviométricos acumulados anuais provenientes de estações convencionais da Agência Nacional de Águas (ANA) e estimativas do produto CHIRPS (Climate Hazards Group InfraRed Precipitation with Station data).
 
 \begin{figure}[htbp]
 	\centering
 	\begin{minipage}{0.6\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{cor_ana_sp.png}
+		\includegraphics[width=\textwidth]{fig/cor_ana_sp.png}
 		
 		(a) São Paulo
 	\end{minipage}
 	\hfill
 	\begin{minipage}{0.6\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{cor_ana_rn.png}
+		\includegraphics[width=\textwidth]{fig/cor_ana_rn.png}
 		
 		(b) Rio Grande do Norte
 	\end{minipage}
@@ -65,62 +61,67 @@ A validação da precipitação baseou-se na comparação entre dados pluviomét
 	\label{fig:corr_prec_chirps}
 \end{figure}
 
-Para o estado de São Paulo (Figura~\ref{fig:corr_prec_chirps}a), a regressão ortogonal entre ANA e CHIRPS resultou em $y = (0{,}544 \pm 0{,}006)x + (581,0 \pm 7,8)$ mm, com coeficiente de correlação moderado $R = 0{,}7$ e qui-quadrado reduzido $\chi^2_r = 0{,}8$, baseado em um conjunto de $N = 3777$ pares de dados. O coeficiente angular substancialmente inferior à unidade ($0{,}544 \pm 0{,}006$) indica tendência sistemática pronunciada do CHIRPS em subestimar os acumulados de precipitação mais elevados, comportamento frequentemente observado em produtos de satélite quando confrontados com eventos convectivos intensos que podem saturar os sensores infravermelhos ou exceder os limites de detecção dos algoritmos de estimativa. O coeficiente linear excepcionalmente elevado de $(581,0 \pm 7,8)$ mm sugere compensação desta subestimação através de viés aditivo substancial que afeta uniformemente toda a faixa de precipitações, resultando em superestimativa de eventos de baixa intensidade.
+Para o estado de São Paulo (Figura~\ref{fig:corr_prec_chirps}a), cada cor representa um município na análise. A regressão ortogonal entre ANA e CHIRPS resultou em $y = (0{,}544 \pm 0{,}006)x + (581,0 \pm 7,8)$ mm, com coeficiente de correlação moderado $R = 0{,}7$ e qui-quadrado reduzido $\chi^2_r = 0{,}8$, baseado em $N = 3777$ pares de dados. O desvio pronunciado do ajuste em relação à linha 1:1 (representando concordância perfeita) evidencia a presença de viés sistemático nas estimativas do CHIRPS para esta região. O coeficiente angular substancialmente inferior à unidade ($0{,}544 \pm 0{,}006$) indica tendência sistemática do CHIRPS em subestimar os acumulados de precipitação mais elevados, comportamento frequentemente observado em produtos de satélite quando confrontados com eventos convectivos intensos que podem saturar os sensores 
+infravermelhos ou exceder os limites de detecção dos algoritmos de estimativa 
+\citep{tian2009component}. O coeficiente linear excepcionalmente elevado de 
+$(581,0 \pm 7,8)$ mm sugere compensação desta subestimação através de viés aditivo substancial, resultando em superestimativa de eventos de baixa intensidade.
 
-A dispersão observada nos dados, embora resulte em correlação moderada, pode ser esperada considerando-se: (i) a diferença fundamental nas escalas de representatividade espacial entre medições pontuais de pluviômetros (tipicamente círculos de 20 cm de diâmetro) e pixels CHIRPS de aproximadamente 5 km de resolução espacial, diferença que se torna particularmente problemática para precipitações convectivas de pequena escala espacial; (ii) a heterogeneidade topográfica significativa do estado de São Paulo, incluindo Serra do Mar e Serra da Mantiqueira, que induz gradientes pluviométricos pronunciados em escalas menores que a resolução CHIRPS; e (iii) a variabilidade temporal sub-diária da precipitação convectiva que pode resultar em diferenças substanciais entre acumulações diárias mesmo quando os totais mensais ou anuais são similares.
+Para o estado do Rio Grande do Norte (Figura~\ref{fig:corr_prec_chirps}b), a regressão ortogonal apresentou $y = (0{,}73 \pm 0{,}02)x + (147,2 \pm 9,9)$ mm, com coeficiente de correlação elevado $R = 0{,}9$ e qui-quadrado reduzido $\chi^2_r = 1{,}1$, baseado em $N = 229$ pares de dados. O ajuste linear apresenta desvio moderado em relação à linha 1:1, indicando viés sistemático de menor magnitude comparativamente ao observado em São Paulo. O coeficiente angular ($0{,}73 \pm 0{,}02$), embora ainda inferior à unidade, aproxima-se consideravelmente da concordância, sugerindo que o CHIRPS reproduz adequadamente a variabilidade espacial da precipitação no semiárido nordestino. O coeficiente linear reduzido de $(147,2 \pm 9,9)$ mm indica menor viés aditivo, 
+resultando em melhor concordância absoluta entre as estimativas.
 
+A correlação superior observada no Rio Grande do Norte comparada a São Paulo aparenta, à primeira vista, contraditória, dado que RN possui densidade de estações meteorológicas substancialmente inferior. No entanto, esta diferença pode ser resultante da natureza distinta dos regimes de precipitação dominantes. São Paulo se caracteriza por precipitação convectiva intensa e localizada com alta variabilidade espacial e o Rio Grande do Norte apresenta precipitações frequentemente associadas a sistemas de escala sinótica (Zona de Convergência Intertropical, perturbações de leste) que produzem comportamentos mais  característicos, verão quente e chuvoso e inverno frio e seco, sendo portanto, mais adequadamente capturados por produtos de resolução moderada como CHIRPS \citep{kousky1980diurnal}.
 
-Já para o Rio Grande do Norte (Figura~\ref{fig:corr_prec_chirps}b), a validação revelou comportamento substancialmente distinto, com regressão ortogonal $y = (0{,}73 \pm 0{,}02)x + (147,2 \pm 9,9)$ mm, correlação notavelmente elevada $R = 0{,}9$ quando comparada ao observado para o estado de São Paulo, qui-quadrado reduzido próximo ao ideal $\chi^2_r = 1,1$, baseado em $N = 229$ pares de dados, consideravelmente inferior aos pares de SP. A correlação superior observada no Rio Grande do Norte comparada a São Paulo aparenta, à primeira vista, contraditória dado que RN possui densidade de estações meteorológicas substancialmente inferior. No entanto, esta diferença reflete por algumas questões como a natureza distinta dos regimes de precipitação dominantes: enquanto São Paulo caracteriza-se por precipitação convectiva intensa e localizada com alta variabilidade espacial, o Rio Grande do Norte apresenta precipitações frequentemente associadas a sistemas de escala sinótica (Zona de Convergência Intertropical, perturbações de leste) que produzem comportamentos mais coerentes, ou seja, separados por apenas "duas estações" características, verão quente e chuvoso e inverno frio e seco, onde portanto, mais adequadamente capturados por produtos de resolução moderada como CHIRPS \citep{kousky1980diurnal}.
+O coeficiente angular de $0{,}73 \pm 0{,}02$ no Rio Grande do Norte, embora ainda inferior à unidade, mostra menor subestimação que São Paulo, indicando melhor desempenho do CHIRPS em capturar a magnitude dos eventos de precipitação no semiárido. O coeficiente linear moderado de $(147,2 \pm 9,9)$ mm é substancialmente inferior ao observado em São Paulo, sugerindo menor tendência de superestimativa de precipitações leves. Esta diferença pode estar relacionada tanto às características distintas dos regimes pluviométricos quanto aos processos de calibração do CHIRPS, que utiliza dados de estações pluviométricas locais para ajuste das estimativas de satélite e pode ter maior densidade de estações de calibração disponíveis em regiões semiáridas globalmente similares ao nordeste brasileiro \citep{funk2015}.
 
-O coeficiente angular de $0{,}73 \pm 0{,}02$ no Rio Grande do Norte, embora ainda inferior à unidade, mostra menor subestimação que São Paulo, indicando melhor desempenho do CHIRPS em capturar a magnitude dos eventos de precipitação no semiárido. O coeficiente linear moderado de $(147,2 \pm 9,9)$ mm é substancialmente inferior ao observado em São Paulo, sugerindo menor tendência de super estimativa de precipitações leves. Esta diferença pode estar relacionada tanto às características distintas dos regimes pluviométricos quanto aos processos de calibração do CHIRPS, que utiliza dados de estações pluviométricas locais para ajuste das estimativas de satélite e pode ter maior densidade de estações de calibração disponíveis em regiões semiáridas globalmente similares ao nordeste brasileiro \citep{funk2015}.
+\subsection{Validação da Temperatura: INMET vs ERA5-Land}
 
-\subsection{Correlação entre temperatura média observada (INMET) e reanálise (ERA5-Land)}
-
-A validação da temperatura do ar baseou-se na comparação entre médias diárias observadas em estações automáticas do INMET e dados de reanálise ERA5-Land, produto com resolução espacial sendo de aproximadamente 9 km que assimila observações meteorológicas globais em modelo numérico para produzir campos espaciotemporalmente consistentes de variáveis atmosféricas e de superfície \citep{munoz2021era5}.
+A validação da temperatura do ar baseou-se na comparação entre médias anuais observadas em estações automáticas do INMET e dados de reanálise ERA5-Land, produto com resolução espacial de aproximadamente 9 km que assimila observações meteorológicas globais em modelo numérico para produzir campos espaço-temporalmente consistentes de variáveis atmosféricas e de superfície \citep{munoz2021era5}.
 
 \begin{figure}[htbp]
 	\centering
 	\begin{minipage}{0.6\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{correlacao_inmet_era5_tavg_2004_2024_sp.png}
-		
+		\includegraphics[width=\textwidth]{fig/correlacao_inmet_era5_tavg_2004_2024_sp.png}
 		(a) São Paulo
 	\end{minipage}
 	\hfill
 	\begin{minipage}{0.6\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{correlacao_inmet_era5_tavg_2004_2024.png}
-		
+		\includegraphics[width=\textwidth]{fig/correlacao_inmet_era5_tavg_2004_2024_rn.png}
 		(b) Rio Grande do Norte
 	\end{minipage}
-	\caption{Correlação entre temperatura média anual observada em estações automáticas do INMET e dados de reanálise ERA5-Land para o período 2004--2024.}
+	\caption{Correlação entre temperatura média anual observada em estações automáticas 
+	do INMET e dados de reanálise ERA5-Land para o período 2004--2024. A linha tracejada 
+	representa a concordância perfeita (1:1).}
 	\label{fig:corr_temp_era5}
 \end{figure}
 
+Para o estado de São Paulo (Figura~\ref{fig:corr_temp_era5}a), a regressão ortogonal entre INMET e ERA5-Land para o período 2004--2024 resultou no ajuste 
+$y = (0{,}75 \pm 0{,}01)x + (6{,}10 \pm 0{,}16)$ °C, com coeficiente de correlação elevado $R = 0{,}89$ e qui-quadrado reduzido $\chi^2_r = 7{,}61$, baseado em $N = 327$ pares de dados anuais representados pelas cores. O ajuste 
+apresenta desvio moderado em relação à linha 1:1, evidenciando a presença de viés sistemático. O coeficiente angular inferior à unidade ($0{,}75 \pm 0{,}01$) indica que o ERA5-Land tende a subestimar as temperaturas mais elevadas observadas em São Paulo, enquanto o coeficiente linear positivo ($6{,}10 \pm 0{,}16$ °C) revela viés aditivo que resulta em superestimativa das temperaturas mais baixas. 
 
-Para São Paulo (Figura~\ref{fig:corr_temp_era5}a), a regressão ortogonal entre INMET e ERA5-Land para o período 2004-2024 resultou em ajuste acima do adequado $y = (1,0 \pm 0{,}2)x + (0{,}4 \pm 3,4)$ °C, com correlação muito elevada $R = 0{,}9$ e qui-quadrado $\chi^2_r = 4,1$, baseado em $N = 272$ pares de dados anuais representando múltiplas estações distribuídas pelo estado. O coeficiente angular estatisticamente aproximadamente à ($1,0 \pm 0{,}2$) e coeficiente linear próximo a zero ($0{,}4 \pm 3,4$ °C) demonstram baixíssimos vieses sistemáticos significativos, confirmando que ERA5-Land reproduz adequadamente tanto a magnitude quanto a variabilidade da temperatura observada. O qui-quadrado ligeiramente elevado ($\chi^2_r = 4,1$) sugere que as incertezas estimadas podem estar subestimadas ou que existe variabilidade residual não capturada pelo modelo de regressão linear.
+O qui-quadrado reduzido elevado ($\chi^2_r = 7{,}61$) sugere que 
+as incertezas estimadas estão subestimadas ou que existe variabilidade residual não capturada pelo modelo de regressão ortogonal.
 
-No Rio Grande do Norte (Figura~\ref{fig:corr_temp_era5}b), a validação produziu $y = (1,2 \pm 0{,}3)x + (-6,5 \pm 8,5)$ °C, com correlação similar $R = 0{,}9$ mas qui-quadrado mais próximo ao ideal $\chi^2_r = 1,7$, embora baseado em conjunto consideravelmente menor de $N = 56$ pares de dados devido à menor densidade de estações INMET no estado (em contagem). O coeficiente angular ligeiramente superior à unidade ($1,2 \pm 0{,}3$) combinado com intercepto negativo sugere tendência sutil do ERA5-Land em amplificar a amplitude térmica em relação às observações, comportamento que pode estar relacionado às características específicas do modelo de superfície utilizado na reanálise quando aplicado a solos semiáridos com propriedades térmicas distintas daquelas de regiões mais úmidas.
+No Rio Grande do Norte (Figura~\ref{fig:corr_temp_era5}b), a validação produziu 
+$y = (1{,}03 \pm 0{,}04)x + (-0{,}72 \pm 1{,}17)$ °C, com correlação elevada $R = 0{,}89$ e qui-quadrado reduzido próximo ao ideal $\chi^2_r = 2{,}74$, baseado em $N = 56$ pares de dados. O ajuste linear apresenta excelente concordância com a linha 1:1, indicando ausência de viés sistemático significativo. O coeficiente angular estatisticamente indistinguível da unidade ($1{,}03 \pm 0{,}04$) e o intercepto compatível com zero ($-0{,}72 \pm 1{,}17$ °C) demonstram que o ERA5-Land reproduz de forma adequada tanto a magnitude quanto a variabilidade da temperatura na região analisada.
 
-\subsection{Correlação entre radiação solar média observada (INMET) e produtos de satélite (CLARA-A3 e GOES-16)}
+\subsection{Correlação entre radiação solar anual diária observada (INMET) e produtos de satélite (CLARA-A3 e GOES-16)}
 
-A validação da radiação solar incidente na superfície envolveu comparação entre medições piranométricas de estações automáticas do INMET e dois produtos satelitais complementares: CLARA-A3 (CM SAF cLoud, Albedo and surface RAdiation dataset from AVHRR data), derivado de observações de longo prazo do satélite polar AVHRR com resolução espacial de aproximadamente 25 km \citep{karlsson2017clara}, e GOES-16, produto geoestacionário de alta resolução temporal derivado do satélite GOES-16 posicionado sobre a América do Sul. 
-
-A utilização de dois produtos de satélite complementares fundamenta-se em suas características distintas: CLARA-A3, com série temporal desde 1982 e processamento climatológico homogêneo, sendo isso essencial para análises de tendências 
-de longo prazo, enquanto GOES-16, operacional desde 2017 com dados  retrospectivos a partir de 2014, representa um intervalo para série temporal inferior quando comparado ao CLARA-A3, mas em termos de resolução espacial o seu perfil é superior, sendo de 500 metros na região do visível, enquanto que para espectros do infravermelho e de vapor d'água a resolução passa a ser de 1 km a 2 km, capturando mais dados atmosféricos em diferentes faixas espectrais.
+A validação da radiação solar incidente na superfície envolveu comparação entre medições piranométricas de estações automáticas do INMET e dois produtos de satélite complementares: CLARA-A3 e GOES. 
 
 \begin{figure}[htbp]
 	\centering
 	\begin{minipage}{0.8\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{1.png}
+		\includegraphics[width=\textwidth]{fig/1.png}
 		
 		(a) São Paulo
 	\end{minipage}
 	\par\medskip
 	\begin{minipage}{0.8\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{4_2.png}
+		\includegraphics[width=\textwidth]{fig/4_2.png}
 		
 		(b) Rio Grande do Norte
 	\end{minipage}
@@ -128,20 +129,20 @@ de longo prazo, enquanto GOES-16, operacional desde 2017 com dados  retrospectiv
 	\label{fig:corr_rad_goes}
 \end{figure}
 
-A comparação INMET versus GOES-16 para 2014 (Figura~\ref{fig:corr_rad_goes}) no Rio Grande do Norte (Figura~\ref{fig:corr_rad_goes}b) resultou em $y = (0{,}73 \pm 0{,}02)x + (64 \pm 5)$ W/m$^2$, $R^2 = 0{,}6$, $\chi^2_r = 1,00$ e $N = 1167$, enquanto São Paulo (Figura~\ref{fig:corr_rad_goes}a) apresentou $y = (0{,}79 \pm 0{,}01)x + (27 \pm 1)$ W/m$^2$, $R^2 = 0{,}7$, $\chi^2_r = 1,0$ e $N = 8831$. Os coeficientes angulares sistematicamente inferiores à unidade ($0{,}73$ e $0{,}79$) indicam que GOES-16 tende a subestimar radiação em condições de alta incidência, comportamento potencialmente relacionado à saturação parcial dos sensores ou limitações nos algoritmos de correção atmosférica em atmosferas com aerossóis elevados.
+A comparação INMET versus GOES-16 para 2014 (Figura~\ref{fig:corr_rad_goes}) em São Paulo (Figura~\ref{fig:corr_rad_goes}a) apresentou $y = (0{,}79 \pm 0{,}01)x + (27 \pm 1)$ W/m$^2$, $R^2 = 0{,}7$, $\chi^2_r = 1,0$ e $N = 8831$, enquanto  Rio Grande do Norte (Figura~\ref{fig:corr_rad_goes}b) resultou em $y = (0{,}73 \pm 0{,}02)x + (64 \pm 5)$ W/m$^2$, $R^2 = 0{,}6$, $\chi^2_r = 1,00$ e $N = 1167$. Os coeficientes angulares sistematicamente inferiores à unidade ($0{,}73$ e $0{,}79$) indicam que GOES-16 tende a subestimar radiação em condições de alta incidência.
 
 \begin{figure}[htbp]
 	\centering
-	\begin{minipage}{0.8\textwidth}
+	\begin{minipage}{0.6\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{2.png}
+		\includegraphics[width=\textwidth]{fig/2.png}
 		
 		(a) São Paulo
 	\end{minipage}
 	\par\medskip
-	\begin{minipage}{0.8\textwidth}
+	\begin{minipage}{0.6\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{3.png}
+		\includegraphics[width=\textwidth]{fig/3.png}
 		
 		(b) Rio Grande do Norte
 	\end{minipage}
@@ -149,20 +150,232 @@ A comparação INMET versus GOES-16 para 2014 (Figura~\ref{fig:corr_rad_goes}) n
 	\label{fig:corr_clara}
 \end{figure}
 
+Comparando os dados do INMET em relação ao CLARA-A3 para o ano de 2013\footnote{A escolha do ano de 2013 indica o ano de transição entre os dados do CLARA-A3 e GOES já para este último os dados se iniciam em 2014.} (Figura~\ref{fig:corr_clara}). Para São Paulo, no período mencionado (Figura~\ref{fig:corr_clara}a), obteve-se desempenho sendo de $y = (0{,}97 \pm 0{,}01)x + (-9 \pm 1)$ W/m$^2$, $R = 0{,}9$, $\chi^2_r = 4,7$ e $N = 3530$, demonstrando concordância consistente entre CLARA-A3 e observações, com coeficiente angular próximo à unidade e viés aditivo baixo.
 
-Já comparação INMET versus CLARA-A3 para o ano de 2013 (Figura~\ref{fig:corr_clara}), no Rio Grande do Norte (Figura~\ref{fig:corr_clara}b) revelou $y = (0{,}70 \pm 0{,}02)x + (76 \pm 4)$ W/m$^2$, com $R = 0{,}7$, $\chi^2_r = 2,1$ e $N = 891$ observações diárias. O coeficiente angular de $0{,}70$ indica subestimação sistemática de aproximadamente 30\% pelo CLARA-A3 em condições de alta radiação, enquanto o coeficiente linear positivo sugere compensação parcial em condições de radiação mais baixa. Para São Paulo no mesmo período (Figura~\ref{fig:corr_clara}a), obteve-se desempenho superior com $y = (0{,}97 \pm 0{,}01)x + (-9 \pm 1)$ W/m$^2$, $R = 0{,}9$, $\chi^2_r = 4,7$ e $N = 3530$, demonstrando concordância consistente entre CLARA-A3 e observações, com coeficiente angular próximo à unidade e viés aditivo mínimo.
+Já no Rio Grande do Norte (Figura~\ref{fig:corr_clara}b) revelou $y = (0{,}70 \pm 0{,}02)x + (76 \pm 4)$ W/m$^2$, com $R = 0{,}7$, $\chi^2_r = 2,1$ e $N = 891$ observações diárias. O coeficiente angular de $0{,}7$ indica subestimação sistemática de aproximadamente 30\% pelo CLARA-A3 em condições de alta radiação, enquanto o coeficiente linear positivo sugere compensação parcial em condições de radiação mais baixa.
 
-Comparativamente, CLARA-A3 demonstrou desempenho superior a GOES-16 em São Paulo ($R$ = 0{,}9 versus 0{,}7), embora apresentasse maior dispersão residual conforme indicado pelo qui-quadrado mais elevado. Esta diferença pode refletir em diferentes abordagens metodológicas: CLARA-A3 incorpora correções estatísticas baseadas em comparações de longo prazo com estações de referência, enquanto GOES-16 utiliza modelagem radiativa direta com menor calibração regional. Para análises de tendências de longo prazo, considerou-se CLARA-A3 devido à sua homogeneidade temporal superior, resultante de processamento consistente ao longo de múltiplas décadas.
+Comparativamente, CLARA-A3 demonstrou desempenho superior a GOES-16 em São Paulo ($R$ = 0{,}9 versus 0{,}7), embora apresentasse maior dispersão residual conforme indicado pelo qui-quadrado mais elevado. Esta diferença pode ser reflexo de diferentes abordagens metodológicas: CLARA-A3 incorpora correções estatísticas baseadas em comparações de longo prazo com estações de referência \citep{karlsson2023claraA3}, enquanto GOES-16 utiliza modelagem radiativa direta com menor calibração regional \citep{laszlo2020}. Para análises de tendências de longo prazo, considerou-se CLARA-A3 devido à sua homogeneidade temporal superior, resultante de processamento consistente ao longo de múltiplas décadas.
 
 \subsection{Validação por correlação: resultados e implicações}
 
-A validação demonstrou que os produtos de satélite e reanálise empregados reproduzem adequadamente o comportamento observado via estações meteorológicas físicas, embora com precisão variável conforme a variável e região consideradas. A temperatura apresenta concordância acima do adequado com (R $\ge$ 0{,}9) sem vieses sistemáticos significativos, garantindo alta confiabilidade às análises de tendências térmicas. A radiação solar mostra concordância boa a muito boa para o coeficiente de Pearson ($R$ = 0{,}6-0{,}9). A precipitação, apesar de correlações moderadas a boas (R = 0{,}7-0{,}9), apresenta incertezas substancialmente maiores que devem ser consideradas na interpretação de tendências.
+A validação demonstrou que os produtos de satélite e reanálise empregados reproduzem adequadamente o comportamento observado via estações meteorológicas físicas, embora com precisão variável conforme a variável e região consideradas. A temperatura apresenta ótima concordância, com (R $\ge$ 0{,}9), sem vieses sistemáticos significativos, garantindo alta confiabilidade às análises de tendências. A radiação solar mostra concordância boa a muito boa concordância, (coeficiente de Pearson $R$ = 0{,}6-0{,}9). A precipitação, apesar de correlações moderadas a boas (R = 0{,}7-0{,}9), apresenta incertezas substancialmente maiores que devem ser consideradas na interpretação de tendências.
 
-Estes resultados justificam o uso dos produtos de satélite e de reanálise para mapeamento espacial de tendências climáticas, fornecendo cobertura espacial contínua essencial para identificação de padrões regionais que não seriam detectáveis com a distribuição irregular e incompleta das estações observacionais.
+Estes resultados justificam o uso dos produtos de satélite e de reanálise para mapeamento espacial de tendências climáticas, fornecendo cobertura espacial contínua essencial para identificação de padrões regionais que não seriam detectáveis com a distribuição irregular e incompleta das estações meteorológicas de superfície.
+
+\section{Normais climatológicas e suas implicações}
+
+Esta seção apresenta as normais climatológicas para os estados de São Paulo e Rio Grande do Norte calculadas para o período completo de análise (1990-2024).
+
+\subsection{Caracterização climatológica no estado de São Paulo}
+
+\subsubsection*{Temperatura}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{fig/Climatologia_Temperatura_SP_mapas.png}
+	\caption[Normais climatológicas de temperatura média no estado de São Paulo]{Normais climatológicas de temperatura média no estado de São Paulo para as quatro estações do ano (1990-2024).}
+	\label{fig:climatologia_temp_sp}
+\end{figure}
+
+Os padrões espaciais de temperatura no estado de São Paulo (Figura \ref{fig:climatologia_temp_sp}) revelam gradientes térmicos complexos que refletem a interação entre múltiplos controles geográficos. Durante o verão (DJF), as temperaturas médias sazonais variam desde aproximadamente $22{,}5$ a $23{,}0$ °C nas regiões mais elevadas da Serra da Mantiqueira e Serra do Mar até $25{,}5$ a $26{,}0$ °C no extremo noroeste do estado. Este gradiente de cerca de $3$ a $3{,}5$ °C ao longo do território resulta da atuação simultânea de três fatores principais.
+
+O primeiro fator é a latitude, que promove aquecimento em direção ao norte devido ao aumento da radiação solar incidente. O segundo é a altitude, responsável pelo resfriamento nas áreas elevadas à medida que a pressão atmosférica e a temperatura diminuem com a ascensão topográfica. O terceiro é a influência oceânica, que modera as temperaturas no litoral graças à elevada capacidade térmica do oceano Atlântico e aos processos de circulação de brisa marítima. 
+
+A região metropolitana de São Paulo merece destaque particular. Mesmo em comparação com áreas rurais de altitude similar, apresenta valores ligeiramente elevados devido ao efeito de ilha de calor urbana \citep{Campelo,Almeida}, que tipicamente adiciona $1$ a $2$ °C às temperaturas urbanas em relação ao entorno rural.
+
+O outono (MAM) mantém padrão espacial similar ao verão, porém com valores absolutos reduzidos em aproximadamente $2{,}0$ a $2{,}5$ °C. Esta redução reflete a transição para o período mais frio do ano, com diminuição progressiva da radiação solar incidente à medida que o sol desloca-se para o hemisfério norte. 
+
+No inverno (JJA), observam-se os valores mais baixos do ciclo anual. As temperaturas médias variam desde aproximadamente $17{,}5$ a $18{,}0$ °C no noroeste até $14{,}0$ a $15{,}0$ °C nas regiões serranas mais elevadas e no extremo sul do estado. O gradiente térmico invernal é ligeiramente mais pronunciado que no verão, alcançando cerca de $4$ a $4{,}5$ °C. A primavera (SON) marca o retorno gradual do aquecimento, com valores intermediários entre o inverno e o verão.
+
+A amplitude térmica sazonal varia de forma sistemática pelo território. O interior do estado apresenta amplitudes típicas de $5$ a $7$ °C, refletindo o caráter continental com maior resposta às variações sazonais da radiação solar. Em contraste, o litoral apresenta amplitudes consideravelmente menores, de $3$ a $4$ °C, especialmente em sua porção sul próxima à Serra do Mar. Este comportamento é resultado direto da influência moderadora oceânica, que atenua tanto os máximos de verão quanto os mínimos de inverno.
+\newpage
+\subsubsection*{Precipitação}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{fig/Climatologia_Precipitacao_SP_mapas.png}
+	\caption[Normais climatológicas de precipitação no estado de São Paulo]{Normais climatológicas de precipitação no estado de São Paulo para as quatro estações do ano (1990-2024).}
+	\label{fig:climatologia_prec_sp}
+\end{figure}
+
+Os padrões espaciais de precipitação (Figura \ref{fig:climatologia_prec_sp}) são ainda mais complexos e heterogêneos que os de temperatura. Durante o verão (DJF), estação de máxima pluviométrica em todo o estado, os totais médios variam desde aproximadamente $350$ a $450$ mm no interior oeste até valores que frequentemente excedem $700$ a $800$ mm no litoral sul e encostas da Serra do Mar.
+
+Esta intensificação drástica da precipitação costeira tem origem bem definida: o levantamento orográfico forçado das massas de ar úmidas de origem oceânica. À medida que essas massas ascendem as encostas da Serra do Mar, experimentam resfriamento adiabático que induz condensação e precipitação intensificada \citep{eagleson1978}, particularmente nas vertentes voltadas para o oceano. A região metropolitana de São Paulo, situada em posição intermediária, apresenta valores típicos de $500$ a $600$ mm sazonais.
+
+O outono (MAM) mantém padrões espaciais similares, porém com valores absolutos substancialmente reduzidos. Os totais sazonais representam tipicamente $40$ a $50\%$ daqueles observados no verão, refletindo o enfraquecimento dos sistemas convectivos e da Zona de Convergência do Atlântico Sul \citep{Nobre2011} característicos desta estação transicional.
+
+O inverno (JJA) representa o período de mínima precipitação, particularmente no interior do estado onde totais trimestrais frequentemente não excedem $80$ a $120$ mm. O litoral mantém precipitações relativamente mais elevadas mesmo durante o inverno, beneficiando-se da maior frequência de sistemas frontais e eventual formação de ciclones extratropicais sobre o oceano adjacente. Ainda assim, os valores absolutos permanecem substancialmente menores que no verão.
+
+A primavera (SON) marca o início do retorno das chuvas, com totais intermediários entre inverno e verão. Esta estação caracteriza-se por alta variabilidade interanual, refletindo a natureza transicional do período e a sensibilidade aos padrões de circulação de grande escala que começam a se reorganizar para o regime de verão.
+
+\subsubsection*{Radiação}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{fig/Climatologia_Radiacao_SP_mapas.png}
+	\caption[Normais climatológicas de radiação solar no estado de São Paulo]{Normais climatológicas de radiação solar no estado de São Paulo para as quatro estações do ano (1990-2024).}
+	\label{fig:climatologia_rad_sp}
+\end{figure}
+
+A radiação solar incidente (Figura \ref{fig:climatologia_rad_sp}) apresenta padrões espaciais distintos daqueles observados para temperatura e precipitação. Durante o verão (DJF), quando o sol atinge sua posição mais alta no céu do hemisfério sul, os valores médios variam desde aproximadamente $180$ a $200$ W/m$^2$ no litoral sul até $240$ a $260$ W/m$^2$ no noroeste do estado.
+
+Este gradiente é inversamente proporcional ao da precipitação, refletindo uma relação física direta: áreas com maior nebulosidade apresentam menor transmissão de radiação solar até a superfície, enquanto áreas com menor nebulosidade permitem maior transmissão. Assim, o litoral chuvoso recebe menos radiação que o interior relativamente mais seco.
+
+O outono e a primavera apresentam valores intermediários com gradientes espaciais similares ao verão. O inverno (JJA) merece atenção especial. Embora caracterizado por sol mais baixo no céu e menor radiação no topo da atmosfera, esta estação apresenta valores relativamente elevados de radiação na superfície. Esta aparente contradição resolve-se quando consideramos a menor nebulosidade característica do período seco.
+
+De fato, os valores no inverno no interior do estado (tipicamente $200$ a $220$ W/m$^2$) frequentemente excedem os valores de verão no litoral (tipicamente $180$ a $200$ W/m$^2$). Este padrão ilustra claramente que a disponibilidade de radiação solar na superfície não depende apenas da posição astronômica do sol, mas também de forma crítica das propriedades ópticas da atmosfera, particularmente da cobertura de nuvens.
+
+
+\subsection{Caracterização climatológica no estado do Rio Grande do Norte}
+
+As normais climatológicas do Rio Grande do Norte (Figuras \ref{fig:climatologia_temp_rn}, \ref{fig:climatologia_prec_rn}, \ref{fig:climatologia_rad_rn}) revelam padrões espaciais relativamente mais simples que São Paulo. Esta simplicidade relativa decorre da menor extensão territorial e da menor variação altimétrica do estado. Ainda assim, gradientes importantes se fazem presentes, associados principalmente à distância do oceano e à transição entre domínios climáticos.
+
+\subsubsection*{Temperatura}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{fig/Climatologia_Temperatura_RN_mapas.png}
+	\caption[Normais climatológicas de temperatura do ar no Rio Grande do Norte]{Normais climatológicas de temperatura do ar no Rio Grande do Norte (1990-2024). Observe o gradiente térmico relativamente modesto ($2$ a $3$ °C) entre litoral e interior, refletindo a baixa latitude. O interior semiárido apresenta as temperaturas mais elevadas ($27$ a $28$ °C), enquanto o litoral mostra valores moderados ($26$ a $27$ °C).}
+	\label{fig:climatologia_temp_rn}
+\end{figure}
+
+As temperaturas médias anuais no Rio Grande do Norte variam de $26$ °C no litoral até $28$ °C no interior semiárido, estabelecendo um gradiente consideravelmente menor que em São Paulo. Esta diferença reflete fundamentalmente a baixa latitude do estado, que minimiza as variações espaciais na radiação solar incidente. 
+
+A amplitude térmica sazonal também é reduzida, situando-se entre $3$ e $4$ °C entre verão e inverno. Esta característica é típica de climas tropicais, onde a variação da insolação ao longo do ano é menor que em latitudes mais altas. Durante todo o ciclo anual, as temperaturas absolutas permanecem consistentemente elevadas, criando condições de estresse térmico permanente tanto para sistemas naturais quanto agrícolas.
+
+O verão (DJF) apresenta as temperaturas mais elevadas, com valores médios frequentemente superiores a $27$ °C mesmo no litoral. O inverno (JJA), apesar de representar o período relativamente mais fresco, mantém temperaturas médias superiores a $24$ °C em praticamente todo o estado. Esta elevação consistente das temperaturas ao longo do ano distingue fundamentalmente o clima potiguar do paulista.
+
+\subsubsection*{Precipitação}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{fig/Climatologia_Precipitacao_RN_mapas.png}
+	\caption[Normais climatológicas de precipitação no Rio Grande do Norte]{Normais climatológicas de precipitação no Rio Grande do Norte (1990-2024). Observe o forte gradiente entre litoral ($1.200$ mm/ano) e interior semiárido ($400$ a $600$ mm/ano). A concentração sazonal é extrema, com $70$ a $80\%$ do total anual ocorrendo em DJF-MAM no interior.}
+	\label{fig:climatologia_prec_rn}
+\end{figure}
+
+O contraste mais marcante nas normais climatológicas do Rio Grande do Norte manifesta-se na precipitação. A precipitação anual varia de $1.200$ a $1.500$ mm no litoral oriental até apenas $400$ a $700$ mm no interior semiárido, estabelecendo um gradiente horizontal extremamente pronunciado em distâncias relativamente curtas.
+
+A concentração sazonal da precipitação no interior é um dos aspectos mais definidores do clima semiárido. Cerca de $70$ a $80\%$ do total anual concentra-se em apenas três a quatro meses, tipicamente de fevereiro a maio, quando a Zona de Convergência Intertropical (ZCIT) atinge sua posição mais meridional \citep{kousky1980diurnal,marengo2017}. Esta concentração extrema cria um déficit hídrico severo durante oito a nove meses do ano, período em que a precipitação é praticamente ausente.
+
+O verão e outono (DJF e MAM) são as estações chuvosas, com totais que podem variar dramaticamente de ano para ano dependendo do posicionamento e intensidade da ZCIT. Esta variabilidade interanual é uma das características mais desafiadoras do clima semiárido \citep{marengo2017drought} para a agricultura e o abastecimento de água. O inverno e a primavera (JJA e SON) são extremamente secos no interior, com precipitação mensal frequentemente inferior a $10$ mm.
+
+O litoral, por sua vez, mantém regime pluviométrico relativamente mais regular ao longo do ano, embora ainda apresente máximos em DJF-MAM. A proximidade oceânica e a atuação de perturbações de leste proporcionam precipitação adicional mesmo fora do período de atuação da ZCIT.
+
+\subsubsection*{Radiação}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{fig/Climatologia_Radiacao_RN_mapas.png}
+	\caption[Normais climatológicas de radiação solar no Rio Grande do Norte]{Normais climatológicas de radiação solar no Rio Grande do Norte (1990-2024). Observe os valores consistentemente elevados ($250$ a $280$ W/m$^2$) em todo o estado, refletindo a baixa latitude e alta transparência atmosférica. A variação espacial é menor que em São Paulo.}
+	\label{fig:climatologia_rad_rn}
+\end{figure}
+
+A radiação solar no Rio Grande do Norte apresenta valores consistentemente elevados em todo o estado, variando entre $250$ e $280$ W/m$^2$ em média anual. Estes valores são substancialmente superiores aos observados em São Paulo, refletindo a posição tropical do estado e a alta transparência atmosférica característica do semiárido, particularmente durante a estação seca.
+
+A variação espacial é modesta quando comparada com São Paulo. O interior semiárido apresenta valores ligeiramente superiores ao litoral, diferença que se deve principalmente à menor nebulosidade média no interior. Durante a estação seca, quando a nebulosidade é mínima, o interior pode receber valores de radiação que excedem $280$ W/m$^2$, estabelecendo um dos regimes radiativos mais intensos do Brasil.
+
+Esta alta disponibilidade de radiação solar, combinada com as temperaturas elevadas e a escassez de água, cria condições de demanda evapotranspirativa extremamente alta. A evapotranspiração potencial frequentemente excede a precipitação anual em várias vezes no interior semiárido, caracterizando o intenso déficit hídrico estrutural que define o clima da região  \citep{santos2014caatinga}.
+
+Ao longo do ciclo anual, a variação da radiação solar é menor que em São Paulo, mais uma vez refletindo a baixa latitude. Mesmo durante o inverno, quando o sol está ligeiramente mais baixo no céu, os valores de radiação permanecem elevados, tipicamente superiores a $230$ W/m$^2$ devido à baixa nebulosidade característica da estação seca.
+
+\section{Análise estatística sazonal}
+
+Adicionalmente às médias climatológicas, foram calculadas medidas de variabilidade incluindo desvo padrão ($\sigma$), valores máximos e mínimos observados ao longo do período para as três variáves climáticas, e percentis (P$_{25}$ e P$_{75}$) para caracterizar a distribuição estatística. A variabilidade sazonal foi visualizada com auxílio de gráficos boxplots, permitindo a identificação de tendência central, amplitude de variação, identificação de valores extremos e diferenças na disperção entre as estações do ano.
+
+\subsection{Variabilidade sazonal no estado de São Paulo}
+
+\subsubsection*{Temperatura}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{fig/Climatologia_Temperatura_SP_boxplot.png}
+	\caption[Variabilidade sazonal da temperatura no estado de São Paulo]{Variabilidade sazonal da temperatura média no estado de São Paulo (1990-2024). Cada boxplot indica todos os valores espaciais (pixels) e interanuais do período analisado.}
+	\label{fig:boxplot_temp_sp}
+\end{figure}
+
+A variabilidade térmica sazonal no estado de São Paulo (Figura \ref{fig:boxplot_temp_sp}) apresenta características consistentes. A amplitude interquartil (distância entre P$_{25}$ e P$_{75}$) permanece relativamente constante entre as estações, variando entre $2{,}5$ e $3{,}5$ °C. Este resultado reflete a estabilidade dos processos físicos que controlam a temperatura em escala regional, particularmente os gradientes topográficos e a influência oceânica que, embora modulem os valores absolutos conforme discutido anteriormente, mantêm magnitude similar ao longo do ano.
+
+A presença de pontos fora da tendência (outliers) é relativamente limitada, concentrando-se principalmente nas estações de transição (MAM e SON), onde identifica-se valores extremos, que podem desviar-se da distribuição central em até $5$ a $7$ °C. Já para os períodos de DJF e JJA o que se observa é uma baixa frequência destes outliers sugerindo que os extremos térmicos são menos prováveis nos períodos de regime climático bem estabelecido.
+
+\subsubsection*{Precipitação}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{fig/Climatologia_Precipitação_SP_boxplot.png}
+	\caption[Variabilidade sazonal da precipitação no estado de São Paulo]{Variabilidade sazonal da precipitação no estado de São Paulo (1990-2024). Observe a alta assimetria das distribuições e a presença abundante de eventos extremos, particularmente em DJF.}
+	\label{fig:boxplot_prec_sp}
+\end{figure}
+
+A precipitação (Figura \ref{fig:boxplot_prec_sp}) contrasta com a temperatura em termos de variabilidade. As distribuições são fortemente assimétricas em todas as estações, com numerosos outliers superiores que se estendem a valores extremamente elevados. Durante o verão (DJF), eventos de precipitação sazonal podem alcançar $1.500$ a $1.800$ mm em localidades específicas, valores que representam mais que o triplo da mediana sazonal (~$650$ mm).
+
+Esta caracterização de eventos extremos é algo intrínseco da precipitação tropical e subtropical \citep{marengo2009extreme}. Os outliers não representam erros ou anomalias espúrias, mas sim a resposta do sistema climático a configurações sinóticas favoráveis. A amplitude interquartil também varia substancialmente entre estações, desde aproximadamente $100$ mm em SON até $250$ a $300$ mm em DJF, evidenciando não apenas diferentes magnitudes de precipitação, mas também diferentes regimes de variabilidade.
+
+A estação seca (JJA) merece atenção particular. Embora a mediana seja baixa (~$100$ mm), a presença de outliers superiores alcançando $700$ a $1.000$ mm demonstra que mesmo durante o período tipicamente seco, eventos de acumulados de precipitação consideravelmente significativos podem ocorrer em anos ou localidades específicas, frequentemente associados à passagem de sistemas frontais particularmente intensos ou à formação de ciclones extratropicais sobre o oceano adjacente \citep{Nobre2011}.
+
+\subsubsection*{Radiação solar}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{fig/Climatologia_Radiação_SP_boxplot.png}
+	\caption[Variabilidade sazonal da radiação solar no estado de São Paulo]{Variabilidade sazonal da radiação solar no estado de São Paulo (1990-2024). A abundância de outliers inferiores reflete a modulação pela nebulosidade.}
+	\label{fig:boxplot_rad_sp}
+\end{figure}
+
+A radiação solar (Figura \ref{fig:boxplot_rad_sp}) apresenta padrão de variabilidade intermediário entre temperatura e precipitação. A característica mais marcante é a assimetria negativa das distribuições, com abundantes outliers inferiores em todas as estações. Estes valores extremamente baixos representam reduções de $40$ a $50\%$ em relação à mediana sazonal, ocorrendo durante períodos prolongados de nebulosidade densa ou persistência de sistemas precipitantes.
+
+A variabilidade é maior durante o verão (DJF) e outono (MAM), estações caracterizadas por maior atividade convectiva e maior amplitude na cobertura de nuvens. No inverno (JJA), apesar dos valores absolutos mais baixos de radiação no topo da atmosfera devido à posição solar, a menor variabilidade reflete a maior estabilidade atmosférica e menor frequência de sistemas nebulosos \citep{yamasoe2017,yamasoe2021}.
+
+\subsection{Variabilidade sazonal no estado do Rio Grande do Norte}
+
+\subsubsection*{Temperatura}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{fig/Climatologia_Temperatura_RN_boxplot.png}
+	\caption[Variabilidade sazonal da temperatura no Rio Grande do Norte]{Variabilidade sazonal da temperatura média no Rio Grande do Norte (1990-2024). Observe a menor amplitude sazonal e os valores consistentemente elevados em comparação com São Paulo.}
+	\label{fig:boxplot_temp_rn}
+\end{figure}
+
+A variabilidade térmica no Rio Grande do Norte (Figura \ref{fig:boxplot_temp_rn}) caracteriza-se por amplitude sazonal consideravelmente menor que em São Paulo. A diferença entre as medianas de verão (DJF, ~$28$ °C) e inverno (JJA, ~$26$ °C) é de apenas $2$ a $2{,}5$ °C, cerca de metade da amplitude observada no em SP.
+\newpage
+As amplitudes interquartis são compactas em todas as estações, tipicamente entre $1{,}5$ e $2{,}5$ °C, indicando alta consistência espacial das temperaturas. Esta característica contrasta com São Paulo, onde a heterogeneidade topográfica e a maior extensão territorial produzem maior dispersão. A presença limitada de outliers sugere que eventos térmicos extremos são relativamente justamente pelo estado apresentar já situações de extremo de temperatura.
+
+Merece destaque que mesmo os valores mínimos observados ao longo da série histórica permanecem consistentemente acima de $24$ °C em DJF e raramente abaixo de $21$ a $22$ °C mesmo em JJA nas localidades mais frescas. Estas temperaturas mínimas, que seriam consideradas elevadas em São Paulo mesmo durante o verão, mantêm-se ao longo de todo o ciclo anual no Rio Grande do Norte, evidenciando o estresse térmico permanente característico do clima do estado.
+
+\subsubsection*{Precipitação}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{fig/Climatologia_Precipitação_RN_boxplot.png}
+	\caption[Variabilidade sazonal da precipitação no Rio Grande do Norte]{Variabilidade sazonal da precipitação no Rio Grande do Norte (1990-2024). Observe o contraste extremo entre a estação chuvosa (DJF-MAM) e a estação seca (JJA-SON), característica do regime semiárido.}
+	\label{fig:boxplot_prec_rn}
+\end{figure}
+
+A precipitação no Rio Grande do Norte (Figura \ref{fig:boxplot_prec_rn}) apresenta o padrão de variabilidade mais extremo entre todas as variáveis analisadas em ambos os estados. A diferença entre medianas sazonais é um destaque: valores de $350$ a $400$ mm em MAM (estação de máxima pluviométrica) reduzem-se a menos de $20$ mm em SON, estabelecendo uma razão superior a $20:1$ entre estações úmida e seca.
+
+Na estação seca (JJA-SON) o que se observa são medianas extremamente baixas (~$10$ a $20$ mm por trimestre) e a presença de numerosos outliers próximos a zero evidenciam que períodos prolongados sem precipitação. Mesmo os outliers superiores em JJA-SON, que alcançam $200$ a $300$ mm, embora significativos em termos relativos, permanecem substancialmente menores que a mediana de MAM, reforçando o contraste sazonal extremo.
+
+A imprevisibilidade interanual, evidenciada pelas amplitudes interquartis muito amplas em DJF-MAM, dificulta meios de planejamento baseadas em valores médios climatológicos, problema agravado pela sensibilidade dos ecossistemas da Caatinga a variações no regime hídrico \citep{santos2014caatinga}.
+
+\subsubsection*{Radiação solar}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{fig/Climatologia_Radiação_RN_boxplot.png}
+	\caption[Variabilidade sazonal da radiação solar no Rio Grande do Norte]{Variabilidade sazonal da radiação solar no Rio Grande do Norte (1990-2024). Valores consistentemente elevados refletem a baixa latitude e alta transparência atmosférica do semiárido.}
+	\label{fig:boxplot_rad_rn}
+\end{figure}
+
+A radiação solar no Rio Grande do Norte (Figura \ref{fig:boxplot_rad_rn}) apresenta valores consistentemente superiores aos de São Paulo em todas as estações, com medianas variando entre $230$ W/m$^2$ em JJA e $270$ a $290$ W/m$^2$ em DJF e SON. Esta elevação sistemática reflete tanto a menor latitude quanto a alta transparência atmosférica característica do semiárido, particularmente durante a prolongada estação seca, conforme documentado por \citet{medeiros2017} em estudos sobre a radiação solar incidente no estado.
+
+A variabilidade é notavelmente menor que em São Paulo, especialmente durante a estação seca (JJA-SON), quando a amplitude interquartil reduz-se a apenas $15$ a $20$ W/m$^2$. Esta consistência reflete a ausência quase total de nebulosidade durante o período, quando sistemas atmosféricos responsáveis pela formação de nuvens são extremamente raros. Outliers inferiores são menos observados que em São Paulo e concentram-se principalmente em DJF-MAM, coincidindo com a estação chuvosa quando eventos de nebulosidade persistente podem reduzir temporariamente a radiação incidente.
+
+Mesmo durante o inverno (JJA), quando o ângulo solar é relativamente mais baixo, os valores de radiação no Rio Grande do Norte (mediana ~$230$ W/m$^2$) são comparáveis ou superiores aos valores de verão no litoral paulista (mediana ~$180$ a $200$ W/m$^2$). Este padrão evidencia que a alta disponibilidade de radiação no semiárido nordestino é condição permanente, não sazonal. Combinada às temperaturas repetivamente elevadas, esta radiação intensa estabelece demanda de evapotranspiração que frequentemente excede a precipitação anual em várias vezes \citep{santos2014caatinga}, caracterizando o intenso déficit hídrico estrutural que define o clima da região.
 
 \section{Análise climática em pontos de grade para o estado de São Paulo}
 
-Para capturar adequadamente esta diversidade climática descrita no Capítulo \ref{cap:area_estudo}, selecionaram-se dez localidades distribuídas pelo território paulista (Tabela \ref{tab:coordenadas_sp}), cada uma representando domínio climático distinto ou posição geográfica relevante para compreensão dos padrões espaciais de mudanças climáticas. A seleção considerou não apenas a representatividade climática, mas também a cobertura de diferentes contextos de uso da terra, desde áreas predominantemente rurais até a região metropolitana altamente urbanizada.
+Após a identificação dos perfis de diversidade climática apresentados inicialmente no Capítulo \ref{cap:area_estudo} e analisados no decorrer deste capítulo, em especial ao avaliarmos as normais climatológicas e resultados estatísticos a respeito das séries históricas utilizadas neste estudo, selecionaram-se dez localidades distribuídas pelo território paulista (Tabela \ref{tab:coordenadas_sp}), cada uma representando domínio climático distinto ou posição geográfica relevante para compreensão dos padrões espaciais de mudanças climáticas. A seleção considerou não apenas a representatividade climática, mas também diferentes contextos de uso da terra, desde áreas predominantemente rurais até a região metropolitana altamente urbanizada.
 
 \begin{table}[htbp]
 	\centering
@@ -186,7 +399,7 @@ Para capturar adequadamente esta diversidade climática descrita no Capítulo \r
 	\end{tabular}
 \end{table}
 
-Os resultados para esses pontos são demonstrados a partir do Apêndice \ref{ap01}, mas serão amplamente discutidas nesta seção.
+Os resultados para esses pontos são demonstrados a partir do Apêndice \ref{ap01}, mas serão amplamente discutidos nesta seção.
 
 De modo geral, todas as localidades analisadas apresentam tendências positivas de temperatura ao longo das quatro estações do ano, em concordância com o aquecimento observado em escala global e regional, amplamente documentado em relatórios recentes do \citep{ipcc2021}.
 
@@ -339,62 +552,72 @@ Nas regiões sul e sudeste do estado, embora os totais pluviométricos sejam his
 
 \subsection{Tendências espaciais da temperatura média}
 
-A análise espacial das tendências de temperatura do ar no estado de São Paulo para o período de 1990 a 2024 (Figura \ref{fig:tend_temp_sp}) evidencia um sinal considerável, espacialmente coerente e estatisticamente significativo de aquecimento em praticamente todo o estado, como é possível observar com as hachuras em destaque nos quadros, independentemente da estação do ano considerada, com maior expressão no intervalo entre os meses de setembro, outubro e novembro (SON). As tendências foram estimadas a partir do método de Sen, com avaliação de significância estatística pelo teste de Mann-Kendall, aplicados às séries sazonais médias, considerando exclusivamente os pontos localizados dentro dos limites territoriais do estado.
+A análise espacial das tendências de temperatura do ar no estado de São Paulo para o período de 1990 a 2020 (Figura \ref{fig:tend_temp_sp}) evidencia um sinal considerável, espacialmente coerente e estatisticamente significativo de aquecimento em praticamente todo o estado, como é possível observar com as hachuras em destaque nos quadros, independentemente da estação do ano considerada, com maior expressão no intervalo entre os meses de setembro, outubro e novembro (SON). As tendências foram estimadas a partir do método de Sen, com avaliação de significância estatística pelo teste de Mann-Kendall, aplicados às séries sazonais médias, considerando exclusivamente os pontos localizados dentro dos limites territoriais do estado.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{temp_tendencia_SP.png}
-	\caption{Distribuição espacial das tendências sazonais da temperatura do ar no estado de São Paulo para o período de 1990 a 2024. As cores indicam a magnitude e o sinal da tendência linear estimada pelo método de Sen (°C/ano), enquanto as áreas hachuradas correspondem a tendências estatisticamente significativas segundo o teste de Mann-Kendall ($p < 0{,}05$).}
+	\includegraphics[width=\textwidth]{fig/temp_tendencia_sazonal_decadal_sp.png}
+	\caption{Distribuição espacial das tendências sazonais da temperatura do ar no estado de São Paulo para o período de 1990 a 2024. As cores indicam a magnitude e o sinal da tendência linear estimada pelo método de Sen (°C/década), enquanto as áreas hachuradas correspondem a tendências estatisticamente significativas segundo o teste de Mann-Kendall ($p < 0{,}05$).}
 	\label{fig:tend_temp_sp}
 \end{figure}
 
-Durante o verão austral (DJF), é possível observar um aquecimento praticamente generalizado em todo o estado, com magnitudes típicas variando entre aproximadamente $0{,}03$ e $0{,}05$ °C por ano. As maiores taxas concentram-se nas regiões do interior oeste e noroeste, bem como em áreas densamente urbanizadas, incluindo a Região Metropolitana de São Paulo. Esse padrão sugere a atuação simultânea de forçantes climáticas de escala regional e global, associadas ao aumento da concentração de gases de efeito estufa, e de fatores locais, como mudanças no uso e cobertura da terra e intensificação do efeito de ilha de calor urbana. Em contraste, as regiões litorâneas apresentam aquecimento ligeiramente mais moderado, refletindo a influência termorreguladora do oceano Atlântico.
+O verão austral (DJF) apresenta aquecimento praticamente generalizado em todo o estado, com magnitudes típicas entre próximo do valor médio (sem mudança de sinal na tendência) e $\approx0{,}3$°C/década \citep{abreu2019}. As maiores taxas concentram-se nas regiões do interior oeste e noroeste, bem como em áreas 
+densamente urbanizadas, incluindo a Região Metropolitana de São Paulo. Esse padrão sugere a atuação simultânea de forçantes climáticas de escala regional e global, associadas ao aumento da concentração de gases de efeito estufa \citep{ipcc2021}, e de fatores locais, como mudanças no uso e cobertura da terra 
+\citep{alkama2016biophysical} e intensificação do efeito de ilha de calor urbana \citep{Almeida, oke1982energetic, manoli2019magnitude}. Em contraste, as regiões litorâneas apresentam aquecimento ligeiramente mais moderado, refletindo a influência termorreguladora do oceano Atlântico.
 
-No outono (MAM), estação de transição entre o regime chuvoso e o período seco, o sinal de aquecimento permanece consistente, embora com maior heterogeneidade espacial. As tendências situam-se majoritariamente entre $0{,}02$ e $0{,}04$ °C por ano, com áreas do interior e da porção norte do estado apresentando valores mais elevados. A maior variabilidade espacial observada nesta estação pode estar associada à maior sensibilidade do balanço de energia superficial às condições locais, como umidade do solo, cobertura vegetal e topografia.
+A transição para o outono (MAM) mantém o sinal de aquecimento consistente, embora com maior heterogeneidade espacial. As tendências situam-se majoritariamente entre $0{,}1$ e $0{,}4$°C por década, com áreas do interior e da porção norte do estado apresentando valores mais elevados. A maior variabilidade espacial observada nesta estação pode estar associada à maior sensibilidade do balanço de energia superficial 
+às condições locais, como umidade do solo, cobertura vegetal e topografia \citep{li2015local, duveiller2018local}.
 
-O inverno austral (JJA), apesar de caracterizar-se por temperaturas médias mais baixas e menor atividade convectiva, apresenta tendências de aquecimento comparáveis às observadas no verão em grande parte do território. As taxas observadas para o inverno variam tipicamente entre $0{,}025$ e $0{,}04$ °C por ano, com ampla significância estatística. A persistência do aquecimento durante o inverno indica que os processos responsáveis pela elevação da temperatura do ar atuam de forma contínua ao longo do ano, não estando restritos a condições atmosféricas específicas.
+Apesar de caracterizar-se por temperaturas médias mais baixas e menor atividade convectiva, o inverno austral (JJA) apresenta tendências de aquecimento comparáveis às observadas no verão em grande parte do território, com destaque em uma porção central distribuída entre as regiões de Piracicaba, Campinas e Sorocaba. As taxas 
+observadas variam tipicamente entre $0{,}25$ e $0{,}4$°C por década, com ampla significância estatística. A persistência do aquecimento durante o inverno indica que os processos responsáveis pela elevação da temperatura do ar atuam de forma contínua ao longo do ano, não estando restritos a condições atmosféricas específicas \citep{abreu2019}.
 
-A primavera (SON) destaca-se como a estação com o aquecimento mais intenso e espacialmente homogêneo em todo o estado. As tendências frequentemente excedem $0{,}05$ °C por ano, especialmente nas regiões oeste, centro-oeste e norte do estado. Esse padrão é consistente com o papel da primavera como período de forte reorganização do sistema climático regional, marcado pelo aumento progressivo da radiação solar, elevação da temperatura do ar e retorno gradual da atividade convectiva após o inverno seco. Alterações no balanço de energia superficial associadas à redução da umidade do solo ao final do inverno e a mudanças no uso da terra podem amplificar o aquecimento nesta estação.
+Entre todas as estações, a primavera (SON) destaca-se pelo aquecimento mais intenso e espacialmente homogêneo em todo o estado. As tendências frequentemente excedem $0{,}4$°C por década, especialmente nas regiões oeste, centro-oeste e norte. Esse padrão é consistente com o papel da primavera como período de forte reorganização do sistema climático regional, marcado pelo aumento progressivo da radiação solar, 
+elevação da temperatura do ar e retorno gradual da atividade convectiva após o inverno seco. Alterações no balanço de energia superficial associadas à redução da umidade do solo ao final do inverno e a mudanças no uso da terra podem amplificar o aquecimento nesta estação \citep{alkama2016biophysical, shen2015dryland}.
 
-De forma geral, os resultados indicam que o estado de São Paulo experimentou aquecimento acumulado da ordem de $1{,}0$ a $1{,}5$ °C ao longo das últimas três décadas e meia, dependendo da estação e da região considerada. Esse incremento é comparável à magnitude da variabilidade interanual natural da temperatura regional, representando, portanto, um deslocamento significativo do regime térmico histórico e configurando evidências claras de mudança climática para todo o estado.
+De forma geral, os resultados indicam que o estado de São Paulo experimentou aquecimento acumulado da ordem de $0{,}6$ a $2{,}5$°C ao longo das últimas três décadas e meia, dependendo da estação e da região considerada \citep{abreu2019}. Esse incremento é comparável à magnitude da variabilidade interanual natural da temperatura regional, representando, portanto, um deslocamento significativo do 
+regime térmico histórico e configurando evidências claras de mudança climática para todo o estado \citep{ipcc2021, wild2012}.
 
 \subsection{Tendências espaciais da precipitação}
-
-As tendências espaciais da precipitação no estado de São Paulo para o período de 1990 a 2024 (Figura \ref{fig:tend_prec_sp}) contrastam fortemente com o comportamento observado para a temperatura do ar, apresentando padrão altamente heterogêneo e fragmentado, com ampla predominância de áreas sem significância estatística.
+As tendências espaciais da precipitação no estado de São Paulo para o período de 1990 a 2020 (Figura \ref{fig:tend_prec_sp}) contrastam fortemente com o comportamento observado para a temperatura do ar, apresentando padrão altamente heterogêneo e fragmentado, com ampla predominância de áreas sem significância estatística. As tendências são apresentadas em unidades decadais (mm por década), representando a mudança na precipitação média mensal sazonal ao longo de dez anos.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{prec_tendencia_SP.png}
-	\caption[Distribuição espacial das tendências sazonais de precipitação no estado de São Paulo para o período de 1990 a 2024]{Distribuição espacial das tendências sazonais de precipitação no estado de São Paulo para o período de 1990 a 2024. As cores representam a magnitude e o sinal da tendência linear (mm/ano), enquanto as áreas hachuradas indicam tendências estatisticamente significativas ($p < 0{,}05$).}
+	\includegraphics[width=\textwidth]{fig/prec_tendencia_sazonal_decadal_sp.png}
+	\caption[Distribuição espacial das tendências sazonais de precipitação no estado de São Paulo para o período de 1990 a 2020]{Distribuição espacial das tendências sazonais de precipitação no estado de São Paulo para o período de 1990 a 2020. As cores representam a magnitude e o sinal da tendência linear (mm/década), enquanto as áreas hachuradas indicam tendências estatisticamente significativas (p<0,05p < 0{,}05
+p<0,05).}
 	\label{fig:tend_prec_sp}
 \end{figure}
 
+O verão (DJF), estação responsável por aproximadamente metade da precipitação anual no estado \citep{alvares2013}, caracteriza-se pela ausência de um padrão regional consistente. Algumas áreas do interior apresentam tendências positivas localizadas, enquanto outras indicam reduções fracas, mas grande parte do território não exibe tendências estatisticamente significativas. As magnitudes das tendências 
+detectadas raramente excedem $\pm$40~mm por década, valores que, embora modestos em termos absoltos, podem representar mudanças substanciais considerando a variabilidade natural do sistema \citep{Groisman2005}.
 
-Durante o verão (DJF), estação responsável por aproximadamente metade da precipitação anual no estado, observa-se ausência de um padrão regional consistente. Algumas áreas do interior apresentam tendências positivas localizadas, enquanto outras indicam reduções fracas, mas grande parte do território não exibe tendências estatisticamente significativas.
+A transição para o outono (MAM) revela tendências predominantemente fracas ou estatisticamente não significativas em quase todo o estado. A menor contribuição absoluta da precipitação nesta estação, aliada à elevada variabilidade interanual, dificulta a detecção de sinais significativos de mudança de longo prazo. Observam-se alguns pontos isolados com tendências positivas ou negativas, mas sem formar padrão 
+espacialmente coerente que permita inferências regionais robustas.
 
-O outono (MAM) apresenta tendências predominantemente fracas ou estatisticamente não significativas em quase todo o estado. A menor contribuição absoluta da precipitação nesta estação, aliada à elevada variabilidade interanual, dificulta a detecção de sinais significativos de mudança de longo prazo.
+O período mais seco do ano, correspondente ao inverno (JJA), quando a precipitação é escassa e dominada pela passagem episódica de sistemas frontais, apresenta o maior número de áreas sem significância estatística. As tendências estimadas apresentam baixas magnitudes e distribuição espacial irregular, comportamento consistente com a baixa frequência de eventos precipitantes nesta estação e com a dominância de 
+variabilidade sinótica e interanual. Algumas regiões do sul do estado apresentam tendências positivas fracas, possivelmente relacionadas a mudanças na frequência ou intensidade da passagem de frentes frias, mas estes sinais não são suficientemente consistentes para permitir conclusões definitivas.
 
-No inverno (JJA), quando a precipitação é escassa e dominada pela passagem episódica de sistemas frontais, observa-se o maior número de áreas sem significância estatística. As tendências estimadas apresentam baixas magnitudes e distribuição espacial irregular, comportamento consistente com a baixa frequência de eventos precipitantes nesta estação e com a dominância de variabilidade sinótica e interanual.
-
-A primavera (SON) destaca-se como a estação em que surgem sinais mais coerentes de possíveis mudanças, com diversas regiões do interior exibindo tendências negativas fracas a moderadas. Embora nem sempre estatisticamente significativas de forma individual, essas tendências formam padrão espacial sugestivo de redução da precipitação neste período.
+Sinais mais coerentes de possíveis mudanças emergem na primavera (SON), com diversas regiões do interior exibindo tendências negativas fracas a moderadas, com magnitudes típicas entre $-20$ e $-40$~mm por década. Embora nem sempre estatisticamente significativas de forma individual, essas tendências formam padrão espacial sugestivo de redução da precipitação neste período de transição entre a estação seca e o início 
+do período chuvoso \citep{coelho2016}.
 
 \subsection{Tendências espaciais da radiação solar}
-
-As tendências de radiação solar incidente na superfície no estado de São Paulo para o período de 1990 a 2024 (Figura \ref{fig:tend_rad_sp}) apresentam padrão predominantemente positivo e espacialmente coerente, em contraste com a elevada heterogeneidade observada para a precipitação.
-
+As tendências de radiação solar incidente na superfície no estado de São Paulo para o período de 1990 a 2020 (Figura \ref{fig:tend_rad_sp}) apresentam padrão predominantemente positivo e espacialmente coerente, em contraste com a elevada heterogeneidade observada para a precipitação. As tendências são expressas em unidades decadais (W/m$^2$ por década), representando a mudança na radiação solar média ao longo de dez anos.
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{rad_tendencia_SP.png}
-	\caption[Distribuição espacial das tendências sazonais da radiação solar incidente no estado de São Paulo para o período de 1990 a 2024]{Distribuição espacial das tendências sazonais da radiação solar incidente no estado de São Paulo para o período de 1990 a 2024. As cores indicam a magnitude da tendência linear (W/m$^2$/ano), e as áreas hachuradas representam tendências estatisticamente significativas ($p < 0{,}05$).}
+	\includegraphics[width=\textwidth]{fig/rad_tendencia_sazonal_decadal_sp.png}
+	\caption[Distribuição espacial das tendências sazonais da radiação solar incidente no estado de São Paulo para o período de 1990 a 2020]{Distribuição espacial das tendências sazonais da radiação solar incidente no estado de São Paulo para o período de 1990 a 2020. As cores indicam a magnitude da tendência linear (W/m$^2$/década), e as áreas hachuradas representam tendências estatisticamente significativas (p$<$0,05).}
 	\label{fig:tend_rad_sp}
 \end{figure}
 
-As tendências positivas são particularmente intensas durante o inverno (JJA), as tendências observadas apresentam um perfil quase que todo positivo, com algumas regiões ao sul do estado apresentando tendências positivas moderadas (próximas de 0) até valores negativos, refletindo a certa concordância com o perfil observado para precipitação para o mesmo período, com pontos de grade do sul indicando alta de precipitação sutil (próximo de 0) ou até indiferente à média do intervalo analisado. O outono (MAM) apresenta padrões mais heterogêneos e tendências consideravelmente altas uma vez considerando o período transicional da estação.
+As estações de verão (DJF) e outono (MAM) exibem tendências predominantemente positivas em grande parte do território paulista, com magnitudes típicas entre 5 e 12~W/m$^2$ por década. O outono apresenta valores particularmente elevados e espacialmente consistentes, com amplas áreas mostrando incrementos superiores a 10~W/m$^2$ por década com significância estatística robusta. Este aumento substancial da radiação solar durante o outono, período de transição entre a estação chuvosa e seca, pode estar relacionado a mudanças nos padrões de nebulosidade ou a reduções na concentração de aerossóis atmosféricos 
+\citep{yamasoe2017, wild2012}.
 
-Durante o verão (DJF) e a primavera (SON), as tendências permanecem majoritariamente positivas, embora com magnitudes ligeiramente inferiores na primavera quando comparadas com o verão, apesar desta estação indicar um período de aumento de nebulosidade significativo, mas que também quando comparado aos resultados de precipitação para tendência o que observamos é uma concentração bem generalizada de tendências negativas em boa parte do estado, indicando redução de precipitação, que por sua vez está diretamente relacionado com o perfil de radiação incidente em superfície.
+Tendências positivas particularmente intensas caracterizam o inverno (JJA), quando observa-se um perfil quase inteiramente positivo em todo o estado, com magnitudes frequentemente superiores a 8~W/m$^2$ por década e ampla significância estatística. Algumas regiões ao sul do estado apresentam tendências positivas moderadas ou próximas de zero, refletindo certa concordância com o perfil observado para precipitação no mesmo período, onde pontos de grade do sul indicam elevação sutil de precipitação ou valores indiferentes à média do intervalo analisado. Esta relação inversa entre radiação e precipitação é fisicamente consistente, uma vez que maior precipitação está associada a maior cobertura de nuvens e consequente redução da radiação solar incidente \citep{Trenberth2009}.
 
-De modo geral, os resultados indicam aumento sistemático da disponibilidade de energia radiativa na superfície do estado de São Paulo ao longo das últimas décadas, processo que atua em sinergia com o aquecimento observado da temperatura do ar e pode amplificar impactos como por exemplo na evapotranspiração.
+A primavera (SON) mantém tendências majoritariamente positivas, embora com magnitudes ligeiramente inferiores ao verão e outono em algumas áreas, apesar desta estação indicar um período que precede o aumento de nebulosidade significativo. Quando comparado aos resultados de precipitação para tendência, observa-se uma concentração bem generalizada de tendências negativas em boa parte do estado, indicando redução 
+de precipitação, que por sua vez está diretamente relacionada com o perfil de radiação incidente em superfície.
 
+De modo geral, os resultados indicam aumento sistemático da disponibilidade de energia radiativa na superfície do estado de São Paulo ao longo das últimas três décadas, com incrementos acumulados da ordem de 15 a 35~W/m$^2$ dependendo da estação e localidade. Este padrão de \textit{brightening} regional \citep{wild2012, yamasoe2021} atua em sinergia com o aquecimento observado da temperatura do ar e pode amplificar impactos como intensificação da evapotranspiração, particularmente relevante durante períodos de déficit hídrico quando a maior disponibilidade energética potencializa o estresse hídrico sobre ecossistemas e sistemas agrícolas \citep{eagleson1978}.
 
 \section{Análise climática em pontos de grade para o estado do Rio Grande do Norte}
 
@@ -420,7 +643,7 @@ Para refletir a diversidade climática do Rio Grande do Norte, caracterizada pel
 	\end{tabular}
 \end{table}
 
-Os resultados para esses pontos são demonstrados a partir do Apêndice \ref{ap02}, mas serão amplamente discutidos nesta seção.
+Os resultados para esses pontos são demonstrados a partir do Apêndice \ref{ap01}, mas serão amplamente discutidos nesta seção.
 
 \subsection{Temperatura}
 
@@ -570,237 +793,211 @@ Durante o outono (MAM), observa-se o maior número de tendências positivas esta
 
 \section{Análise climática no estado do Rio Grande do Norte}
 
+
 \subsection{Tendências espaciais da temperatura}
-A análise espacial das tendências de temperatura do ar no estado do Rio Grande do Norte para o período 1990-2024 (Figura \ref{fig:tend_temp_rn}) revela padrão de aquecimento generalizado embora espacialmente mais heterogêneo que o observado em São Paulo, com taxas de mudança variando significativamente entre diferentes regiões do estado e magnitude média ligeiramente inferior àquela documentada para o território paulista. Este aquecimento, embora menos intenso em termos médios, ocorre em contexto climático onde as temperaturas absolutas já são elevadas e a capacidade adaptativa natural (tanto de ecossistemas quanto de sistemas socioeconômicos) pode ser mais limitada devido ao estresse térmico e hídrico preexistente, tornando mesmo mudanças moderadas potencialmente significativas em suas consequências.
+
+A análise espacial das tendências de temperatura do ar no estado do Rio Grande do Norte para o período 1990-2020 (Figura \ref{fig:tend_temp_rn}), apresentando as tendências avaliadas em termos decadais (°C por década). O que se observa é um padrão de aquecimento generalizado embora espacialmente mais heterogêneo que 
+o observado em São Paulo, com taxas de mudança variando significativamente entre diferentes regiões do estado e magnitude média ligeiramente inferior àquela documentada para o território paulista. Este aquecimento, embora menos intenso em termos médios, ocorre em contexto climático onde as temperaturas absolutas já 
+são elevadas e a capacidade adaptativa natural (tanto de ecossistemas quanto de sistemas socioeconômicos) pode ser mais limitada devido ao estresse térmico e hídrico preexistente \citep{santos2014caatinga, marengo2017drought}, tornando mesmo mudanças moderadas potencialmente significativas em suas consequências.
 
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\textwidth]{temp_tendencia_RN.png}
-	\caption[Distribuição espacial das tendências de temperatura]{Distribuição espacial das tendências de temperatura do ar no estado do Rio Grande do Norte para as quatro estações do ano no período 1990-2024. Observe o aquecimento generalizado mas espacialmente heterogêneo, com maior intensidade no interior semiárido e durante a primavera (SON). A variabilidade espacial é maior que em São Paulo, refletindo diferentes respostas regionais às forçantes climáticas.}
-	\label{fig:tend_temp_rn}
+\centering
+\includegraphics[width=\textwidth]{fig/temp_tendencia_sazonal_decadal_rn.png}
+\caption[Distribuição espacial das tendências de temperatura, °C/década]{Distribuição espacial das tendências de temperatura do ar no estado do Rio Grande do Norte para as quatro estações do ano no período 1990-2020 avaliadas em termos decadais. Observe o aquecimento generalizado mas espacialmente heterogêneo, com maior intensidade no interior semiárido e durante a primavera (SON).}
+\label{fig:tend_temp_rn}
 \end{figure}
 
-Durante o verão austral (DJF), estação que no Rio Grande do Norte coincide com o início do período chuvoso no interior semiárido quando a ZCIT atinge sua posição mais ao sul, observa-se aquecimento significativo em grande parte do território embora com intensidade variável espacialmente. As taxas de aquecimento situam-se tipicamente entre $0{,}020$ e $0{,}032$ °C por ano conforme a localidade, valores consideravelmente mais heterogêneos que os observados em São Paulo onde o padrão era espacialmente mais uniforme. O interior semiárido tende a apresentar as taxas mais elevadas, frequentemente excedendo $0{,}028$ a $0{,}030$ °C por ano, enquanto a faixa costeira mostra aquecimento relativamente mais moderado de $0{,}020$ a $0{,}025$ °C por ano, reflexo da influência termorreguladora oceânica que atenua as mudanças térmicas atmosféricas assim como observado no litoral paulista.
+Durante o verão austral (DJF), estação que no Rio Grande do Norte coincide com o início do período chuvoso no interior semiárido quando a ZCIT atinge sua posição mais ao sul \citep{kousky1980diurnal}, observa-se aquecimento significativo em grande parte do território embora com intensidade variável espacialmente. As taxas de aquecimento situam-se tipicamente entre 0{,}10 e 0{,}20°C por década conforme 
+a localidade, valores consideravelmente mais heterogêneos que os observados em São Paulo onde o padrão era espacialmente mais uniforme. O interior semiárido tende a apresentar as taxas mais elevadas, enquanto a faixa costeira mostra aquecimento relativamente mais moderado, em torno de 0{,}08 a 0{,}15°C por década, reflexo 
+da influência termorreguladora oceânica que atenua as mudanças térmicas atmosféricas assim como observado no litoral paulista.
 
-A região metropolitana de Natal e entorno apresenta padrão interessante com aquecimento moderado a intenso dependendo da localidade específica, sugerindo que processos de urbanização, embora certamente presentes e localmente significativos, podem ser menos dominantes que em São Paulo devido ao menor tamanho populacional absoluto e densidade urbana. A heterogeneidade espacial observada nas tendências de verão pode refletir múltiplos processos incluindo diferenças nas mudanças de uso da terra (particularmente relevantes no semiárido onde conversão de Caatinga em agricultura irrigada ou pastagens pode ter efeitos significativos sobre o balanço de energia superficial), variações na modulação por sistemas atmosféricos de grande escala, ou simplesmente maior influência da variabilidade natural de escala decadal que, em contexto de séries relativamente curtas (35 anos), pode manifestar-se como aparente heterogeneidade espacial.
+A região metropolitana de Natal e entorno apresenta padrão interessante com aquecimento moderado a intenso dependendo da localidade específica, sugerindo que processos de urbanização, embora certamente presentes e localmente significativos \citep{manoli2019magnitude}, podem ser menos dominantes que em São Paulo devido ao 
+menor tamanho populacional absoluto e densidade urbana. A heterogeneidade espacial observada nas tendências de verão pode refletir múltiplos processos incluindo diferenças nas mudanças de uso da terra (particularmente relevantes no semiárido onde conversão de Caatinga em agricultura irrigada ou pastagens pode ter efeitos 
+significativos sobre o balanço de energia superficial) \citep{alkama2016biophysical, leal2003_caatinga}, variações na modulação por sistemas atmosféricos de grande escala, ou simplesmente maior influência da variabilidade natural de escala decadal que, em contexto de séries de trinta anos, pode manifestar-se como aparente heterogeneidade espacial.
 
-O outono (MAM), estação crítica no Rio Grande do Norte por coincidir com o pico da estação chuvosa no interior semiárido quando a ZCIT está tipicamente bem posicionada e ativa sobre o Nordeste brasileiro, mantém padrão geral de aquecimento mas com intensidade ligeiramente atenuada e maior heterogeneidade espacial em comparação com o verão. As taxas de aquecimento variam tipicamente entre $0{,}018$ e $0{,}028$ °C por ano, com algumas áreas do interior semiárido apresentando os valores mais elevados enquanto outras regiões mostram aquecimento mais moderado ou mesmo ausência de tendências estatisticamente significativas ao nível de confiança estabelecido. Esta maior heterogeneidade pode estar associada às características específicas desta estação quando a precipitação exerce papel mais importante na modulação do balanço de energia através da evaporação de água interceptada pela vegetação e do solo, e mudanças na precipitação (que como veremos adiante são espacialmente heterogêneas e de difícil detecção) podem estar indiretamente afetando as tendências térmicas.
+O outono (MAM), estação crítica no Rio Grande do Norte por coincidir com o pico da estação chuvosa no interior semiárido quando a ZCIT está tipicamente bem posicionada e ativa sobre o Nordeste brasileiro, mantém padrão geral de aquecimento mas com intensidade ligeiramente atenuada e maior heterogeneidade espacial em 
+comparação com o verão. As taxas de aquecimento variam tipicamente entre 0{,}05 e 0{,}15°C por década, com algumas áreas do interior semiárido apresentando os valores mais elevados enquanto outras regiões mostram aquecimento mais moderado ou mesmo ausência de tendências estatisticamente significativas ao nível de confiança estabelecido. Esta maior heterogeneidade pode estar associada às características específicas desta estação quando a precipitação exerce papel mais importante na modulação do balanço de energia através da evaporação de água interceptada pela vegetação e do solo, e mudanças na precipitação (que como veremos adiante são espacialmente heterogêneas e de difícil detecção) podem estar indiretamente afetando as tendências térmicas.
 
-O inverno austral (JJA), período que no Rio Grande do Norte coincide com a estação seca no interior quando praticamente não há precipitação e as temperaturas são ligeiramente inferiores ao verão embora ainda elevadas em termos absolutos, apresenta padrão de aquecimento relativamente consistente em grande parte do território. As taxas variam tipicamente entre $0{,}022$ e $0{,}030$ °C por ano, com o interior continental mostrando ligeira tendência a valores mais elevados que a faixa costeira. Este comportamento, com manutenção de aquecimento significativo mesmo durante a estação relativamente mais fria, é qualitativamente similar ao observado em São Paulo e sugere influência de forçantes de grande escala operando continuamente ao longo do ciclo anual.
+O inverno austral (JJA), período que no Rio Grande do Norte coincide com a estação seca no interior quando praticamente não há precipitação e as temperaturas são ligeiramente inferiores ao verão embora ainda elevadas em termos absolutos \citep{alvares2013}, apresenta padrão de aquecimento relativamente consistente em 
+grande parte do território. As taxas variam tipicamente entre $-0{,}1$ e 0{,}18°C por década, com o interior continental mostrando ligeira tendência a valores mais elevados que a faixa costeira. Este comportamento, com manutenção de aquecimento significativo mesmo durante a estação relativamente mais fria, é qualitativamente 
+similar ao observado em São Paulo e sugere influência de forçantes de grande escala operando continuamente ao longo do ciclo anual \citep{ipcc2021}.
 
-A primavera (SON), estação que marca a transição entre o período seco e o início do retorno das chuvas, destaca-se como apresentando algumas das tendências térmicas mais consistentes e espacialmente coerentes de todo o ciclo anual, com aquecimento significativo documentado em praticamente todo o território estadual. As taxas de aquecimento primaveril frequentemente excedem $0{,}030$ °C por ano em diversas localidades do interior, estabelecendo este período como o de mudanças térmicas mais intensas, padrão qualitativamente similar ao observado em São Paulo embora com magnitude ligeiramente inferior. Este aquecimento preferencial durante a primavera pode refletir mecanismos específicos desta época de transição, incluindo mudanças nos padrões de circulação atmosférica, modificações no balanço radiativo associadas ao início do aumento da cobertura de nuvens, ou influências de transformações no uso da terra que afetam particularmente esta estação quando o solo está seco após meses sem precipitação.
+A primavera (SON), estação que marca a transição entre o período seco e o início do retorno das chuvas, destaca-se como apresentando algumas das tendências térmicas mais consistentes e espacialmente coerentes de todo o ciclo anual, com aquecimento significativo documentado em praticamente todo o território estadual, particularmente no litoral norte. As taxas de aquecimento primaveril frequentemente situam-se entre 
+0{,}15 e 0{,}25°C por década em diversas localidades, com algumas áreas mostrando significância estatística robusta conforme indicado pelas hachuras na figura. Este aquecimento durante a primavera pode refletir mecanismos específicos desta época de transição, incluindo mudanças nos padrões de circulação atmosférica, modificações no balanço radiativo associadas ao início do aumento da cobertura de nuvens, ou 
+influências de transformações no uso da terra que afetam particularmente esta estação quando o solo está seco após meses sem precipitação \citep{eagleson1978}.
 
-A integração dos padrões sazonais sugere que o estado do Rio Grande do Norte experimentou aquecimento médio da ordem de $0{,}7$ a $1,1$ °C ao longo do período 1990-2024 dependendo da região considerada, com o interior semiárido tendendo a apresentar os incrementos mais elevados. Embora estes valores sejam ligeiramente inferiores aos observados em São Paulo, eles ocorrem em contexto onde as temperaturas absolutas são substancialmente mais elevadas (médias anuais de $26$ a $28$ °C comparadas com $18$ a $23$ °C em São Paulo), e onde o estresse térmico preexistente sobre sistemas naturais e agrícolas já é significativo. Neste contexto, mesmo aquecimento moderado pode ter consequências desproporcionalmente importantes ao empurrar temperaturas para além de limiares críticos de tolerância fisiológica ou ao intensificar processos dependentes de temperatura como evapotranspiração em situação já caracterizada por déficit hídrico crônico.
+A integração dos padrões sazonais sugere que o estado do Rio Grande do Norte experimentou aquecimento médio da ordem de 0{,}3 a 0{,}6°C ao longo do período 1990-2020 dependendo da região considerada, com algumas áreas específicas podendo ter experimentado incrementos ligeiramente superiores. Embora estes valores sejam 
+inferiores aos observados em São Paulo, eles ocorrem em contexto onde as temperaturas absolutas são substancialmente mais elevadas (médias anuais de 26 a 28°C comparadas com 18 a 23°C em São Paulo) \citep{alvares2013}, e onde o estresse térmico preexistente sobre sistemas naturais e agrícolas já é significativo \citep{santos2014caatinga}. Neste contexto, mesmo aquecimento moderado pode ter consequências desproporcionalmente importantes ao empurrar temperaturas para além de limiares críticos de tolerância fisiológica ou ao intensificar processos dependentes de temperatura como evapotranspiração em situação já caracterizada por déficit hídrico considerável como o observado para a região nordeste 
+\citep{marengo2017drought}.
 
 \subsection{Tendências espaciais da precipitação}
 
-As tendências de precipitação no estado do Rio Grande do Norte (Figura \ref{fig:tend_prec_rn}) apresentam padrão ainda mais heterogêneo e espacialmente fragmentado que o observado em São Paulo, reflexo da variabilidade interanual extremamente elevada característica do regime semiárido e da forte modulação por fenômenos climáticos de grande escala cujas flutuações podem obscurecer completamente tendências de longo prazo menos intensas. A precipitação no semiárido nordestino é reconhecidamente uma das mais variáveis do planeta, com coeficientes de variação interanual frequentemente excedendo $40$ a $50\%$ e eventos de seca plurianual alternando com períodos de chuvas abundantes em escalas de tempo decadais, padrão que torna a detecção de mudanças sistemáticas extremamente desafiadora mesmo com séries temporais relativamente longas.
+As tendências de precipitação no estado do Rio Grande do Norte (Figura \ref{fig:tend_prec_rn}) apresentam padrão ainda mais heterogêneo e espacialmente fragmentado que o observado em São Paulo, reflexo da variabilidade interanual extremamente elevada característica do regime semiárido \citep{marengo2017drought} 
+e da forte modulação por fenômenos climáticos de grande escala cujas flutuações podem obscurecer as tendências de longo prazo menos intensas. A precipitação no semiárido nordestino é reconhecidamente uma das mais variáveis do planeta, com coeficientes de variação interanual frequentemente excedendo 40 a 50\% e eventos de seca anual alternando com períodos de chuvas concentradas em escalas de tempo decadais por exemplo, padrão que torna a detecção de mudanças sistemáticas extremamente desafiadora mesmo com séries temporais de três décadas \citep{marengo2017}.
 
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\textwidth]{prec_tendencia_RN.png}
-	\caption[Distribuição espacial das tendências de precipitação]{Distribuição espacial das tendências de precipitação no estado do Rio Grande do Norte para as quatro estações do ano no período 1990-2024. Observe a extrema heterogeneidade espacial e o grande número de áreas sem tendências estatisticamente significativas, reflexo da variabilidade interanual excepcionalmente elevada característica do semiárido. Não há padrão regional consistente identificável.}
-	\label{fig:tend_prec_rn}
+\centering
+\includegraphics[width=\textwidth]{fig/prec_tendencia_sazonal_decadal_rn.png}
+\caption[Distribuição espacial das tendências de precipitação]{Distribuição espacial das tendências de precipitação no estado do Rio Grande do Norte para as quatro estações do ano no período 1990-2020. Observe a extrema heterogeneidade espacial e o grande número de áreas sem tendências estatisticamente significativas, reflexo da variabilidade interanual excepcionalmente elevada característica do semiárido. Não há padrão regional consistente identificável.}
+\label{fig:tend_prec_rn}
 \end{figure}
 
-Durante o verão austral (DJF), estação que marca o início da estação chuvosa no interior semiárido quando a ZCIT começa a migrar para sul, observa-se padrão extremamente fragmentado de tendências que não permite identificação de qualquer sinal regional consistente. Algumas localidades apresentam tendências fracas positivas, outras mostram tendências fracas negativas, e a maioria não apresenta tendências estatisticamente significativas ao nível de confiança estabelecido. As magnitudes das tendências observadas (quando estatisticamente detectáveis) são tipicamente inferiores a $\pm20$ mm por estação por década, valores que embora possam parecer modestos representam frações substanciais da precipitação média sazonal (tipicamente $10$ a $15\%$) em contexto semiárido onde os totais absolutos são limitados.
+No intervalo compreendido em (DJF), estação que marca o início da estação chuvosa no interior semiárido quando a ZCIT começa a migrar para sul \citep{kousky1980diurnal}, observa-se padrão extremamente fragmentado de tendências que não permite identificação de qualquer sinal regional consistente. Algumas localidades apresentam tendências fracas positivas, outras mostram tendências fracas negativas, e a maioria não 
+apresenta tendências estatisticamente significativas ao nível de confiança estabelecido. As magnitudes das tendências observadas (quando estatisticamente detectáveis) são tipicamente inferiores a $\pm$10~mm por década, valores que embora possam parecer modestos representam frações substanciais da precipitação média 
+sazonal em contexto semiárido onde os totais absolutos são limitados.
 
-O outono (MAM), estação crítica do ponto de vista hidrológico por concentrar a maior parte da precipitação anual no interior semiárido (tipicamente $50$ a $60\%$ do total anual ocorre durante MAM), apresenta igualmente padrão heterogêneo sem sinais claros de mudanças sistemáticas. Esta ausência de tendências robustas durante a estação mais importante do ciclo hidrológico anual poderia ser interpretada como indicação de relativa estabilidade do regime pluviométrico principal, embora a interpretação alternativa - de que a alta variabilidade natural mascara mudanças existentes mas sutis - não possa ser descartada. Alguns estudos regionais baseados em análises mais sofisticadas ou séries temporais mais longas sugerem possível redução na frequência de anos extremamente chuvosos e/ou aumento na frequência de anos de seca, padrões que não seriam necessariamente detectados por análise de tendências lineares em totais sazonais mas que teriam implicações importantes para gestão de água e agricultura de sequeiro.
+O outono (MAM), estação crítica do ponto de vista hidrológico por concentrar a maior parte da precipitação anual no interior semiárido (tipicamente 50 a 60\% do total anual ocorre durante MAM) \citep{velloso2002_ecorregioes_caatinga}, apresenta igualmente padrão heterogêneo sem sinais claros de mudanças sistemáticas. Esta ausência de tendências estatisticamente significativas durante a estação mais 
+importante do ciclo hidrológico anual poderia ser interpretada como indicação de relativa estabilidade do regime pluviométrico principal, embora a interpretação alternativa de que a alta variabilidade natural mascara mudanças existentes, mas sutis não possa ser descartada \citep{yue2002}.
 
-O inverno austral (JJA), período de mínima pluviométrica absoluta no interior semiárido quando totais mensais frequentemente não excedem $5$ a $10$ mm e muitos meses individuais podem não registrar qualquer precipitação mensurável, naturalmente apresenta número muito limitado de tendências estatisticamente significativas. A escassez extrema de precipitação torna qualquer análise de tendências estatisticamente desafiadora, e os resultados devem ser interpretados com cautela considerando as limitações metodológicas inerentes. A faixa costeira mantém precipitações ligeiramente mais elevadas mesmo durante o inverno devido à atuação ocasional de perturbações de leste e convecção local intensificada pela brisa marítima, mas os totais permanecem substancialmente inferiores aos de outono.
+O inverno austral (JJA), período de mínima pluviométrica absoluta no interior semiárido quando totais mensais frequentemente não excedem 5 e 10~mm e muitos meses individuais podem não registrar qualquer precipitação mensurável, naturalmente apresenta número muito limitado de tendências estatisticamente significativas. A 
+escassez extrema de precipitação torna qualquer análise de tendências estatisticamente desafiadora, e os resultados devem ser interpretados com cautela considerando as limitações metodológicas inerentes. Observa-se uma pequena área no sudeste do estado com possível tendência negativa moderada (entre $-10$ e $-15$~mm por década), mas este sinal isolado não permite inferências regionais. A faixa costeira mantém 
+precipitações ligeiramente mais elevadas mesmo durante o inverno devido à atuação ocasional de perturbações de leste e convecção local intensificada pela brisa marítima \citep{kousky1980diurnal}, mas os totais permanecem substancialmente inferiores aos de outono.
 
-A primavera (SON), estação que marca a transição entre o período seco e o início do retorno das chuvas, apresenta padrão heterogêneo similar às demais estações, sem evidência clara de mudanças sistemáticas generalizadas. Algumas localidades do interior semiárido mostram possíveis tendências negativas fracas que poderiam indicar retardo no início da estação chuvosa ou redução na precipitação transicional, mas estes sinais não são espacialmente consistentes e podem refletir variabilidade natural de baixa frequência ao invés de mudanças sistemáticas de longo prazo.
+A primavera (SON), estação que marca a transição entre o período seco e o início do retorno das chuvas, apresenta padrão heterogêneo similar às demais estações, sem evidência clara de mudanças sistemáticas generalizadas. Algumas localidades do interior semiárido mostram possíveis tendências negativas fracas que poderiam indicar retardo no início da estação chuvosa ou redução na precipitação transicional, mas 
+estes sinais não são espacialmente consistentes e podem refletir variabilidade natural de baixa frequência ao invés de mudanças sistemáticas de longo prazo. Observa-se pequena área com tendência negativa estatisticamente significativa no centro do estado, mas a extensão limitada e o caráter isolado deste sinal impedem generalizações regionais.
 
 \subsection{Tendências espaciais de radiação solar}
 
-A radiação solar incidente na superfície no estado do Rio Grande do Norte (Figura \ref{fig:tend_rad_rn}) apresenta tendências predominantemente positivas em diversas regiões do estado, com padrão espacial relativamente mais organizado que o observado para precipitação embora ainda apresentando heterogeneidade significativa. O aumento da radiação solar em ambiente semiárido onde os valores absolutos já são naturalmente elevados e o estresse radiativo sobre organismos e sistemas é significativo tem implicações potencialmente importantes, particularmente quando considerado em conjunto com o aquecimento térmico simultaneamente observado.
+A radiação solar incidente na superfície no estado do Rio Grande do Norte (Figura \ref{fig:tend_rad_rn}) apresenta tendências predominantemente positivas em diversas regiões do estado, com padrão espacial relativamente mais organizado que o observado para precipitação embora ainda apresentando heterogeneidade significativa. O aumento da radiação solar em ambiente semiárido onde os valores absolutos já são naturalmente elevados \citep{medeiros2017} e o estresse radiativo sobre organismos e sistemas é significativo tem implicações potencialmente importantes, particularmente quando considerado em conjunto com o aquecimento térmico simultaneamente observado. As tendências são expressas em unidades decadais (W/m$^{2}$ por década).
 
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\textwidth]{rad_tendencia_RN.png}
-	\caption[Distribuição espacial das tendências de radiação solar]{Distribuição espacial das tendências de radiação solar no estado do Rio Grande do Norte para as quatro estações do ano no período 1990-2024. Observe as tendências predominantemente positivas, particularmente intensas no interior semiárido e durante o inverno (JJA). A correlação espacial com áreas de redução da cobertura de Caatinga sugere possível relação causal.}
-	\label{fig:tend_rad_rn}
+\centering
+\includegraphics[width=\textwidth]{fig/rad_tendencia_sazonal_decadal_rn.png}
+\caption[Distribuição espacial das tendências de radiação solar]{Distribuição espacial das tendências de radiação solar no estado do Rio Grande do Norte para as quatro estações do ano no período 1990-2020. Observe as tendências predominantemente positivas, particularmente intensas no interior semiárido e durante o inverno (JJA) e outono (MAM). A correlação espacial com áreas de redução da cobertura de Caatinga sugere possível relação causal.}
+\label{fig:tend_rad_rn}
 \end{figure}
 
-Durante o verão austral (DJF), as tendências de radiação solar são predominantemente positivas embora com magnitude moderada e distribuição espacial relativamente heterogênea, com incrementos típicos entre $0{,}2$ e $0{,}5$ W/m$^2$ por ano conforme a localidade. O inverno (JJA), período de mínima nebulosidade quando a atmosfera apresenta máxima transparência radiativa, apresenta as tendências positivas mais consistentes e intensas, com incrementos frequentemente superiores a $0{,}5$ W/m$^2$ por ano em diversas localidades do interior semiárido. Este padrão sazonal, com mudanças mais pronunciadas durante o período seco, é qualitativamente similar ao observado em São Paulo e sugere mecanismos comuns possivelmente relacionados a reduções adicionais na cobertura de nuvens ou mudanças em propriedades de superfície.
+As tendências de radiação solar observadas para o conjunto correspondente ao verão austral (DJF) são predominantemente positivas embora com magnitude moderada e distribuição espacial relativamente heterogênea, com incrementos típicos entre 3 e 8 W/m$^2$ por década conforme a localidade. Grande parte do território apresenta tendências positivas estatisticamente significativas, particularmente no interior semiárido e na porção oeste do estado, como evidenciado pelas extensas áreas hachuradas na figura.
 
-A análise espacial integrada revela correlação interessante entre áreas que apresentam os maiores incrementos de radiação solar e regiões que experimentaram redução substancial da cobertura de vegetação de Caatinga conforme documentado pelos dados do projeto MapBiomas (que serão apresentados em detalhe posteriormente). Esta correlação espacial sugere que mudanças antropogênicas na cobertura vegetal podem estar contribuindo para as tendências radiativas observadas, possivelmente através de múltiplos mecanismos incluindo mudanças no albedo de superfície (Caatinga degradada ou solo exposto tem albedo tipicamente mais elevado que Caatinga preservada, refletindo maior fração da radiação incidente), alterações na rugosidade superficial e evapotranspiração que afetam a formação de nuvens convectivas rasas, e modificações na emissão de aerossóis biogênicos e de queimadas associadas a práticas de manejo da terra.
+O outono (MAM) apresenta tendências predominantemente positivas e espacialmente consistentes, com magnitudes frequentemente superiores a 8 W/m$^2$ por década em grande parte do território e ampla significância estatística. Este incremento substancial durante a principal estação chuvosa é particularmente notável e pode estar relacionado a mudanças nos padrões de nebulosidade convectiva ou a alterações na composição atmosférica que afetam a transmissividade radiativa \citep{wild2012}.
 
-\section{Normais climatológicas e suas implicações}
+O inverno (JJA), período de mínima nebulosidade quando a atmosfera apresenta máxima transparência radiativa, apresenta as tendências positivas mais consistentes e intensas de todo o ciclo anual, com incrementos frequentemente superiores a 8 W/m$^2$ por década em praticamente todo o estado, e diversas localidades alcançando valores próximos a 10 W/m$^2$ por década. A extensão espacial das áreas com significância estatística é particularmente notável durante esta estação, abrangendo quase todo o território estadual. Este padrão sazonal, com mudanças mais pronunciadas durante o período seco, é qualitativamente similar ao observado em São Paulo e sugere mecanismos comuns possivelmente relacionados a reduções adicionais na cobertura de nuvens ou mudanças em propriedades de superfície.
 
-Esta seção apresenta as normais climatológicas para os estados de São Paulo e Rio Grande do Norte calculadas para o período completo de análise (1990-2024).
+A primavera (SON) mantém tendências predominantemente positivas com magnitudes moderadas a elevadas, tipicamente entre 5 e 10 W/m$^2$ por década, com significância estatística em parcela substancial do território. O padrão espacial mostra certa heterogeneidade, com o interior semiárido tendendo a apresentar os incrementos mais elevados.
 
-\subsection{Caracterização climatológica no estado de São Paulo}
-
-\subsubsection*{Temperatura}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\textwidth]{Climatologia_Temperatura_SP_mapas.png}
-	\caption[Normais climatológicas de temperatura média no estado de São Paulo]{Normais climatológicas de temperatura média no estado de São Paulo para as quatro estações do ano (1990-2024).}
-	\label{fig:climatologia_temp_sp}
-\end{figure}
-
-Os padrões espaciais de temperatura no estado de São Paulo (Figura \ref{fig:climatologia_temp_sp}) revelam gradientes térmicos complexos que refletem a interação entre múltiplos controles geográficos. Durante o verão (DJF), as temperaturas médias sazonais variam desde aproximadamente $22{,}5$ a $23{,}0$ °C nas regiões mais elevadas da Serra da Mantiqueira e Serra do Mar até $25{,}5$ a $26{,}0$ °C no extremo noroeste do estado. Este gradiente de cerca de $3$ a $3{,}5$ °C ao longo do território resulta da atuação simultânea de três fatores principais.
-
-O primeiro fator é a latitude, que promove aquecimento em direção ao norte devido ao aumento da radiação solar incidente. O segundo é a altitude, responsável pelo resfriamento nas áreas elevadas à medida que a pressão atmosférica e a temperatura diminuem com a ascensão topográfica. O terceiro é a influência oceânica, que modera as temperaturas no litoral graças à elevada capacidade térmica do oceano Atlântico e aos processos de circulação de brisa marítima. 
-
-A região metropolitana de São Paulo merece destaque particular. Mesmo em comparação com áreas rurais de altitude similar, apresenta valores ligeiramente elevados devido ao efeito de ilha de calor urbana, que tipicamente adiciona $1$ a $2$ °C às temperaturas urbanas em relação ao entorno rural.
-
-O outono (MAM) mantém padrão espacial similar ao verão, porém com valores absolutos reduzidos em aproximadamente $2{,}0$ a $2{,}5$ °C. Esta redução reflete a transição para o período mais frio do ano, com diminuição progressiva da radiação solar incidente à medida que o sol desloca-se para o hemisfério norte. 
-
-No inverno (JJA), observam-se os valores mais baixos do ciclo anual. As temperaturas médias variam desde aproximadamente $17{,}5$ a $18{,}0$ °C no noroeste até $14{,}0$ a $15{,}0$ °C nas regiões serranas mais elevadas e no extremo sul do estado. O gradiente térmico invernal é ligeiramente mais pronunciado que no verão, alcançando cerca de $4$ a $4{,}5$ °C. A primavera (SON) marca o retorno gradual do aquecimento, com valores intermediários entre o inverno e o verão.
-
-A amplitude térmica sazonal varia de forma sistemática pelo território. O interior do estado apresenta amplitudes típicas de $5$ a $7$ °C, refletindo o caráter continental com maior resposta às variações sazonais da radiação solar. Em contraste, o litoral apresenta amplitudes consideravelmente menores, de $3$ a $4$ °C, especialmente em sua porção sul próxima à Serra do Mar. Este comportamento é resultado direto da influência moderadora oceânica, que atenua tanto os máximos de verão quanto os mínimos de inverno.
-
-\subsubsection*{Precipitação}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\textwidth]{Climatologia_Precipitacao_SP_mapas.png}
-	\caption[Normais climatológicas de precipitação no estado de São Paulo]{Normais climatológicas de precipitação no estado de São Paulo para as quatro estações do ano (1990-2024).}
-	\label{fig:climatologia_prec_sp}
-\end{figure}
-
-Os padrões espaciais de precipitação (Figura \ref{fig:climatologia_prec_sp}) são ainda mais complexos e heterogêneos que os de temperatura. Durante o verão (DJF), estação de máxima pluviométrica em todo o estado, os totais médios variam desde aproximadamente $350$ a $450$ mm no interior oeste até valores que frequentemente excedem $700$ a $800$ mm no litoral sul e encostas da Serra do Mar.
-
-Esta intensificação drástica da precipitação costeira tem origem bem definida: o levantamento orográfico forçado das massas de ar úmidas de origem oceânica. À medida que essas massas ascendem as encostas da Serra do Mar, experimentam resfriamento adiabático que induz condensação e precipitação intensificada, particularmente nas vertentes voltadas para o oceano. A região metropolitana de São Paulo, situada em posição intermediária, apresenta valores típicos de $500$ a $600$ mm sazonais.
-
-O outono (MAM) mantém padrões espaciais similares, porém com valores absolutos substancialmente reduzidos. Os totais sazonais representam tipicamente $40$ a $50\%$ daqueles observados no verão, refletindo o enfraquecimento dos sistemas convectivos e da Zona de Convergência do Atlântico Sul característicos desta estação transicional.
-
-O inverno (JJA) representa o período de mínima precipitação, particularmente no interior do estado onde totais trimestrais frequentemente não excedem $80$ a $120$ mm. O litoral mantém precipitações relativamente mais elevadas mesmo durante o inverno, beneficiando-se da maior frequência de sistemas frontais e eventual formação de ciclones extratropicais sobre o oceano adjacente. Ainda assim, os valores absolutos permanecem substancialmente menores que no verão.
-
-A primavera (SON) marca o início do retorno das chuvas, com totais intermediários entre inverno e verão. Esta estação caracteriza-se por alta variabilidade interanual, refletindo a natureza transicional do período e a sensibilidade aos padrões de circulação de grande escala que começam a se reorganizar para o regime de verão.
-
-\subsubsection*{Radiação}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\textwidth]{Climatologia_Radiacao_SP_mapas.png}
-	\caption[Normais climatológicas de radiação solar no estado de São Paulo]{Normais climatológicas de radiação solar no estado de São Paulo para as quatro estações do ano (1990-2024).}
-	\label{fig:climatologia_rad_sp}
-\end{figure}
-
-A radiação solar incidente (Figura \ref{fig:climatologia_rad_sp}) apresenta padrões espaciais distintos daqueles observados para temperatura e precipitação. Durante o verão (DJF), quando o sol atinge sua posição mais alta no céu do hemisfério sul, os valores médios variam desde aproximadamente $180$ a $200$ W/m$^2$ no litoral sul até $240$ a $260$ W/m$^2$ no noroeste do estado.
-
-Este gradiente é inversamente proporcional ao da precipitação, refletindo uma relação física direta: áreas com maior nebulosidade apresentam menor transmissão de radiação solar até a superfície, enquanto áreas com menor nebulosidade permitem maior transmissão. Assim, o litoral chuvoso recebe menos radiação que o interior relativamente mais seco.
-
-O outono e a primavera apresentam valores intermediários com gradientes espaciais similares ao verão. O inverno (JJA) merece atenção especial. Embora caracterizado por sol mais baixo no céu e menor radiação no topo da atmosfera, esta estação apresenta valores relativamente elevados de radiação na superfície. Esta aparente contradição resolve-se quando consideramos a menor nebulosidade característica do período seco.
-
-De fato, os valores no inverno no interior do estado (tipicamente $200$ a $220$ W/m$^2$) frequentemente excedem os valores de verão no litoral (tipicamente $180$ a $200$ W/m$^2$). Este padrão ilustra claramente que a disponibilidade de radiação solar na superfície não depende apenas da posição astronômica do sol, mas também de forma crítica das propriedades ópticas da atmosfera, particularmente da cobertura de nuvens.
-
-\subsection{Caracterização climatológica no estado do Rio Grande do Norte}
-
-As normais climatológicas do Rio Grande do Norte (Figuras \ref{fig:climatologia_temp_rn}, \ref{fig:climatologia_prec_rn}, \ref{fig:climatologia_rad_rn}) revelam padrões espaciais relativamente mais simples que São Paulo. Esta simplicidade relativa decorre da menor extensão territorial e da menor variação altimétrica do estado. Ainda assim, gradientes importantes se fazem presentes, associados principalmente à distância do oceano e à transição entre domínios climáticos.
-
-\subsubsection*{Temperatura}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\textwidth]{Climatologia_Temperatura_RN_mapas.png}
-	\caption[Normais climatológicas de temperatura do ar no Rio Grande do Norte]{Normais climatológicas de temperatura do ar no Rio Grande do Norte (1990-2024). Observe o gradiente térmico relativamente modesto ($2$ a $3$ °C) entre litoral e interior, refletindo a baixa latitude. O interior semiárido apresenta as temperaturas mais elevadas ($27$ a $28$ °C), enquanto o litoral mostra valores moderados ($26$ a $27$ °C).}
-	\label{fig:climatologia_temp_rn}
-\end{figure}
-
-As temperaturas médias anuais no Rio Grande do Norte variam de $26$ °C no litoral até $28$ °C no interior semiárido, estabelecendo um gradiente consideravelmente menor que em São Paulo. Esta diferença reflete fundamentalmente a baixa latitude do estado, que minimiza as variações espaciais na radiação solar incidente. 
-
-A amplitude térmica sazonal também é reduzida, situando-se entre $3$ e $4$ °C entre verão e inverno. Esta característica é típica de climas tropicais, onde a variação da insolação ao longo do ano é menor que em latitudes mais altas. Durante todo o ciclo anual, as temperaturas absolutas permanecem consistentemente elevadas, criando condições de estresse térmico permanente tanto para sistemas naturais quanto agrícolas.
-
-O verão (DJF) apresenta as temperaturas mais elevadas, com valores médios frequentemente superiores a $27$ °C mesmo no litoral. O inverno (JJA), apesar de representar o período relativamente mais fresco, mantém temperaturas médias superiores a $24$ °C em praticamente todo o estado. Esta elevação consistente das temperaturas ao longo do ano distingue fundamentalmente o clima potiguar do paulista.
-
-\subsubsection*{Precipitação}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\textwidth]{Climatologia_Precipitacao_RN_mapas.png}
-	\caption[Normais climatológicas de precipitação no Rio Grande do Norte]{Normais climatológicas de precipitação no Rio Grande do Norte (1990-2024). Observe o forte gradiente entre litoral ($1.200$ mm/ano) e interior semiárido ($400$ a $600$ mm/ano). A concentração sazonal é extrema, com $70$ a $80\%$ do total anual ocorrendo em DJF-MAM no interior.}
-	\label{fig:climatologia_prec_rn}
-\end{figure}
-
-O contraste mais marcante nas normais climatológicas do Rio Grande do Norte manifesta-se na precipitação. A precipitação anual varia de $1.200$ a $1.500$ mm no litoral oriental até apenas $400$ a $700$ mm no interior semiárido, estabelecendo um gradiente horizontal extremamente pronunciado em distâncias relativamente curtas.
-
-A concentração sazonal da precipitação no interior é um dos aspectos mais definidores do clima semiárido. Cerca de $70$ a $80\%$ do total anual concentra-se em apenas três a quatro meses, tipicamente de fevereiro a maio, quando a Zona de Convergência Intertropical (ZCIT) atinge sua posição mais meridional. Esta concentração extrema cria um déficit hídrico severo durante oito a nove meses do ano, período em que a precipitação é praticamente ausente.
-
-O verão e outono (DJF e MAM) são as estações chuvosas, com totais que podem variar dramaticamente de ano para ano dependendo do posicionamento e intensidade da ZCIT. Esta variabilidade interanual é uma das características mais desafiadoras do clima semiárido para a agricultura e o abastecimento de água. O inverno e a primavera (JJA e SON) são extremamente secos no interior, com precipitação mensal frequentemente inferior a $10$ mm.
-
-O litoral, por sua vez, mantém regime pluviométrico relativamente mais regular ao longo do ano, embora ainda apresente máximos em DJF-MAM. A proximidade oceânica e a atuação de perturbações de leste proporcionam precipitação adicional mesmo fora do período de atuação da ZCIT.
-
-\subsubsection*{Radiação}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\textwidth]{Climatologia_Radiacao_RN_mapas.png}
-	\caption[Normais climatológicas de radiação solar no Rio Grande do Norte]{Normais climatológicas de radiação solar no Rio Grande do Norte (1990-2024). Observe os valores consistentemente elevados ($250$ a $280$ W/m$^2$) em todo o estado, refletindo a baixa latitude e alta transparência atmosférica. A variação espacial é menor que em São Paulo.}
-	\label{fig:climatologia_rad_rn}
-\end{figure}
-
-A radiação solar no Rio Grande do Norte apresenta valores consistentemente elevados em todo o estado, variando entre $250$ e $280$ W/m$^2$ em média anual. Estes valores são substancialmente superiores aos observados em São Paulo, refletindo a posição tropical do estado e a alta transparência atmosférica característica do semiárido, particularmente durante a estação seca.
-
-A variação espacial é modesta quando comparada com São Paulo. O interior semiárido apresenta valores ligeiramente superiores ao litoral, diferença que se deve principalmente à menor nebulosidade média no interior. Durante a estação seca, quando a nebulosidade é mínima, o interior pode receber valores de radiação que excedem $280$ W/m$^2$, estabelecendo um dos regimes radiativos mais intensos do Brasil.
-
-Esta alta disponibilidade de radiação solar, combinada com as temperaturas elevadas e a escassez de água, cria condições de demanda evapotranspirativa extremamente alta. A evapotranspiração potencial frequentemente excede a precipitação anual em várias vezes no interior semiárido, caracterizando o intenso déficit hídrico estrutural que define o clima da região.
-
-Ao longo do ciclo anual, a variação da radiação solar é menor que em São Paulo, mais uma vez refletindo a baixa latitude. Mesmo durante o inverno, quando o sol está ligeiramente mais baixo no céu, os valores de radiação permanecem elevados, tipicamente superiores a $230$ W/m$^2$ devido à baixa nebulosidade característica da estação seca.
+A análise espacial integrada revela correlação interessante entre áreas que apresentam os maiores incrementos de radiação solar e regiões que experimentaram redução substancial da cobertura de vegetação de Caatinga conforme documentado pelos dados do projeto MapBiomas \citep{souza2020_mapbiomas, mapbiomas_collection8_platform}. Esta correlação espacial sugere que mudanças antropogênicas na cobertura vegetal podem estar contribuindo para as tendências radiativas observadas, possivelmente através de múltiplos mecanismos incluindo mudanças no albedo de superfície (Caatinga degradada ou solo exposto tem albedo tipicamente mais elevado que Caatinga preservada, refletindo maior fração da radiação incidente) \citep{alkama2016biophysical, duveiller2018local}, alterações na rugosidade superficial e evapotranspiração que afetam a formação de nuvens convectivas rasas, e modificações na emissão de aerossóis biogênicos e de queimadas associadas a práticas de manejo da terra. O incremento acumulado ao longo das três décadas analisadas situa-se tipicamente entre 15 e 30~W/m$^{2}$ dependendo da estação e localidade, representando mudança substancial na disponibilidade energética superficial.
 
 \section{Implicações da cobertura de superfície no clima}
 
-A análise das mudanças climáticas apresentadas nas seções anteriores quantifica e qualifica as variações nos últimos 35 anos das variáveis climáticas abordadas neste trabalho. Porém, ao observarmos de forma integrada, podemos perceber que em alguns pontos dos dois estados existem divergências na comparação conjunta dessas três variáveis. A exemplo disso, podemos destacar a região sul do estado de São Paulo, onde estão localizados municípios como Sete Barras, Eldorado e Registro, distribuídos na região do Vale do Ribeira, área conhecida por seu remanescente de Mata Atlântica. Porém, ao observarmos a Figura \ref{fig:tend_prec_sp}, o que se destaca principalmente no período de verão austral (DJF) é que, além de ser um dos poucos pontos com \textit{p}-valor de significância estatística consistente (abaixo de 0,05), a região apresenta uma tendência negativa considerável, com valores variando entre $-7{,}5$ e $-10{,}0$ mm/ano. No entanto, nas demais análises de tendência (temperatura e radiação), a região não apresentou comportamentos drásticos, ou seja, aumento considerável de temperatura e radiação. Sendo assim, algumas perguntas surgem, em especial: se a precipitação acumulada diminuiu, por que a temperatura e a radiação incidente na superfície não aumentaram de forma proporcionalmente inversa à redução da precipitação?
+A análise das mudanças climáticas apresentadas nas seções anteriores quantifica e qualifica as variações nos últimos 35 anos das variáveis climáticas abordadas neste trabalho. Porém, ao observarmos de forma integrada, podemos perceber que em alguns pontos dos dois estados existem divergências na comparação conjunta dessas três variáveis. A exemplo disso, podemos destacar a região sul do estado de São Paulo, onde estão localizados municípios como Sete Barras, Eldorado e Registro, distribuídos na região do Vale do Ribeira, área conhecida por seu remanescente de Mata Atlântica \citep{ribeiro2009_atlanticforest, sos_inpe_atlas}. Porém, ao observarmos a Figura \ref{fig:tend_prec_sp}, o que se destaca principalmente no período de verão austral 
+(DJF) é que, além de ser um dos poucos pontos com \textit{p}-valor de significância estatística consistente (abaixo de 0,05), a região apresenta uma tendência negativa considerável, com valores variando entre $-7{,}5$ e $-10{,}0$~mm/ano. No entanto, nas demais análises de tendência (temperatura e radiação), a região não apresentou comportamentos drásticos, ou seja, aumento considerável de temperatura e radiação. 
+Sendo assim, algumas perguntas surgem, em especial: se a precipitação acumulada diminuiu, por que a temperatura e a radiação incidente na superfície não aumentaram de forma proporcionalmente inversa à redução da precipitação?
 
-Pensando em uma resposta para esta pergunta, propõe-se, portanto, uma avaliação da influência da cobertura de superfície nos dois estados, ou seja, avaliar se o fato de ter mais vegetação é capaz de absorver parte da radiação incidente de onda curta e, por consequência, diminuir a de onda longa reemitida para a atmosfera, sendo esta uma das responsáveis pelo aumento de temperatura. Portanto, esta seção integra sistematicamente os dados climáticos anteriormente apresentados com informações detalhadas sobre mudanças no uso e cobertura da terra derivadas do projeto MapBiomas, permitindo a identificação de correlações espaciais e temporais que sugerem relações causais entre transformações ambientais e mudanças climáticas observadas. Análise espacial foi feita considerando células de 100$\times$100 km por cobrir espacilamente as grades definidas por todas as variáveis climáticas (Figura \ref{fig:mapbiomas_sp_1990}), o processo considerou a representação de cores apresentada pela Tabela \ref{tab:mapbiomas_classes} que descreve a tipagem de cobertura segundo a classificação feita via pacote de dados MapBiomas Collection, via QGIS.
+Pensando em uma resposta para esta pergunta, propõe-se, portanto, uma avaliação da influência da cobertura de superfície nos dois estados, ou seja, avaliar se o fato de ter mais vegetação é capaz de absorver parte da radiação incidente de onda curta e, por consequência, diminuir a de onda longa reemitida para a atmosfera, sendo esta uma das responsáveis pelo aumento de temperatura \citep{alkama2016biophysical, 
+duveiller2018local}. Portanto, esta seção integra sistematicamente os dados climáticos anteriormente apresentados com informações detalhadas sobre mudanças no uso e cobertura da terra derivadas do projeto MapBiomas \citep{souza2020_mapbiomas, mapbiomas_collection8_platform}, permitindo a identificação de correlações espaciais e temporais que sugerem relações causais entre transformações ambientais e mudanças 
+climáticas observadas. Análise espacial foi feita considerando células de 100$\times$100~km por cobrir espacialmente as grades definidas por todas as variáveis climáticas (Figura \ref{fig:mapbiomas_sp_1990}), o processo considerou a representação de cores apresentada pela Tabela \ref{tab:mapbiomas_classes} que descreve a tipagem de cobertura segundo a classificação feita via pacote de dados MapBiomas Collection, 
+via QGIS.
 
 \subsection{Transformações no uso da terra em São Paulo e Rio Grande do Norte}
 
-O estado de São Paulo experimentou transformações substanciais no uso e cobertura da terra ao longo do período 1990-2020 (Figura \ref{fig:mapbiomas_sp_1990}), refletindo processos econômicos, demográficos e tecnológicos complexos que incluem urbanização contínua, intensificação agrícola, expansão de cultivos energéticos (particularmente cana-de-açúcar), conversão de pastagens em agricultura ou reflorestamento, e em algumas áreas específicas, recuperação de vegetação nativa através de regeneração natural ou reflorestamento ativo. 
+O estado de São Paulo experimentou transformações substanciais no uso e cobertura da terra ao longo do período 1990-2020 (Figura \ref{fig:mapbiomas_sp_1990}), refletindo processos econômicos, demográficos e tecnológicos complexos que incluem urbanização contínua, intensificação agrícola, expansão de cultivos energéticos (particularmente cana-de-açúcar), conversão de pastagens em agricultura ou reflorestamento, e em algumas áreas específicas, recuperação de vegetação nativa através de regeneração natural ou reflorestamento ativo \citep{souza2020_mapbiomas}.
 
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=1\textwidth]{mapa_grade_sp.png}
-	\caption[Uso e cobertura da terra no estado de São Paulo em 1990 segundo classificação MapBiomas, Collection 9]{Uso e cobertura da terra no estado de São Paulo em 1990 segundo classificação MapBiomas, Collection 9. Observe a dominância de pastagens (tons amarelados), presença significativa de agricultura (tons rosados) e remanescentes de vegetação nativa (tons verdes) principalmente na Serra do Mar e Serra da Mantiqueira. Já ao lado direito o que temos é a relação do uso de cobertura da terra em 2020 segundo classificação, intensificação agrícola com redução de pastagens, e recuperação parcial de vegetação nativa em algumas áreas protegidas.}
-	\label{fig:mapbiomas_sp_1990}
+    \centering
+    \includegraphics[width=1\textwidth]{fig/mapa_grade_sp.png}
+    \caption[Uso e cobertura da terra no estado de São Paulo em 1990 segundo classificação MapBiomas, Collection 9]{Uso e cobertura da terra no estado de São Paulo em 1990 segundo classificação MapBiomas, Collection 9. Observe a dominância de pastagens (tons amarelados), presença significativa de agricultura 
+    (tons rosados) e remanescentes de vegetação nativa (tons verdes) principalmente na Serra do Mar e Serra da Mantiqueira. Já ao lado direito o que temos é a relação do uso de cobertura da terra em 2020 segundo classificação, intensificação agrícola com redução de pastagens, e recuperação parcial de vegetação nativa em algumas áreas protegidas.}
+    \label{fig:mapbiomas_sp_1990}
 \end{figure}
 
 A Figura \ref{fig:mapbiomas_sp_1990} apresenta a distribuição espacial das classes de uso e cobertura da terra no estado de São Paulo em dois momentos distintos (1990 e 2020), evidenciando transformações substanciais ao longo do período de três décadas. Em 1990, o território paulista apresentava configuração caracterizada pela dominância de pastagens (tons amarelados) ocupando extensas áreas nas regiões centro, oeste e noroeste do estado, intercaladas com agricultura intensiva (tons rosados), particularmente concentrada no norte e noroeste. As formações florestais nativas (tons verdes escuros) encontravam-se predominantemente preservadas na Serra do Mar (faixa costeira sudeste) e em remanescentes dispersos na Serra da Mantiqueira (extremo leste). As áreas urbanizadas (tons avermelhados) já apresentavam expressão significativa na região metropolitana de São Paulo e em cidades médias do interior.
 
-Já em 2020 o que se revela são transformações marcantes nesta configuração. Observa-se intensificação agrícola substancial, com expansão de cultivos de cana-de-açúcar (tons rosa-lilás) nas regiões norte, noroeste e centro-oeste, ocupando áreas anteriormente destinadas a pastagens. A conversão de pastagens de baixa produtividade em agricultura mecanizada é particularmente evidente nas regiões de Ribeirão Preto, Barretos e Araçatuba. Simultaneamente, as formações florestais na Serra do Mar e Serra da Mantiqueira apresentam aparente expansão ou adensamento (tons verdes mais intensos). A mancha urbana apresenta expansão moderada mas geograficamente concentrada, com crescimento mais visível na região metropolitana de São Paulo e no entorno de cidades médias do interior, representada pela intensificação dos tons avermelhados.
+Já em 2020 o que se revela são transformações marcantes nesta configuração. Observa-se intensificação agrícola substancial, com expansão de cultivos de cana-de-açúcar (tons rosa-lilás) nas regiões norte, noroeste e centro-oeste, ocupando áreas anteriormente destinadas a pastagens. A conversão de pastagens de baixa produtividade em agricultura mecanizada é particularmente evidente nas regiões de Ribeirão Preto, Barretos e Araçatuba. Simultaneamente, as formações florestais na Serra do Mar e Serra da Mantiqueira apresentam aparente expansão ou adensamento (tons verdes mais intensos) \citep{sos_inpe_atlas_2023_2024}. A mancha urbana apresenta expansão moderada mas geograficamente concentrada, com crescimento mais visível na região metropolitana de São Paulo e no entorno de cidades médias do interior, representada pela intensificação dos tons avermelhados.
 
-O estado do Rio Grande do Norte, por sua vez, apresenta transformações ainda mais dramáticas (Figura \ref{fig:mapbiomas_rn_1990}). As alterações observadas caracterizam um dos processos de conversão de vegetação nativa mais severos.
+O estado do Rio Grande do Norte, por sua vez, apresenta transformações ainda mais dramáticas (Figura \ref{fig:mapbiomas_rn_1990}). As alterações observadas caracterizam um dos processos de conversão de vegetação nativa mais severos documentados no Brasil \citep{leal2003_caatinga, velloso2002_ecorregioes_caatinga}.
 
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=1\textwidth]{mapa_grade_rn.png}
-	\caption[Uso e cobertura da terra no estado do Rio Grande do Norte em 1990 segundo classificação MapBiomas, Collection 9]{Uso e cobertura da terra no estado do Rio Grande do Norte em 1990 segundo classificação MapBiomas, Collection 9. Observe a dominância de formação savânica (Caatinga) em tons verde-claro e verde-amarelado ocupando aproximadamente 79\% do território, refletindo extensão da vegetação nativa semiárida. A zona costeira apresenta manguezais (tons verde-escuro), aquicultura (tons lilás) e áreas urbanizadas. Já ao lado direito, em 2020, observa-se redução catastrófica da Caatinga (agora apenas 35,5\% do território), substituída principalmente por pastagens degradadas (tons amarelados), agricultura de sequeiro, solo exposto e áreas em diversos estágios de degradação ambiental.}
-	\label{fig:mapbiomas_rn_1990}
+    \centering
+    \includegraphics[width=1\textwidth]{fig/mapa_grade_rn.png}
+    \caption[Uso e cobertura da terra no estado do Rio Grande do Norte em 1990 segundo classificação MapBiomas, Collection 9]{Uso e cobertura da terra no estado do Rio Grande do Norte em 1990 segundo classificação MapBiomas, Collection 9. Observe a dominância de formação savânica (Caatinga) em tons verde-claro e verde-amarelado ocupando aproximadamente 79\% do território, refletindo extensão da vegetação 
+    nativa semiárida. A zona costeira apresenta manguezais (tons verde-escuro), aquicultura (tons lilás) e áreas urbanizadas. Já ao lado direito, em 2020, observa-se redução catastrófica da Caatinga (agora apenas 35,5\% do território), substituída principalmente por pastagens degradadas (tons amarelados), agricultura 
+    de sequeiro, solo exposto e áreas em diversos estágios de degradação ambiental.}
+    \label{fig:mapbiomas_rn_1990}
 \end{figure}
 
-A Figura \ref{fig:mapbiomas_rn_1990} apresenta a distribuição espacial das classes de uso e cobertura da terra no Rio Grande do Norte em 1990 e 2020. Em 1990, o estado apresentava dominância de formação savânica (Caatinga) representada em tons verde-claro e verde-amarelado, cobrindo aproximadamente 79\% do território e distribuída de forma relativamente contínua pelas regiões central, sul e oeste. A vegetação de Caatinga preservada era particularmente expressiva nas regiões do Seridó (centro-sul) e no interior semiárido, intercalada com manchas de pastagem (tons amarelados) e agricultura de sequeiro. A zona costeira já apresentava maior heterogeneidade, com presença de áreas urbanizadas concentradas em Natal e outras cidades litorâneas (tons avermelhados), atividades de aquicultura incipientes (tons lilás), manguezais preservados (tons verde-escuro) e agricultura irrigada em áreas específicas do litoral leste. Formações campestres e campos alagados (tons alaranjados e ciano) eram visíveis em áreas de transição ecológica e várzeas.
+A Figura \ref{fig:mapbiomas_rn_1990} apresenta a distribuição espacial das classes de uso e cobertura da terra no Rio Grande do Norte em 1990 e 2020. Em 1990, o estado apresentava dominância de formação savânica (Caatinga) representada em tons verde-claro e verde-amarelado, cobrindo aproximadamente 79\% do território e distribuída de forma relativamente contínua pelas regiões central, sul e oeste. A vegetação de Caatinga 
+preservada era particularmente expressiva nas regiões do Seridó (centro-sul) e no interior semiárido, intercalada com manchas de pastagem (tons amarelados) e agricultura de sequeiro. A zona costeira já apresentava maior heterogeneidade, com presença de áreas urbanizadas concentradas em Natal e outras cidades litorâneas (tons avermelhados), atividades de aquicultura incipientes (tons lilás), manguezais preservados (tons verde-escuro) e agricultura irrigada em áreas específicas do litoral leste. Formações campestres e campos alagados (tons alaranjados e ciano) eram visíveis em áreas de transição ecológica e várzeas.
 
-O painel de 2020 apresenta uma transformação particularmente drástica desta configuração original. A cobertura de Caatinga sofreu redução significativa e espacialmente generalizada, com conversão massiva em pastagens degradadas (tons amarelados agora predominantes em vastas áreas do interior), agricultura de sequeiro de baixa produtividade, solo exposto e áreas em diversos estágios de degradação ambiental. Esta conversão é particularmente severa e visualmente impactante nas regiões centro-norte e central do estado, onde a vegetação nativa característica (tons verdes) foi substituída quase completamente por tons amarelados. Os remanescentes de Caatinga preservada (tons verdes) restringem-se a fragmentos dispersos e áreas específicas no sul do estado e em localidades pontuais. A região costeira apresenta expansão visível de áreas urbanizadas, especialmente em Natal, Mossoró e ao longo do litoral oriental (intensificação dos tons avermelhados), intensificação marcante da aquicultura com ampliação de manchas lilás. O contraste visual entre os dois painéis é extremamente marcante: o que em 1990 era um estado predominantemente coberto por vegetação nativa semiárida (tons verdes ocupando a maior parte do território) transformou-se em 2020 em território dominado por usos antrópicos de baixa produtividade e cobertura vegetal severamente degradada (tons amarelados).
+O painel de 2020 apresenta uma transformação particularmente drástica desta configuração original. A cobertura de Caatinga sofreu redução significativa e espacialmente generalizada, com conversão massiva em pastagens degradadas (tons amarelados agora predominantes em vastas áreas do interior), agricultura de sequeiro de baixa produtividade, solo exposto e áreas em diversos estágios de degradação ambiental 
+\citep{santos2014caatinga, sudene2024desertificacao}. Esta conversão é particularmente severa e visualmente impactante nas regiões centro-norte e central do estado, onde a vegetação nativa característica (tons verdes) foi substituída quase completamente por tons amarelados. Os remanescentes de Caatinga preservada (tons verdes) restringem-se a fragmentos dispersos e áreas específicas no sul do estado e em localidades pontuais.
+
+A região costeira apresenta expansão visível de áreas urbanizadas, especialmente em Natal, Mossoró e ao longo do litoral oriental (intensificação dos tons avermelhados), intensificação marcante da aquicultura com ampliação de manchas lilás. O contraste visual entre os dois painéis é extremamente marcante: o que em 1990 era um estado predominantemente coberto por vegetação nativa semiárida (tons verdes ocupando a maior 
+parte do território) transformou-se em 2020 em território dominado por usos antrópicos de baixa produtividade e cobertura vegetal severamente degradada (tons amarelados).
+
+\subsection{Análise das mudanças nas classes de uso da terra}
+
+A quantificação das transformações no uso e cobertura da terra permite avaliar a magnitude absoluta e relativa das mudanças observadas nos mapas qualitativos apresentados anteriormente. As Figuras \ref{fig:sp_top10_classes} e \ref{fig:rn_top10_classes} apresentam as dez classes de uso da terra mais representativas em cada estado nos anos de 1990 e 2020, enquanto as Figuras \ref{fig:sp_variacao_classes} 
+e \ref{fig:rn_variacao_classes} quantificam as variações absolutas (em pontos percentuais) experimentadas por cada classe ao longo do período de três décadas.
+
+\subsubsection*{São Paulo: dinâmica das classes de uso da terra}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{fig/SP_top10_1990_2020.png}
+    \caption[Top 10 classes de uso do solo em São Paulo (1990 vs 2020)]{Top 10 classes de uso do solo em São Paulo para os anos de 1990 (azul) e 2020 (laranja). Observe a dramática redução de pastagens (de 37,4\% para 22,1\%) e o aumento correspondente de cana-de-açúcar (de 3,5\% para 12,1\%) e soja (de 0 para 8,1\%), refletindo intensificação agrícola generalizada.}
+    \label{fig:sp_top10_classes}
+\end{figure}
+
+A análise quantitativa para São Paulo (Figura \ref{fig:sp_top10_classes}) revela transformação profunda na estrutura de uso da terra. Em 1990, as pastagens dominavam o território do estado de São Paulo, ocupando 37,4\% da área total, seguidas por formação florestal (17,7\%) e mosaico de usos (13,9\%). Em 2020, embora as pastagens permaneçam como a classe mais representativa, sua extensão reduziu-se dramaticamente para 22,1\%, 
+representando perda absoluta de 15,3 pontos percentuais. Esta redução massiva de pastagens foi compensada principalmente pela expansão de agricultura intensiva: cana-de-açúcar expandiu-se de 3,5\% para 12,1\%, soja de praticamente zero para 8,1\%, e formação campestre de 1,2\% para 4,3\%.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{fig/SP_variacao_top10_1990_2020.png}
+    \caption[Variação absoluta por classe de uso do solo em São Paulo (1990-2020)]
+    {Variação absoluta (em pontos percentuais) por classe de uso do solo em São Paulo entre 1990 e 2020. Cores vermelhas indicam redução; cores verdes indicam expansão. Destaque para a redução de $-15{,}3$\%. em pastagens e expansão de $+8{,}6\%$}
+    \label{fig:sp_variacao_classes}
+\end{figure}
+
+A Figura \ref{fig:sp_variacao_classes} quantifica estas transformações de forma ainda mais clara. A porcentagem indicada para a classe ``pastagens'' apresentam de longe a maior redução absoluta ($-15{,}3\%$), seguidas por "outras lavouras temporárias" ($-3{,}2\%$) e formação florestal ($-0{,}6\%$). Em contraste, cana-de-açúcar apresentou o maior ganho absoluto ($+8{,}6\%$), seguida por soja ($+4{,}8\%$) e formação campestre ($+3{,}1\%$). A formação florestal, embora tenha apresentado pequena redução em termos percentuais relativos ao território total estadual, manteve-se relativamente estável, variando de 17,7\% para 17,0\%, sugerindo que perdas florestais em algumas regiões foram parcialmente compensadas por recuperação em outras áreas, particularmente na Serra do Mar \citep{sos_inpe_atlas_2023_2024}.
+\newpage
+\subsubsection*{Rio Grande do Norte: dinâmica das classes de uso da terra}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{fig/RN_top10_1990_2020.png}
+    \caption[Top 10 classes de uso do solo no Rio Grande do Norte (1990 vs 2020)]
+    {Top 10 classes de uso do solo no Rio Grande do Norte para os anos de 1990 (azul) e 2020 (laranja). Observe a queda considerável da formação savânica (Caatinga), de 27,0\% para 23,6\%, e a expansão correspondente de pastagens (de 10,2\% para 11,4\%) e outras lavouras temporárias (de 0,2\% para 3,7\%).}
+    \label{fig:rn_top10_classes}
+\end{figure}
+
+A análise quantitativa para o Rio Grande do Norte (Figura \ref{fig:rn_top10_classes}) revela transformação ainda mais dramática que a observada em São Paulo, caracterizada pela diminuição da vegetação nativa de Caatinga. Em 1990, a formação savânica dominava o estado com 27,0\% do território, seguida por pastagens (10,2\%) e mosaico de usos (9,4\%). Em 2020, a formação savânica reduziu-se para 23,6\%, representando 
+perda absoluta de 3,4 pontos percentuais da cobertura nativa. Simultaneamente, as pastagens expandiram-se moderadamente de 10,2\% para 11,4\% (+1,2\%), e particularmente notável foi a emergência de "outras lavouras temporárias" que expandiram dramaticamente de 0,2\% para 3,7\% (+3,5\%).
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{fig/RN_variacao_top10_1990_2020.png}
+    \caption[Variação absoluta por classe de uso do solo no Rio Grande do Norte (1990-2020)]{Variação absoluta (em pontos percentuais) por classe de uso do solo no Rio Grande do Norte entre 1990 e 2020. Cores vermelhas indicam redução; cores verdes indicam expansão. Destaque para a redução de $-3{,}4$\%. em formação savânica (Caatinga) e $-2{,}3$\%. em mosaico de usos, substituídos principalmente por outras lavouras temporárias ($+3{,}5$\%) e pastagens ($+1{,}2$\%).}
+    \label{fig:rn_variacao_classes}
+\end{figure}
+
+A Figura \ref{fig:rn_variacao_classes} quantifica estas transformações de forma detalhada. A formação savânica (Caatinga) apresentou a maior redução absoluta ($-3{,}4$\%), seguida por mosaico de usos ($-2{,}3$\%) e formação florestal ($-0{,}3$\%). Em contraste, "outras lavouras temporárias" apresentaram o maior ganho absoluto ($+3{,}5$\%), seguidas por pastagens ($+1{,}2$\%), outras lavouras perenes ($+0{,}9$\%) e área urbanizada ($+0{,}6$\%). O padrão geral indica processo de conversão extensiva de vegetação nativa de Caatinga em usos antrópicos de baixa produtividade, particularmente pastagens degradadas e agricultura 
+de sequeiro, caracterizando um dos processos de degradação ambiental mais severos documentados no semiárido brasileiro \citep{leal2003_caatinga, sudene2024desertificacao}.
 
 \subsection{Avaliação e extremos de cobertura de solo no estado de São Paulo}
 
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=1\textwidth]{mapa_blocos_extremos_sp.png}
-	\caption[Áreas de maior e menor mudança de formação florestal em percentis]{Áreas de maior e menor mudança de formação florestal em percentis, onde a maior perda (desmatamento) está em destaque com tons avermelhados, a menor perda ou cobertura constante em tons amarelados, já o ganho de área florestal está representada em tons de verde.}
-	\label{fig:mapa_blocos_extremos_sp}
+    \centering
+    \includegraphics[width=1\textwidth]{fig/mapa_blocos_extremos_sp.png}
+    \caption[Áreas de maior e menor mudança de formação florestal em percentis]{Áreas de maior e menor mudança de formação florestal em percentis, onde a maior perda (desmatamento) está em destaque com tons avermelhados, a menor perda ou cobertura constante em tons amarelados, já o ganho de área florestal está representada em tons de verde.}
+    \label{fig:mapa_blocos_extremos_sp}
 \end{figure}
 
-Ao analisar a Figura \ref{fig:mapa_blocos_extremos_sp} o que se destacam são: A evolução temporal da cobertura de formação florestal (predominantemente Mata Atlântica) apresenta duas trajetórias distintas que refletem diferentes contextos espaciais. Em áreas sob maior pressão de conversão agrícola e urbana, a cobertura florestal reduziu-se de 15,0\% em 1990 para 6,0\% em 2020, representando perda absoluta de 9,0 pontos percentuais. Avaliando progressivamente o comportamento de 10 em 10 anos, o que se observa é uma queda progressiva nos últimos anos, estabilizando-se de 2010 à 2020, Figura \ref{fig:evolucao_cobertura_sp}.
+Ao analisar a Figura \ref{fig:mapa_blocos_extremos_sp} o que se destacam são: A evolução temporal da cobertura de formação florestal (predominantemente Mata Atlântica) apresenta duas trajetórias distintas que refletem diferentes contextos espaciais. Em áreas sob maior pressão de conversão agrícola e urbana, a cobertura florestal reduziu-se de 15,0\% em 1990 para 6,0\% em 2020, representando perda absoluta de 9,0 pontos percentuais. 
+
+Avaliando progressivamente o comportamento de 10 em 10 anos, o que se observa é uma queda progressiva nos últimos anos, estabilizando-se de 2010 à 2020, Figura \ref{fig:evolucao_cobertura_sp}.
 
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\textwidth]{evolucao_cobertura_vegetal_sp.png}
-	\caption{Evolução temporal da cobertura de formação florestal no estado de São Paulo (1990-2020).}
-	\label{fig:evolucao_cobertura_sp}
+    \centering
+    \includegraphics[width=\textwidth]{fig/evolucao_cobertura_vegetal_sp.png}
+    \caption{Evolução temporal da cobertura de formação florestal no estado de São Paulo (1990-2020). Linha vermelha sólida (Perda \#1, Cell 3) e tracejada (Perda \#2, Cell 146) representam células com maior perda de cobertura florestal; linhas verdes sólida (Ganho \#1, Cell 93) e tracejada (Ganho \#2, Cell 78) representam células com ganho ou preservação de cobertura florestal.}
+    \label{fig:evolucao_cobertura_sp}
 \end{figure}
-
 
 Em contraste, a linha verde representa áreas com trajetória oposta, iniciando em 40,3\% de cobertura florestal em 1990 e apresentando crescimento progressivo para 45,0\% (2000), 47,0\% (2010) e 49,8\% (2020), totalizando ganho de 9,5 pontos percentuais ao longo do período.
 
-A análise integrada das duas figuras evidencia portanto que as mudanças na cobertura florestal paulista não seguem padrão estadual homogêneo. As perdas concentram-se em regiões de agricultura intensiva no interior (noroeste), enquanto ganhos ocorrem em áreas de proteção ambiental e topografia acidentada (Serra do Mar).
-
-\subsubsection*{Análises complementares}
-As pastagens, que em 1990 ocupavam aproximadamente $57,4\%$ do território estadual, reduziram-se para apenas $7,8\%$ em 2020{,}. Esta redução massiva reflete múltiplos processos: conversão de pastagens degradadas de baixa produtividade em agricultura intensiva mecanizada (principalmente cana-de-açúcar, citros e grãos); abandono de pastagens marginalmente produtivas em áreas de topografia acidentada com subsequente regeneração natural da vegetação; e em menor escala, reflorestamento comercial com eucalipto ou pinus.
+A análise integrada das duas figuras evidencia portanto que as mudanças na cobertura florestal paulista não seguem padrão estadual homogêneo. As perdas concentram-se em regiões de agricultura intensiva no interior (noroeste), enquanto ganhos ocorrem em áreas de proteção ambiental e topografia acidentada (Serra do Mar) 
+\citep{sos_inpe_atlas_2023_2024}.
 
 \subsection{Avaliação e extremos de cobertura de solo no estado do Rio Grande do Norte}
 
@@ -808,7 +1005,7 @@ A análise espacial (Figura \ref{fig:mapa_blocos_extremos_rn}) revela alta heter
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{mapa_blocos_extremos_rn.png}
+	\includegraphics[width=\textwidth]{fig/mapa_blocos_extremos_rn.png}
 	\caption[Distribuição espacial das mudanças na cobertura de formação savânica (Caatinga) no Rio Grande do Norte (1990-2020)]{Distribuição espacial das mudanças na cobertura de formação savânica (Caatinga) no Rio Grande do Norte (1990-2020) por célula de 100×100 km. Tons vermelhos indicam maior perda (desmatamento); tons amarelados representam mudanças moderadas; tons verdes indicam ganho ou estabilidade.}
 	\label{fig:mapa_blocos_extremos_rn}
 \end{figure}
@@ -817,7 +1014,7 @@ A Figura \ref{fig:evolucao_cobertura_rn} revela as trajetórias temporais que ca
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{evolucao_cobertura_vegetal_rn.png}
+	\includegraphics[width=\textwidth]{fig/evolucao_cobertura_vegetal_rn.png}
 	\caption[Evolução temporal da cobertura de formação savânica (Caatinga) no Rio Grande do Norte (1990-2020)]{Evolução temporal da cobertura de formação savânica (Caatinga) no Rio Grande do Norte (1990-2020). Linha vermelha representa células com maior perda de cobertura; linha verde representa células com menor mudança ou recuperação.}
 	\label{fig:evolucao_cobertura_rn}
 \end{figure}
@@ -826,101 +1023,99 @@ Em contraste marcante, a linha verde representa áreas com trajetória de recupe
 
 A análise integrada das duas figuras evidencia que o Rio Grande do Norte experimenta processo de diferenciação espacial extrema, com áreas apresentando um comportamento e recuperação de cobertura vegetal, enquanto a maioria do território sofre degradação progressiva quando observado em conjunto com a Figura \ref{fig:mapa_blocos_extremos_rn} que demonstra uma mudança considerável nos dois cenários.
 
-% ANÁLISE DAS VARIÁVEIS CLIMÁTICAS NOS EXTREMOS DE MUDANÇA DE COBERTURA VEGETAL
-
 \section{Variáveis climáticas em áreas de extremos de mudança de cobertura}
 
-A análise das variáveis climáticas em células de grade apresentadas no decorrer desta seção pelas Figuras \ref{fig:mapa_blocos_extremos_sp} e \ref{fig:mapa_blocos_extremos_sp} com a descrição das localidades das mudanças extremas de mudança de cobertura vegetal, permite avaliar se as variações de cobertura estão associados aos padrões climáticos analisados nas seções anteriores. Para cada estado, selecionaram-se células representando os extremos: células com maior perda de vegetação nativa versus células com menor perda ou ganho de vegetação. As médias anuais de temperatura e radiação solar e acumulados de precipitação foram calculadas para estes dois grupos ao longo do período 1990-2020.
+A análise das variáveis climáticas em blocos de grade apresentadas no decorrer desta seção pelas Figuras \ref{fig:mapa_blocos_extremos_sp} e \ref{fig:mapa_blocos_extremos_rn} com a descrição das localidades das mudanças extremas de mudança de cobertura vegetal, permite avaliar se as variações de cobertura estão associadas aos padrões climáticos analisados nas seções anteriores. Para cada estado, selecionaram-se quatro blocos representando os extremos: os dois blocos com maior perda de vegetação nativa versus os dois blocos com maior ganho ou menor perda de vegetação. As médias anuais de temperatura e radiação solar e acumulados de precipitação foram calculadas para estes quatro blocos ao longo do período 1990--2024.
 
 \subsection{São Paulo: Formação Florestal}
 
 \subsubsection*{Temperatura}
 
-A Figura \ref{fig:temp_extremos_sp} apresenta as médias anuais de temperatura para células com maior versus menor redução de formação florestal no estado de São Paulo. Observa-se diferença térmica e persistente ao longo de todo o período analisado. Células com maior redução de vegetação florestal (linha vermelha) apresentam temperaturas consistentemente elevadas, oscilando entre 24,0 e 26,5 °C ao longo da série temporal, com média aproximada de 24,8 °C. Em contraste, células com menor redução ou ganho florestal (linha verde) mantêm-se consistentemente mais frias, variando entre 19,0 e 20,5 °C, com média próxima a 19,5 °C.
+A Figura \ref{fig:temp_extremos_sp} apresenta as médias anuais de temperatura para os quatro blocos extremos de mudança de formação florestal no estado de São Paulo. Observa-se clara e persistente separação térmica entre os dois grupos ao longo de todo o período analisado. Os dois blocos com maior perda de vegetação florestal (linhas vermelhas, sólida e tracejada) apresentam temperaturas consistentemente elevadas, oscilando entre 24,0 e 26,5°C ao longo da série temporal, com média aproximada de 24,8°C. Em contraste marcante, os dois blocos com ganho ou menor perda florestal (linhas verdes, sólida e tracejada) mantêm-se consistentemente mais frios, variando entre 17,5 e 20,5°C, com média próxima a 19,0°C.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{medias_anuais_temp_celsius_formacao_florestal_sp.png}
-	\caption{Médias anuais de temperatura (°C) em células com maior versus menor redução de formação florestal em São Paulo (1990-2020).}
+	\includegraphics[width=\textwidth]{fig/temp_formacao_florestal_sp.png}
+	\caption{Médias anuais de temperatura (°C) em quatro blocos extremos de mudança de formação florestal em São Paulo (1990--2024). Linhas vermelhas: blocos com maior perda florestal. Linhas verdes: blocos com ganho ou menor perda florestal.}
 	\label{fig:temp_extremos_sp}
 \end{figure}
 
-A diferença entre os dois grupos mantém-se notavelmente constante em aproximadamente 5,0 a 5,5 °C ao longo de três décadas. Esta magnitude e persistência sugerem que a diferença de temperatura é primariamente determinada por fatores geográficos estruturais (altitude, latitude) ao invés de mudanças dinâmicas na cobertura vegetal. As células com maior perda florestal localizam-se predominantemente no interior noroeste do estado, em altitudes baixas (300-500 m) e latitudes menores, enquanto células com menor perda ou ganho concentram-se na Serra do Mar, em altitudes elevadas (800-1200 m) e latitude ligeiramente maior.
+A diferença entre os dois grupos mantém-se notavelmente constante em aproximadamente 5,0 a 5,5°C ao longo de três décadas e meia. As trajetórias histórica dos dois blocos de cada grupo apresentam comportamento coerente entre si, com as linhas vermelhas (Perda \#1 e Perda \#2) seguindo trajetórias praticamente paralelas, assim como as linhas verdes (Ganho \#1 e Ganho \#2), reforçando o padrão observado. Esta magnitude e persistência da diferença térmica sugerem que ela é primariamente determinada por fatores geográficos (altitude, latitude) \citep{alvares2013}, ao invés de mudanças dinâmicas na cobertura vegetal. Os blocos com maior perda florestal localizam-se predominantemente no interior noroeste do estado, em altitudes baixas (300--500m) e latitudes menores, enquanto blocos com ganho ou menor perda concentram-se na Serra do Mar, em altitudes elevadas (800--1200m) e latitude ligeiramente maior.
 
-Ambos os grupos apresentam tendência de aquecimento ao longo do período, particularmente visível após 2010. Células com maior perda florestal mostram aquecimento de aproximadamente 1,5 a 2,0 °C entre 1990 e 2020, enquanto células preservadas apresentam aquecimento de magnitude similar (1,0 a 1,5 °C).
+Ambos os grupos apresentam tendência clara de aquecimento ao longo do período, particularmente visível após 2010. Blocos com maior perda florestal mostram aquecimento de aproximadamente 1,5 a 2,0°C entre 1990 e 2024, enquanto blocos preservados apresentam aquecimento de magnitude similar (1,0 a 1,5°C). A consistência das taxas de aquecimento entre os dois grupos, independentemente da magnitude da mudança de cobertura florestal, sugere que o aquecimento regional é controlado primariamente por forçantes climáticas de grande escala \citep{ipcc2021} ao invés de mudanças locais na cobertura vegetal.
 
 \subsubsection*{Radiação Solar}
 
-A Figura \ref{fig:rad_extremos_sp} descreve o comportamento de radiação solar incidente fundamentalmente distinto entre os dois grupos de células. A célula com maior perda florestal (linha vermelha) apresentam valores consistentemente elevados, oscilando entre 205 e 235 W/m$^2$ ao longo da série temporal, com média aproximada de 220 W/m$^2$. Células preservadas (linha verde) mantêm radiação substancialmente inferior, variando entre 160 e 197 W/m$^2$, com média próxima a 180 W/m$^2$.
+A Figura \ref{fig:rad_extremos_sp} evidencia comportamento de radiação solar incidente fundamentalmente distinto entre os dois grupos de blocos. Os dois blocos com maior perda florestal (linhas vermelhas) apresentam valores consistentemente elevados e trajetórias altamente coerentes entre si, oscilando entre 205 e 238~W/m$^2$ ao longo da série temporal, com média aproximada de 220~W/m$^2$. Os dois blocos preservados (linhas verdes) mantêm radiação substancialmente inferior, também com alta coerência interna, variando entre 170 e 220~W/m$^2$, com média próxima a 190~W/m$^2$.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{medias_anuais_SIS_formacao_florestal_sp.png}
-	\caption{Médias anuais de radiação solar incidente (W/m$^2$) em células com maior versus menor redução de formação florestal em São Paulo (1990-2020).}
+	\includegraphics[width=\textwidth]{fig/rad_formacao_florestal_sp.png}
+	\caption{Médias anuais de radiação solar incidente (W/m$^2$) em quatro blocos extremos de mudança de formação florestal em São Paulo (1990--2024). Linhas vermelhas: blocos com maior perda florestal. Linhas verdes: blocos com ganho ou menor perda florestal.}
 	\label{fig:rad_extremos_sp}
 \end{figure}
 
-A diferença radiativa entre os grupos permanece aproximadamente constante em 40 a 50 W/m$^2$ ao longo do período, representando redução de cerca de 20 a 25\% na radiação disponível nas áreas preservadas comparadas às áreas desmatadas. Esta diferença é geograficamente determinada: células preservadas na Serra do Mar apresentam maior nebulosidade orográfica devido ao levantamento de massas de ar úmidas oceânicas, enquanto células do interior noroeste beneficiam-se de maior transparência atmosférica e menor nebulosidade média o que implica em maior incidência de radiação sobre a superfície.
+A diferença radiativa entre os grupos permanece aproximadamente constante em 30 a 40~W/m$^2$ ao longo do período, representando redução de cerca de 15 a 20\% na radiação disponível nas áreas preservadas comparadas às áreas com maior perda florestal. A alta coerência temporal entre os dois blocos de cada grupo (linhas praticamente paralelas dentro de cada cor) demonstra que esta diferença é geograficamente determinada e persistente. Regiões preservadas na Serra do Mar apresentam maior nebulosidade orográfica devido ao levantamento de massas de ar úmidas oceânicas, enquanto blocos do interior noroeste beneficiam-se de maior transparência atmosférica e menor nebulosidade média, resultando em maior incidência de radiação sobre a superfície \citep{yamasoe2017}.
 
-Ambos os grupos apresentam tendência de aumento da radiação solar ao longo do período, particularmente evidente após 2010. A taxa de aumento é similar entre os grupos (aproximadamente 15 a 20 W/m$^2$ ao longo de 30 anos).
+Ambos os grupos apresentam tendência de aumento da radiação solar ao longo do período, particularmente evidente após 2015. A taxa de aumento é similar entre os grupos (aproximadamente 15 a 20~W/m$^2$ ao longo de 34 anos), com ambas as linhas de cada grupo seguindo trajetórias ascendentes paralelas, sugerindo que esta tendência de brightening \citep{wild2012} é controlada por processos atmosféricos regionais ao invés de mudanças locais na cobertura vegetal.
 
 \subsubsection*{Precipitação}
 
-A Figura \ref{fig:prec_extremos_sp} apresenta diferenças de acumulado de precipitação marcantes entre os dois grupos de células. Células com menor redução ou ganho florestal (linha verde), localizadas predominantemente na Serra do Mar, apresentam precipitação acumulada anual consistentemente superior, oscilando entre 80.000 e 110.000 mm acumulados (equivalente a aproximadamente 800 a 1100 mm anuais quando considerada a área total das células), com média próxima a 90.000 mm. Em contraste, células com maior perda florestal (linha vermelha), situadas no interior noroeste, apresentam valores substancialmente inferiores, variando entre 60.000 e 95.000 mm, com média próxima a 75.000 mm.
+A Figura \ref{fig:prec_extremos_sp} apresenta diferenças marcantes de precipitação acumulada entre os dois grupos de blocos. Os dois blocos com ganho ou menor perda florestal (linhas verdes), localizados predominantemente na Serra do Mar, apresentam precipitação acumulada anual consistentemente superior e trajetórias altamente coerentes entre si, oscilando entre 60.000 e 110.000~mm acumulados, com média próxima a 85.000~mm. Em contraste, os dois blocos com maior perda florestal (linhas vermelhas), situados no interior noroeste, apresentam valores substancialmente inferiores e também alta coerência interna, variando entre 50.000 e 80.000~mm, com média próxima a 65.000~mm.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{acumulados_anuais_prec_formacao_florestal_sp.png}
-	\caption[Precipitação total anual (mm) em células com maior versus menor redução de formação florestal em São Paulo (1990-2020)]{Precipitação total anual (mm) em células com maior versus menor redução de formação florestal em São Paulo (1990-2020). Valores representam acumulados totais considerando a área das células de grade.}
+	\includegraphics[width=\textwidth]{fig/prec_formacao_florestal_sp.png}
+	\caption[Precipitação total anual (mm) em quatro blocos extremos de mudança de formação florestal em São Paulo (1990--2024)]{Precipitação total anual (mm) em quatro blocos extremos de mudança de formação florestal em São Paulo (1990--2024). Valores representam acumulados totais considerando a área dos blocos de grade. Linhas vermelhas: blocos com maior perda florestal. Linhas verdes: blocos com ganho ou menor perda florestal.}
 	\label{fig:prec_extremos_sp}
 \end{figure}
 
-A diferença de precipitação entre os grupos mantém-se relativamente constante ao longo do período, oscilando entre 10.000 e 25.000 mm dependendo do ano específico, equivalente a aproximadamente 15 a 30\% a mais de precipitação nas áreas preservadas. Esta diferença é primariamente determinada por efeitos orográficos: células preservadas na Serra do Mar beneficiam-se de intensificação pluviométrica devido ao levantamento forçado de massas de ar úmidas oceânicas que ascendem as encostas da serra, experimentam resfriamento adiabático, condensação e precipitação intensificada particularmente nas vertentes voltadas para o oceano.
+A diferença de precipitação entre os grupos mantém-se relativamente constante ao longo do período, oscilando entre 15.000 e 30.000~mm dependendo do ano específico, equivalente a aproximadamente 20 a 35\% a mais de precipitação nas áreas preservadas. A alta coerência entre os dois blocos de cada grupo (trajetórias praticamente paralelas dentro de cada cor) demonstra que esta diferença é novamente geograficamente determinada. Esta diferença é controlada por efeitos como: blocos preservados na Serra do Mar beneficiam-se de intensificação pluviométrica devido ao levantamento forçado de massas de ar úmidas oceânicas que ascendem as encostas da serra, experimentam resfriamento adiabático, condensação e precipitação intensificada, particularmente nas vertentes voltadas para o oceano \citep{nimer1989, alvares2013}.
 
-A interpretação destas diferenças pluviométricas requer cuidado: embora células preservadas recebam substancialmente mais precipitação, esta diferença reflete primariamente localização geográfica (Serra do Mar versus interior) ao invés de efeitos diretos da cobertura vegetal. As mesmas características topográficas que induzem alta precipitação orográfica também favoreceram historicamente a preservação florestal, criando correlação geográfica que não implica necessariamente causalidade. Efeitos da vegetação sobre precipitação local (através de evapotranspiração e reciclagem de umidade) podem existir mas são secundários comparados ao forte controle topográfico dominante.
+Observa-se tendência sutil de redução de precipitação em ambos os grupos após 2015, com os blocos de maior perda florestal apresentando declínio ligeiramente mais significativo. Porém, a interpretação destas diferenças de precipitação requer um aprofundamento na análise: embora blocos preservados recebam substancialmente mais precipitação, esta diferença reflete primariamente localização geográfica (Serra do Mar versus interior) ao invés de efeitos diretos da cobertura vegetal \citep{li2015local}. As mesmas características topográficas que induzem alta precipitação também favoreceram historicamente a preservação florestal, criando correlação geográfica que não implica necessariamente causalidade. Efeitos da vegetação sobre precipitação local através de evapotranspiração e ciclagem de umidade \citep{eagleson1978, Trenberth2009} podem existir.
 
 \subsection{Rio Grande do Norte: Formação Savânica}
 
 \subsubsection*{Temperatura}
 
-A Figura \ref{fig:temp_extremos_rn} apresenta as médias anuais de temperatura para células com maior versus menor redução de Caatinga no Rio Grande do Norte. Em contraste marcante com São Paulo, observa-se que os dois grupos apresentam temperaturas surpreendentemente similares ao longo de todo o período analisado. Células com maior redução de Caatinga (linha vermelha) oscilam entre 27,0 e 28,6 °C, enquanto células com menor redução ou ganho (linha verde) variam entre 26,4 e 28,6 °C, com as duas linhas frequentemente convergindo ou até invertendo suas posições relativas.
+A Figura \ref{fig:temp_extremos_rn} apresenta as médias anuais de temperatura para os quatro blocos extremos de mudança de Caatinga no Rio Grande do Norte. Em contraste marcante com São Paulo, observa-se que os quatro blocos apresentam temperaturas altamente convergentes ao longo de todo o período analisado, com as quatro linhas frequentemente entrelaçadas e sobrepondo-se umas às outras. Os dois blocos com maior redução de Caatinga (linhas vermelhas) oscilam entre 27,0 e 29,2°C, enquanto os dois blocos com ganho ou menor redução (linhas verdes) variam entre 27,0 e 28,5°C, com todas as quatro linhas convergindo repetidamente ao longo da série temporal.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{temp.png}
-	\caption{Médias anuais de temperatura (°C) em células com maior versus menor redução de formação savânica (Caatinga) no Rio Grande do Norte (1990-2020).}
+	\includegraphics[width=\textwidth]{fig/temp_formacao_savânica_rn.png}
+	\caption{Médias anuais de temperatura (°C) em quatro blocos extremos de mudança de formação savânica (Caatinga) no Rio Grande do Norte (1990--2024). Linhas vermelhas: blocos com maior perda de Caatinga. Linhas verdes: blocos com ganho ou menor perda de Caatinga.}
 	\label{fig:temp_extremos_rn}
 \end{figure}
 
-A diferença térmica média entre os grupos é mínima, tipicamente inferior a 0,5 °C, e não apresenta consistência temporal ou espacial. Ambos os grupos apresentam alta variabilidade interanual (oscilações de até 2 °C entre anos consecutivos), refletindo flutuações em circulação atmosférica e nebulosidade. Esta variabilidade supera amplamente qualquer possível diferença sistemática entre áreas preservadas e degradadas, dificultando severamente a identificação de sinais associados especificamente a mudanças na cobertura de Caatinga. A análise visual sugere possível tendência sutil de aquecimento ao longo do período em ambos os grupos, consistente com tendências regionais apresentadas anteriormente, mas sem diferença detectável nas taxas de aquecimento entre células preservadas e degradadas.
+A diferença térmica média entre os grupos é mínima, tipicamente inferior a 0,5°C, e não apresenta consistência temporal. A ausência de diferenciação clara entre os quatro blocos, independentemente da magnitude da mudança de cobertura vegetal, contrasta fortemente com o padrão observado em São Paulo. A variabilidade interanual supera amplamente qualquer possível diferença sistemática entre áreas preservadas e degradadas, dificultando na identificação de sinais associados especificamente a mudanças na cobertura de Caatinga. A análise visual sugere possível tendência sutil de aquecimento ao longo do período em todos os blocos, consistente com tendências regionais apresentadas anteriormente \citep{santos2014caatinga}, mas sem diferença detectável nas taxas de aquecimento entre blocos preservados e degradados.
 
 \subsubsection*{Radiação Solar}
 
-A Figura \ref{fig:rad_extremos_rn} apresenta padrão notavelmente distinto daquele observado em São Paulo. Células com maior redução de Caatinga (linha vermelha) e células com menor redução ou ganho (linha verde) apresentam valores de radiação solar surpreendentemente similares, oscilando em faixas que se sobrepõem substancialmente ao longo da série temporal. Ambos os grupos variam entre aproximadamente 245 e 278 W/m$^2$, com alta variabilidade interanual mas sem diferença sistemática consistente entre eles.
+A Figura \ref{fig:rad_extremos_rn} apresenta padrão notavelmente distinto daquele observado em São Paulo. Os quatro blocos (dois de maior perda de Caatinga em vermelho e dois de ganho ou menor perda em verde) apresentam valores de radiação solar altamente convergentes, com as quatro linhas entrelaçando-se e sobrepondo-se substancialmente ao longo da série temporal. Todos os blocos oscilam em faixas que se sobrepõem amplamente, variando entre aproximadamente 245 e 277~W/m$^2$, sem diferença sistemática consistente entre blocos de perda e blocos de ganho.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{rad.png}
-	\caption{Médias anuais de radiação solar incidente (W/m$^2$) em células com maior versus menor redução de formação savânica (Caatinga) no Rio Grande do Norte (1990-2020).}
+	\includegraphics[width=\textwidth]{fig/rad_formação_savânica_rn.png}
+	\caption{Médias anuais de radiação solar incidente (W/m$^2$) em quatro blocos extremos de mudança de formação savânica (Caatinga) no Rio Grande do Norte (1990--2024). Linhas vermelhas: blocos com maior perda de Caatinga. Linhas verdes: blocos com ganho ou menor perda de Caatinga.}
 	\label{fig:rad_extremos_rn}
 \end{figure}
 
-A alta variabilidade interanual observada em ambos os grupos (oscilações de até 30 a 35 W/m$^2$ entre anos consecutivos) supera amplamente qualquer diferença média entre os grupos, dificultando a identificação de sinais associados especificamente a mudanças na cobertura vegetal. Esta variabilidade está provavelmente associada a flutuações na nebulosidade durante a estação chuvosa, que varia dramaticamente de ano para ano dependendo da intensidade e posicionamento da Zona de Convergência Intertropical.
+A alta variabilidade interanual observada em todos os blocos (oscilações de até 30 a 35~W/m$^2$ entre anos consecutivos) supera amplamente qualquer diferença média potencial entre os grupos, dificultando a identificação de sinais associados especificamente a mudanças na cobertura vegetal \citep{alkama2016biophysical, duveiller2018local}. O entrelaçamento constante das quatro linhas ao longo de toda a série temporal demonstra que blocos com históricos radicalmente distintos de mudança de cobertura (perda severa versus ganho substancial) experimentam condições radiativas essencialmente indistinguíveis. Esta variabilidade está provavelmente associada a flutuações na nebulosidade durante a estação chuvosa \citep{medeiros2017}, que varia de ano para ano dependendo da intensidade e posicionamento da Zona de Convergência Intertropical \citep{kousky1980diurnal}.
 
 \subsubsection*{Precipitação}
 
-A Figura \ref{fig:prec_extremos_rn} apresenta o comportamento da precipitação acumulada com características específicas do semiárido. Ambos os grupos (maior redução - linha vermelha; menor redução ou ganho - linha verde) apresentam precipitação total anual variando entre 200 e 1250 mm, com variabilidade interanual extremamente elevada que domina completamente qualquer diferença média entre os grupos.
+A Figura \ref{fig:prec_extremos_rn} apresenta o comportamento da precipitação acumulada com características específicas do semiárido. Os quatro blocos apresentam precipitação total anual variando entre aproximadamente 3.000 e 30.000~mm, com variabilidade interanual extremamente elevada que domina completamente qualquer diferença média potencial entre os grupos. As quatro linhas entrelaçam-se de forma consistente ao longo da série, com alternância frequente de posições entre blocos de perda e blocos de ganho.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{prec.png}
-	\caption{Precipitação total anual (mm) em células com maior versus menor redução de formação savânica (Caatinga) no Rio Grande do Norte (1990-2020).}
+	\includegraphics[width=\textwidth]{fig/prec_formação_savânica_rn.png}
+	\caption{Precipitação total anual (mm) em quatro blocos extremos de mudança de formação savânica (Caatinga) no Rio Grande do Norte (1990--2024). Linhas vermelhas: blocos com maior perda de Caatinga. Linhas verdes: blocos com ganho ou menor perda de Caatinga.}
 	\label{fig:prec_extremos_rn}
 \end{figure}
 
-O coeficiente de variação interanual para ambos os grupos excede 60\%, valor extremamente elevado mesmo para padrões semiáridos. Eventos de seca severa (precipitação <300 mm/ano) alternam-se com anos relativamente úmidos ($>$1000 mm/ano) sem padrão previsível. Esta alta variabilidade dificulta a identificação de possíveis diferenças entre áreas preservadas e degradadas.
+O coeficiente de variação interanual para todos os blocos excede 60\%, valor altos mesmo para padrões semiáridos \citep{marengo2017drought, marengo2017}. Eventos de seca severa (precipitação $<$5.000~mm) alternam-se com anos relativamente úmidos ($>$25.000~mm) sem padrão previsível. Esta alta variabilidade dificulta a identificação de possíveis diferenças entre áreas preservadas e degradadas.
 
-Células com menor redução ou ganho de Caatinga (linha verde) apresentam tendência sutil de precipitação ligeiramente superior em alguns anos, particularmente visível nos picos de 2008-2009 (~1250 mm) e 2024 (~1150 mm). No entanto, esta diferença não é consistente ao longo da série e pode refletir simplesmente localização geográfica das células (sul do estado tipicamente recebe precipitação ligeiramente superior) ao invés de efeitos diretos da cobertura vegetal.
+Os dois blocos com ganho ou menor perda de Caatinga (linhas verdes) apresentam tendência sutil de precipitação ligeiramente superior em alguns anos, particularmente visível nos picos de 2011 (~30.000~mm) e 2024 (~26.000~mm). No entanto, esta diferença não é consistente ao longo da série e pode refletir simplesmente localização geográfica dos blocos (sul do estado tipicamente recebe precipitação ligeiramente superior devido à maior influência de sistemas frontais) \citep{velloso2002_ecorregioes_caatinga} ao invés de efeitos diretos da cobertura vegetal. A convergência frequente das quatro linhas em anos secos (particularmente 2012--2013 e 2016--2017) demonstra que em condições de seca severa, controlada por circulação atmosférica de grande escala, possíveis efeitos locais da vegetação tornam-se irrelevantes.
 
 \subsection{Evolução espaciotemporal das variáveis climáticas e uso da terra}
 
@@ -931,7 +1126,7 @@ As Figuras \ref{fig:mapas_temporais_rn} e \ref{fig:mapas_temporais_sp} apresenta
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{mapas_sp.png}
+	\includegraphics[width=\textwidth]{fig/mapas_sp.png}
 	\caption[Evolução temporal do uso da terra - SP]{Evolução temporal do uso da terra (linha superior), precipitação acumulada anual (segunda linha), temperatura média anual (terceira linha) e radiação solar média anual (linha inferior) em São Paulo para os anos de 1990, 2000, 2010 e 2020.}
 	\label{fig:mapas_temporais_sp}
 \end{figure}
@@ -946,7 +1141,7 @@ A radiação solar mantém padrão inverso ao da precipitação (máximos no int
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{mapas_rn.png}
+	\includegraphics[width=\textwidth]{fig/mapas_rn.png}
 	\caption[Evolução temporal do uso da terra - RN]{Evolução temporal do uso da terra (linha superior), precipitação acumulada anual (segunda linha), temperatura média anual (terceira linha) e radiação solar média anual (linha inferior) no Rio Grande do Norte para os anos de 1990, 2000, 2010 e 2020.}
 	\label{fig:mapas_temporais_rn}
 \end{figure}
@@ -978,7 +1173,7 @@ A análise da influência da Formação Florestal (Classe 3) sobre as variáveis
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{histograma_beta_influencia_cobertura_clima_sp_classe3.png}
+	\includegraphics[width=1\textwidth]{fig/histograma_beta_influencia_cobertura_clima_sp_classe3.png}
 	\caption[Distribuição dos coeficientes $\beta$ para Formação Florestal em São Paulo]{Distribuição dos coeficientes angulares ($\beta$) obtidos por regressão linear entre a fração de Formação Florestal (Classe 3) e as variáveis climáticas temperatura do ar, precipitação acumulada e radiação solar incidente, para o estado de São Paulo. A linha tracejada vertical indica $\beta = 0$.}
 	\label{fig:hist_beta_sp_classe3}
 \end{figure}
@@ -997,7 +1192,7 @@ Em contraste marcante com a Formação Florestal, a análise da influência da �
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{histograma_beta_influencia_cobertura_clima_sp_classe24.png}
+	\includegraphics[width=1\textwidth]{fig/histograma_beta_influencia_cobertura_clima_sp_classe24.png}
 	\caption[Distribuição dos coeficientes $\beta$ para Área Urbanizada em São Paulo]{Distribuição dos coeficientes angulares ($\beta$) obtidos por regressão linear entre a fração de Área Urbanizada (Classe 24) e as variáveis climáticas temperatura do ar, precipitação acumulada e radiação solar incidente, para o estado de São Paulo. Observe a forte assimetria positiva para temperatura e radiação.}
 	\label{fig:hist_beta_sp_classe24}
 \end{figure}
@@ -1020,7 +1215,7 @@ A análise da Formação Savânica (Caatinga, Classe 4) no Rio Grande do Norte (
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{histograma_beta_influencia_cobertura_clima_rn_classe4.png}
+	\includegraphics[width=1\textwidth]{fig/histograma_beta_influencia_cobertura_clima_rn_classe4.png}
 	\caption[Distribuição dos coeficientes $\beta$ para Formação Savânica no Rio Grande do Norte]{Distribuição dos coeficientes angulares ($\beta$) obtidos por regressão linear entre a fração de Formação Savânica (Classe 4) e as variáveis climáticas no Rio Grande do Norte. Observe as distribuições aproximadamente simétricas e centradas próximas a zero.}
 	\label{fig:hist_beta_rn_classe4}
 \end{figure}
@@ -1041,7 +1236,7 @@ A análise da Área Urbanizada (Classe 24) no Rio Grande do Norte (Figura~\ref{f
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{histograma_beta_influencia_cobertura_clima_rn_classe24.png}
+	\includegraphics[width=1\textwidth]{fig/histograma_beta_influencia_cobertura_clima_rn_classe24.png}
 	\caption[Distribuição dos coeficientes $\beta$ para Área Urbanizada no Rio Grande do Norte]{Distribuição dos coeficientes angulares ($\beta$) obtidos por regressão linear entre a fração de Área Urbanizada (Classe 24) e as variáveis climáticas no Rio Grande do Norte.}
 	\label{fig:hist_beta_rn_classe24}
 \end{figure}

@@ -1,30 +1,75 @@
 \chapter{Área de Estudo}
 \label{cap:area_estudo}
 
-A área de estudo compreende os estados de São Paulo (SP) e Rio Grande do Norte (RN), localizados, respectivamente, nas regiões Sudeste e Nordeste do Brasil (Figuras~\ref{fig:mapa_clima_sp} e~\ref{fig:mapa_clima_rn}). A seleção dessas unidades federativas fundamenta-se na representatividade de regimes climáticos distintos, evidenciada por diferenças fisiográficas e hidrológicas, bem como pela diversidade de tipos climáticos, biomas e padrões de uso e cobertura da terra. A caracterização climática regional é apresentada com base na classificação climática de Köppen-Geiger \citep{alvares2013}, enquanto os aspectos relacionados aos biomas e ao uso da terra seguem a classificação oficial dos biomas brasileiros e mapeamentos recentes de uso e cobertura da terra \citep{ibge_biomas2004,ibge_biomas_pagina,mapbiomas_collection8_platform}.
+A área de estudo compreende os estados de São Paulo (SP) e Rio Grande do Norte (RN), localizados, respectivamente, nas regiões Sudeste e Nordeste do Brasil (Figura~\ref{fig:mapa_clima_brasil}). A seleção dessas unidades federativas fundamenta-se na representatividade de regimes climáticos contrastantes dentro do território brasileiro, evidenciada por diferenças fisiográficas, hidrológicas e climáticas significativas. São Paulo caracteriza-se pelo predomínio de climas subtropicais úmidos (Cfa, Cwa, Cwb), enquanto o Rio Grande do Norte apresenta predominância de clima semiárido quente (BSh) no interior e clima tropical úmido (As) na faixa litorânea (Figuras~\ref{fig:mapa_clima_sp} e~\ref{fig:mapa_clima_rn}), sendo estas classificações explicadas a partir da Tabela \ref{tab:koppen_classes}. Essa diversidade abrange distintos biomas e padrões de uso e cobertura da terra, possibilitando análises comparativas de variabilidade e mudanças climáticas em contextos ambientais diferenciados. A caracterização climática regional é apresentada com base na classificação de Köppen-Geiger \citep{alvares2013, Kottek2006}, enquanto os aspectos relacionados aos biomas e ao uso da terra seguem a classificação oficial dos biomas brasileiros e mapeamentos recentes de uso e cobertura da terra \citep{ibge_biomas2004,ibge_biomas_pagina,mapbiomas_collection8_platform}.
 
 \section{Caracterização Climática}
 
+\begin{table}[h!]
+\centering
+\caption{Descrição das classes climáticas segundo a classificação de Köppen-Geiger. 
+A primeira letra indica o grupo climático principal, a segunda o regime de precipitação 
+e a terceira (quando presente) o regime térmico.}
+\label{tab:koppen_classes}
+
+\renewcommand{\arraystretch}{1.2} % aumenta espaçamento vertical
+
+\begin{tabular}{cl}
+\hline
+\textbf{Sigla} & \textbf{Descrição} \\
+\hline
+
+\multicolumn{2}{l}{\textbf{Climas Tropicais (A)}} \\
+Af  & Tropical úmido \\
+Am  & Tropical de monção \\
+Aw  & Tropical com estação seca \\
+As  & Tropical com verão seco \\[4pt]
+
+\multicolumn{2}{l}{\textbf{Climas Secos (B)}} \\
+BSh & Semiárido quente \\[4pt]
+
+\multicolumn{2}{l}{\textbf{Climas Subtropicais (C)}} \\
+Cfa & Subtropical úmido \\
+Cfb & Subtropical oceânico \\
+Cwa & Subtropical com inverno seco \\
+Cwb & Subtropical de altitude \\
+Csa & Mediterrâneo quente \\
+
+\hline
+\end{tabular}
+\end{table}
+
+
+O Brasil apresenta grande diversidade climática em função de sua extensão territorial, variação latitudinal e características fisiográficas (Figura~\ref{fig:mapa_clima_brasil}). Segundo a classificação de Köppen-Geiger \citep{alvares2013, Kottek2006}, o território brasileiro abrange desde climas tropicais úmidos (Af, Am, Aw) predominantes na região Norte e em parte da faixa litorânea, passando por climas semiáridos (BSh) característicos do interior nordestino, até climas subtropicais (Cfa, Cfb, Cwa, Cwb) que ocorrem nas regiões Sul e Sudeste. As principais classes climáticas e suas características estão descritas na Tabela~\ref{tab:koppen_classes}. Essa classificação leva em consideração o abordado no material disponibilizado pelo \cite{forestgis2015} que disponibiliza a classificação Köppen-Geiger em formato shapefile, podendo ser utilizado via malhas no software QGIS.
+
 \begin{figure}[h!]
 \centering
-\fbox{\includegraphics[width=0.7\textwidth]{mapa_clima_sp.png}}
+\fbox{\includegraphics[width=0.85\textwidth]{fig/mapa_bio.png}}
+\caption[Classificação climática de Köppen-Geiger no Brasil.]
+{Distribuição espacial dos tipos climáticos segundo a classificação de Köppen-Geiger no território brasileiro. Observa-se ampla diversidade climática, com predomínio de climas tropicais úmidos (Af, Am, Aw) na Amazônia e costa atlântica norte, climas semiáridos (BSh) no sertão nordestino, e climas subtropicais (Cfa, Cfb, Cwa, Cwb) nas regiões Sul e Sudeste. Os estados de São Paulo e Rio Grande do Norte, encontram-se em destaque com contornos em vermelho (detalhamento nas Figuras~\ref{fig:mapa_clima_sp} e~\ref{fig:mapa_clima_rn}). Fonte: \cite{alvares2013, Kottek2006}, adaptado via QGIS.}
+\label{fig:mapa_clima_brasil}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\fbox{\includegraphics[width=0.85\textwidth]{fig/mapa_sp_bio.png}}
 \caption[Classificação climática de Köppen-Geiger no estado de São Paulo.]
-{Distribuição espacial dos tipos climáticos segundo a classificação de Köppen-Geiger no estado de São Paulo. Predominam climas subtropicais úmidos, com variações associadas à sazonalidade da precipitação e à altitude, incluindo os tipos Cfa, Cwa e Cwb. Fonte: Alvares et al. (2013), adaptado.}
+{Distribuição espacial dos tipos climáticos segundo a classificação de Köppen-Geiger no estado de São Paulo. O estado apresenta predominância de climas subtropicais, com destaque para o tipo Cfa (subtropical úmido sem estação seca) no centro-sul e litoral, Cwa (subtropical com inverno seco) no interior e planalto ocidental, e Cwb (subtropical de altitude com inverno seco) em regiões serranas e de maior elevação. Pequenas áreas com clima tropical (Am, Aw) ocorrem no extremo norte, enquanto o tipo Cfb (subtropical oceânico) aparece em porções da Serra da Mantiqueira e litoral sul. Fonte: \cite{alvares2013, Kottek2006}, adaptado via QGIS.}
 \label{fig:mapa_clima_sp}
 \end{figure}
 
-No estado de São Paulo (Figura~\ref{fig:mapa_clima_sp}), observa-se o predomínio de climas subtropicais úmidos, com variações espaciais associadas à altitude, à continentalidade e à proximidade com o oceano Atlântico. Na faixa litorânea, a atuação da Serra do Mar contrubio para maior precipitação orográfica e para a ocorrência de climas mais úmidos, enquanto regiões de maior altitude, como a Serra da Mantiqueira, apresentam temperaturas médias mais amenas. No interior do estado, predominam climas com estação seca mais bem definida no inverno.
-
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth]{mapa_clima_rn.png}
+\fbox{\includegraphics[width=0.85\textwidth]{fig/mapa_rn_bio.png}}
 \caption[Classificação climática de Köppen-Geiger no estado do Rio Grande do Norte.]
-{Distribuição espacial dos tipos climáticos segundo a classificação de Köppen-Geiger no estado do Rio Grande do Norte. Observa-se o predomínio do clima semiárido quente (BSh), com diferenciação entre áreas com estação seca no inverno (BShw) e no verão (BSsh), abrangendo grande parte do interior do estado. Fonte: Silva (2009), adaptado.}
+{Distribuição espacial dos tipos climáticos segundo a classificação de Köppen-Geiger no estado do Rio Grande do Norte. O estado caracteriza-se pelo predomínio do clima semiárido quente (BSh) em praticamente todo o interior, ocupando a maior extensão territorial. Na faixa litorânea, observa-se a transição para climas tropicais, com presença do tipo As (tropical com verão seco) no litoral oriental e norte, e pequenas áreas de clima Aw (tropical com inverno seco) no extremo sul. Essa configuração reflete o gradiente de precipitação do litoral para o interior. Fonte: \cite{alvares2013, Kottek2006}, adaptado via QGIS.}
 \label{fig:mapa_clima_rn}
 \end{figure}
 
-No Rio Grande do Norte (Figura~\ref{fig:mapa_clima_rn}), predominam condições climáticas semiáridas no interior do estado, caracterizadas por elevada irregularidade espacial e temporal da precipitação. Na faixa litorânea oriental e em áreas mais próximas ao oceano Atlântico, ocorrem climas tropicais mais úmidos, do tipo savana (Aw) e tropical chuvoso com estação seca curta (As). Essa configuração climática reflete a forte influência da Zona de Convergência Intertropical (ZCIT), cuja posição latitudinal controla a sazonalidade das chuvas na região.
+No estado de São Paulo (Figura~\ref{fig:mapa_clima_sp}), observa-se a predominância de climas subtropicais úmidos, com variações espaciais associadas à altitude, à continentalidade e à proximidade com o oceano Atlântico. A porção centro-sul do estado e a faixa litorânea são caracterizadas pelo clima Cfa (subtropical úmido sem estação seca), com precipitação bem distribuída ao longo do ano e verões quentes. Na faixa litorânea, a presença da Serra do Mar contribui para o aumento da precipitação orográfica, mantendo elevados totais pluviométricos mesmo nos meses mais secos. No interior e no planalto ocidental, predomina o clima Cwa (subtropical com inverno seco), caracterizado por uma estação seca bem definida entre os meses de abril e setembro, com concentração das chuvas no período de verão. Nas regiões de maior altitude, como a Serra da Mantiqueira e porções elevadas da Serra do Mar, ocorre o clima Cwb (subtropical de altitude com inverno seco), que se diferencia do Cwa por apresentar verões mais amenos devido à elevação topográfica.
 
+No Rio Grande do Norte (Figura~\ref{fig:mapa_clima_rn}), predominam condições climáticas semiáridas em praticamente todo o interior do estado, caracterizadas pelo clima BSh (semiárido quente). Este domínio climático apresenta elevada irregularidade espacial e temporal da precipitação, com totais anuais geralmente inferiores a 800 mm e forte variabilidade interanual. A estação chuvosa concentra-se nos meses de fevereiro a maio, período de maior atuação da Zona de Convergência Intertropical (ZCIT), principal sistema indutor de precipitação na região. Na faixa litorânea oriental e norte do estado, observa-se a transição para climas tropicais, com predomínio do tipo As (tropical com verão seco). Este padrão, menos comum entre os climas tropicais, caracteriza-se por uma estação seca que ocorre nos meses de verão (setembro a fevereiro), com a estação chuvosa concentrada no outono-inverno. Pequenas áreas no litoral sul apresentam o clima Aw (tropical com inverno seco), padrão mais típico dos climas tropicais brasileiros. Essa configuração climática reflete um gradiente de precipitação do litoral para o interior, associado à atuação diferenciada de sistemas atmosféricos.
+\newpage
 \section{Localização Geográfica e Caracterização Fisiográfica}
 
 O estado de São Paulo situa-se entre aproximadamente 19°S e 25°S de latitude e 44°W e 53°W de longitude, abrangendo uma área de cerca de 248.200 km$^2$. O relevo paulista é caracterizado pela predominância de planaltos e depressões, com destaque para o Planalto Atlântico, a Depressão Periférica Paulista e as faixas serranas da Serra do Mar e da Serra da Mantiqueira. Essas feições topográficas exercem influência direta sobre os padrões de circulação atmosférica regional, a distribuição da precipitação e os gradientes térmicos, especialmente em função dos efeitos orográficos e da proximidade com o Oceano Atlântico \citep{ibge_biomas_pagina}.
@@ -33,7 +78,7 @@ O clima predominante no estado é o subtropical úmido, com estação chuvosa be
 
 O estado do Rio Grande do Norte localiza-se entre aproximadamente 4°S e 7°S de latitude e 34°W e 38°W de longitude, com área aproximada de 52.800 km$^2$. O relevo é predominantemente plano a suavemente ondulado, com presença de planaltos residuais e depressões sertanejas, o que resulta em menor influência orográfica sobre a precipitação quando comparado ao Sudeste brasileiro \citep{ibge_biomas_pagina}.
 
-O clima do Rio Grande do Norte varia do tropical úmido na faixa litorânea ao semiárido no interior do estado. A precipitação apresenta forte irregularidade espacial e temporal, com totais médios anuais superiores a 1.200 mm no litoral oriental e valores inferiores a 600 mm em extensas áreas do Sertão. A dinâmica climática regional é fortemente influenciada pela Zona de Convergência Intertropical (ZCIT), além de teleconexões oceânicas associadas às anomalias de temperatura da superfície do mar no Atlântico tropical \citep{marengo2017}.
+O clima do Rio Grande do Norte varia do tropical úmido na faixa litorânea ao semiárido no interior do estado. A precipitação apresenta forte irregularidade espacial e temporal, com totais médios anuais superiores a 1.200 mm no litoral oriental e valores inferiores a 600 mm em extensas áreas do sertão. A dinâmica climática regional é fortemente influenciada pela Zona de Convergência Intertropical (ZCIT), além de teleconexões oceânicas associadas às anomalias de temperatura da superfície do mar no Atlântico tropical \citep{marengo2017}.
 
 \section{Biomas e Uso e Cobertura da Terra}
 
@@ -44,28 +89,27 @@ As classes de uso e cobertura da terra consideradas neste estudo seguem a legend
 \begin{table}[H]
 \centering
 \caption[Classes de uso e cobertura da terra do MapBiomas.]
-{Descrição das classes de uso e cobertura da terra adotadas neste estudo, conforme a legenda oficial do projeto MapBiomas (Coleção 9). A coluna de cores corresponde à simbologia utilizada nos mapas temáticos apresentados.}
+{Descrição das classes de uso e cobertura da terra adotadas neste estudo, conforme a legenda oficial do projeto MapBiomas (Coleção 9, segundo catálogo de classes disponível em: \url{https://brasil.mapbiomas.org/wp-content/uploads/sites/4/2024/08/Legenda-Colecao-9-LEGEND-CODE.pdf}). A coluna de cores corresponde à simbologia utilizada nos mapas temáticos apresentados.}
 \label{tab:mapbiomas_classes}
-
 \begin{minipage}{0.48\textwidth}
 \centering
 \begin{tabular}{c c l}
 \hline
 \textbf{Código} & \textbf{Cor} & \textbf{Classe} \\
 \hline
-3  & \cellcolor{green!60}  & Formação Florestal \\
-4  & \cellcolor{green!40}  & Formação Savânica \\
-5  & \cellcolor{green!80}  & Mangue \\
-9  & \cellcolor{orange!70} & Formação Campestre \\
-11 & \cellcolor{cyan!50}   & Campo Alagado e Á. Pantanosa \\
-12 & \cellcolor{olive!60}  & Apicum \\
-15 & \cellcolor{yellow!60} & Pastagem \\
-20 & \cellcolor{pink!60}   & Cana \\
-21 & \cellcolor{gray!40}   & Mosaico de Usos \\
-23 & \cellcolor{orange!40} & Praia, Duna e Areal \\
-24 & \cellcolor{red!40}    & Área Urbanizada \\
-25 & \cellcolor{red!70}    & Outras Áreas não Vegetadas \\
-29 & \cellcolor{brown!50}  & Afloramento Rochoso \\
+3  & \cellcolor[RGB]{31, 141, 73}  & Formação Florestal \\
+4  & \cellcolor[RGB]{125, 201, 117}  & Formação Savânica \\
+5  & \cellcolor[RGB]{4, 56, 29}  & Mangue \\
+6 & \cellcolor[RGB]{0, 119, 133}   & Floresta Alagável \\
+12  & \cellcolor[RGB]{214, 188, 116} & Formação Campestre \\
+15 & \cellcolor[RGB]{237, 222, 140} & Pastagem \\
+20 & \cellcolor[RGB]{219, 112, 147}  & Cana \\
+21 & \cellcolor[RGB]{255, 239, 195}   & Mosaico de Usos \\
+23 & \cellcolor[RGB]{255, 160, 122} & Praia, Duna e Areal \\
+24 & \cellcolor[RGB]{212, 39, 30}    & Área Urbanizada \\
+25 & \cellcolor[RGB]{219, 77, 79}    & Outras Áreas não Vegetadas \\
+29 & \cellcolor[RGB]{255, 170, 95}  & Afloramento Rochoso \\
+32 & \cellcolor[RGB]{252, 129, 20}  & Apicum \\
 \hline
 \end{tabular}
 \end{minipage}
@@ -76,31 +120,29 @@ As classes de uso e cobertura da terra consideradas neste estudo seguem a legend
 \hline
 \textbf{Código} & \textbf{Cor} & \textbf{Classe} \\
 \hline
-
-30 & \cellcolor{brown!80}  & Mineração \\
-31 & \cellcolor{purple!50} & Aquicultura \\
-32 & \cellcolor{olive!80}  & Sal \\
-33 & \cellcolor{blue!60}   & Rio, Lago e Oceano \\
-39 & \cellcolor{orange!80} & Soja \\
-40 & \cellcolor{pink!40}   & Arroz \\
-41 & \cellcolor{pink!20}   & Outras Lavouras Temporárias \\
-46 & \cellcolor{green!30}  & Café \\
-47 & \cellcolor{yellow!40} & Citrus \\
-48 & \cellcolor{purple!30} & Outras Lavouras Perenes \\
-49 & \cellcolor{violet!50} & Floresta Plantada \\
-50 & \cellcolor{violet!20} & Restinga Arborizada \\
-75 & \cellcolor{gray!20}   & Desconhecido \\
+30 & \cellcolor[RGB]{156, 0, 39}  & Mineração \\
+31 & \cellcolor[RGB]{9, 16, 119} & Aquicultura \\
+33 & \cellcolor[RGB]{37, 50, 228}   & Rio, Lago e Oceano \\
+39 & \cellcolor[RGB]{245, 179, 200} & Soja \\
+40 & \cellcolor[RGB]{199, 21, 133}   & Arroz \\
+41 & \cellcolor[RGB]{245, 76, 169}   & Outras Lavouras Temporárias \\
+46 & \cellcolor[RGB]{214, 143, 226}  & Café \\
+47 & \cellcolor[RGB]{153, 50, 204} & Citrus \\
+48 & \cellcolor[RGB]{245, 76, 169} & Outras Lavouras Perenes \\
+49 & \cellcolor[RGB]{122, 89, 0} & Silvicultura \\
+50 & \cellcolor[RGB]{2, 214, 89} & Restinga Arbórea \\
+62 & \cellcolor[RGB]{255, 105, 180} & Algodão (beta) \\
+75 & \cellcolor[RGB]{255, 255, 255}   & Não observado \\
 \hline
 \end{tabular}
 \end{minipage}
-
 \end{table}
 
-No estado de São Paulo, o bioma predominante é a Mata Atlântica, originalmente caracterizada por florestas densas e elevada biodiversidade \citep{ribeiro2009_atlanticforest}. Entretanto, a cobertura florestal remanescente encontra-se altamente fragmentada em decorrência de séculos de ocupação antrópica, restando atualmente uma fração reduzida da vegetação original \citep{sos_inpe_atlas}. O uso da terra no estado é dominado por atividades agropecuárias, especialmente agricultura mecanizada e pastagens, além de extensas áreas urbanizadas concentradas na Região Metropolitana de São Paulo e em polos industriais do interior.
+No estado de São Paulo, o bioma predominante era a Mata Atlântica, originalmente caracterizada por florestas densas e elevada biodiversidade \citep{ribeiro2009_atlanticforest}. Entretanto, a cobertura florestal remanescente encontra-se altamente fragmentada em decorrência de séculos de ocupação antrópica, restando atualmente uma fração reduzida da vegetação original \citep{sos_inpe_atlas}. O uso da terra no estado é dominado por atividades agropecuárias, especialmente agricultura mecanizada e pastagens, além de extensas áreas urbanizadas concentradas na Região Metropolitana de São Paulo e em polos industriais do interior.
 
 \begin{figure}[H]
 \centering
-\fbox{\includegraphics[width=0.9\textwidth]{tex/mapa_sp.png}}
+\fbox{\includegraphics[width=0.9\textwidth]{fig/mapa_sp.png}}
 \caption[Uso e cobertura da terra no estado de São Paulo.]
 {Mapa de uso e cobertura da terra do estado de São Paulo, elaborado a partir da Coleção 9 do projeto MapBiomas (ano-base 2024). Fonte: Autor com auxílio do complemento MapBiomas Collection Official via QGIS.}
 \label{fig:mapa_uso_sp}
@@ -112,7 +154,7 @@ No estado do Rio Grande do Norte, o bioma Caatinga predomina na maior parte do t
 
 \begin{figure}[H]
 \centering
-\fbox{\includegraphics[width=0.9\textwidth]{tex/mapa_rn.png}}
+\fbox{\includegraphics[width=0.9\textwidth]{fig/mapa_rn.png}}
 \caption[Uso e cobertura da terra no estado do Rio Grande do Norte.]
 {Mapa de uso e cobertura da terra do estado do Rio Grande do Norte, elaborado a partir da Coleção 9 do projeto MapBiomas (ano-base 2024). Fonte: Autor com auxílio do complemento MapBiomas Collection Official via QGIS.}
 \label{fig:mapa_uso_rn}

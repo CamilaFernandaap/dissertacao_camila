@@ -11,7 +11,7 @@ O Painel Intergovernamental sobre Mudanças Climáticas (IPCC) tem documentado d
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{tex/IPCC_AR6_WGI_Figure_4_2.png}
+\includegraphics[width=0.8\textwidth]{fig/IPCC_AR6_WGI_Figure_4_2.png}
 \caption[Mudanças globais projetadas para a temperatura média da superfície e precipitação continental.]{Mudanças globais projetadas para a temperatura média da superfície, precipitação continental, área de gelo marinho do Ártico e nível médio do mar sob diferentes cenários socioeconômicos (SSPs). Fonte: IPCC (2021).}
 \label{fig:ipcc_ssp}
 \end{figure}
@@ -21,16 +21,18 @@ As projeções climáticas globais indicam que a magnitude das mudanças futuras
 No contexto brasileiro, a diversidade climática associada à grande extensão territorial configura um ambiente propício para estudos de variabilidade e tendências climáticas. O país apresenta regimes climáticos distintos, desde o clima tropical úmido da Amazônia até regiões semiáridas no Nordeste e clima subtropical no Sul, cada qual com vulnerabilidades específicas frente às mudanças climáticas.
 
 \section{Importância das Variáveis Climáticas Analisadas}
+Neste estudo, foram analisadas três variáveis meteorológicas: temperatura do ar, precipitação e radiação solar incidente na superfície. Essas variáveis representam componentes essenciais do balanço de energia e do ciclo hidrológico, permitindo caracterizar os regimes climáticos regionais e identificar tendências associadas 
+às mudanças climáticas nos estados de São Paulo e Rio Grande do Norte durante, especificamente no período de 1990 a 2025, no qual se concentra este trabalho.
 
 A escolha das variáveis temperatura, precipitação e radiação solar incidente na superfície fundamenta-se em sua relevância como indicadores centrais dos processos climáticos, uma vez que respondem diretamente às forçantes radiativas naturais e antropogênicas \citep{funk2015, wang2008}. Essas variáveis constituem pilares fundamentais do sistema climático terrestre e apresentam elevada sensibilidade a alterações na composição atmosférica.
 
 \subsection{Temperatura}
 
-A temperatura do ar representa o indicador mais direto do aquecimento global, refletindo o balanço energético da atmosfera. Variações na temperatura média influenciam padrões de evapotranspiração, demanda energética, circulação atmosférica e a distribuição espacial de espécies sensíveis ao clima. Eventos extremos de temperatura, como ondas de calor e frio, têm se tornado mais frequentes, com impactos diretos sobre a saúde pública e os sistemas urbanos.
+A temperatura do ar representa o indicador mais direto do aquecimento global, refletindo o balanço energético da atmosfera. Variações na temperatura média influenciam padrões de evapotranspiração, demanda energética, circulação atmosférica e a distribuição espacial de espécies sensíveis ao clima. Eventos extremos de temperatura, como ondas de calor e frio, têm se tornado mais frequentes, com impactos diretos sobre a saúde pública, espécies sensíveis da fauna e flora, e os sistemas urbanos, agrícolas e ecológicos.
 
-Estudos recentes documentam tendências de aquecimento em diversas regiões do Brasil. \cite{abreu2019} investigaram os principais fatores que controlam a temperatura do ar na região Sudeste, identificando a influência da zonalidade, continentalidade e altitude, além da cobertura da terra representada pelo NDVI e da cobertura de nuvens. Utilizando 26 anos de dados de 52 estações meteorológicas, os autores observaram um gradiente térmico noroeste--sudeste no estado de São Paulo, com variações de aproximadamente 3~°C na temperatura máxima média e 2~°C na temperatura mínima média.
+Estudos recentes documentam tendências de aquecimento em diversas regiões do Brasil. \cite{abreu2019} investigaram os principais fatores que controlam a temperatura do ar na região Sudeste, identificando a influência da zonalidade (distribuição latitudinal associada à incidência solar), continentalidade (distância em relação ao oceano) e altitude, além da cobertura da terra representada pelo NDVI (Normalized Difference Vegetation Index, ou Índice de Vegetação por Diferença Normalizada) e da cobertura de nuvens. Utilizando 26 anos de dados de 52 estações meteorológicas, os autores observaram um gradiente térmico noroeste--sudeste no estado de São Paulo, com variações de aproximadamente 3~°C na temperatura máxima média e 2~°C na temperatura mínima média.
 
-No contexto urbano, o fenômeno das ilhas de calor urbanas (ICU) intensifica as temperaturas locais, sobretudo em grandes centros urbanos. Campelo (2024) identificou em seu trabalho de dissertação um aumento da intensidade da ilha de calor urbana de superfície na região metropolitana de São Paulo da ordem de 0,13~°C por década, com intensidades superiores a 1,6~°C durante o dia e 2,6~°C durante a noite.
+No contexto urbano, o fenômeno das ilhas de calor urbanas (ICU) intensifica as temperaturas locais, sobretudo em grandes centros urbanos. Campelo (2024) identificou em seu trabalho um aumento da intensidade da ilha de calor urbana de superfície na região metropolitana de São Paulo da ordem de 0,13~°C por década, com intensidades superiores a 1,6~°C durante o dia e 2,6~°C durante a noite.
 
 \subsection{Precipitação}
 
@@ -44,28 +46,46 @@ Na região Sudeste, \cite{coelho2016} realizaram um diagnóstico detalhado do ev
 
 A radiação solar global constitui a principal fonte de energia do sistema climático terrestre, controlando processos como o aquecimento da superfície, a evaporação e a fotossíntese. A quantidade de energia solar que efetivamente atinge a superfície resulta da modulação da radiação ao longo de sua trajetória pela atmosfera, sendo fortemente influenciada pela presença de nuvens, aerossóis, vapor d’água e gases atmosféricos, os quais alteram os processos de absorção e espalhamento da radiação solar. Dessa forma, variações na radiação incidente afetam diretamente os balanços energéticos regionais e desempenham papel central na variabilidade climática.
 
-\cite{wang2008} apresentam uma revisão detalhada das metodologias para a estimativa da irradiância solar incidente na superfície (Surface Solar Irradiance – SSI) a partir de observações por satélite, abordando o desenvolvimento histórico dessas técnicas, assim como descrito pela Figura \ref{fig:evolucao} que menciona os métodos operacionais atualmente empregados, os procedimentos de validação e suas principais aplicações em escalas regional e global. Os autores demonstram que as primeiras tentativas de estimativa da irradiância solar por sensoriamento remoto remontam à década de 1960 e que, ao longo das décadas seguintes, o avanço dos sensores orbitais e dos modelos de transferência radiativa consolidou os produtos de SSI como a principal ferramenta para o mapeamento da variabilidade espaço-temporal da radiação solar na superfície terrestre.
+\cite{wang2008} apresentaram uma revisão detalhada das metodologias para a estimativa da irradiância solar incidente na superfície (Surface Solar Irradiance – SSI) a partir de observações por satélite. A Figura \ref{fig:evolucao} ilustra a evolução temporal dessas técnicas desde a década de 1960, destacando marcos históricos no desenvolvimento de sensores orbitais e modelos de transferência radiativa. Os autores demonstram que as primeiras tentativas de estimativa da irradiância solar por sensoriamento remoto remontam à década de 1960 e que, ao longo das décadas seguintes, o avanço dos sensores orbitais e dos modelos de transferência radiativa consolidou os produtos de SSI como a principal ferramenta para o mapeamento da variabilidade espaço-temporal da radiação solar na superfície terrestre.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{evolucao.png}
-    \caption[Evolução histórica das estimativas de irradiância solar por satélite.]
-{Linha do tempo do desenvolvimento das estimativas de irradiância solar de superfície a partir de observações por satélite, destacando marcos históricos, avanços metodológicos e o surgimento de produtos operacionais globais. Extraído de \cite{wang2008}.}
-
+    \includegraphics[width=1\linewidth]{fig/evolucao.png}
+    \caption[Linha do tempo do desenvolvimento das estimativas de irradiância solar por satélite.]
+{Linha do tempo do desenvolvimento das estimativas de irradiância solar de superfície a partir de observações por satélite, abrangendo o período pré-satélite (antes de 1960) até a atualidade. A figura descreve momentos históricos, avanços metodológicos, projetos internacionais (ISCCP, ERBS, LUT) e o surgimento de produtos 
+operacionais globais de nova geração (CERES, MODIS, GEWEX SRB). Extraído de \cite{wang2008}.}
     \label{fig:evolucao}
 \end{figure}
 
-No contexto operacional, \cite{laszlo2020} descrevem o produto Enterprise Shortwave Radiation Budget da série GOES, que fornece estimativas contínuas da radiação solar de onda curta em alta resolução temporal e espacial. Esses produtos representam uma ferramenta essencial para estudos regionais de variabilidade e tendências climáticas, permitindo a análise consistente da radiação solar incidente na superfície em diferentes escalas temporais e espaciais.
+No contexto operacional, \cite{laszlo2020} descreveram o produto Enterprise Shortwave Radiation Budget da série GOES, que fornece estimativas contínuas da radiação solar em alta resolução temporal e espacial. Esses produtos representam uma ferramenta essencial para estudos regionais de variabilidade e tendências climáticas, permitindo a análise consistente da radiação solar incidente na superfície em diferentes escalas temporais e espaciais.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{tex/G19_ABI_20250621_1700_SWRadiation.jpg}
+\includegraphics[width=0.7\textwidth]{fig/G19_ABI_20250621_1700_SWRadiation.jpg}
 \caption[Distribuição global da radiação solar e seus componentes.]
-{Distribuição global da radiação fotossinteticamente ativa, da radiação solar de onda curta incidente na superfície e da radiação solar refletida no topo da atmosfera, conforme estimativas derivadas do sistema GOES. Extraído de: \url{https://www.star.nesdis.noaa.gov/goesr/product_sw.php}}
+{Distribuição global instantânea (às 17 UTC) da radiação fotossinteticamente 
+ativa (Photosynthetically Active Radiation), da radiação solar incidente na superfície 
+(Downward SW Radiation at surface) e da radiação refletida no topo da atmosfera 
+(Reflected SW Radiation at TOA), conforme estimativas derivadas do sistema GOES. . Extraído de: \url{https://www.star.nesdis.noaa.gov/goesr/product_sw.php}}
 \label{fig:radiation_components}
 \end{figure}
 
-A distribuição espacial da radiação solar e de seus diferentes componentes pode ser analisada de forma integrada a partir de observações por satélite, possibilitando a caracterização simultânea da energia disponível na superfície, da fração refletida no topo da atmosfera e dos fluxos modulados pela cobertura de nuvens e pela presença de aerossóis. A Figura~\ref{fig:radiation_components} ilustra esses padrões em escala global, evidenciando a capacidade dos produtos derivados de satélites geoestacionários em representar a variabilidade espacial da radiação solar e sua relação com os processos atmosféricos.
+A distribuição espacial da radiação solar e de seus diferentes componentes pode ser 
+analisada de forma integrada a partir de observações por satélite, possibilitando a 
+caracterização simultânea da energia disponível na superfície, da fração refletida 
+no topo da atmosfera e dos fluxos modulados pela cobertura de nuvens e pela presença 
+de aerossóis. A Figura~\ref{fig:radiation_components} apresenta valores instantâneos 
+estimados para as 17 UTC (14h no horário local de Brasília) de três componentes 
+radiométricos derivados do sistema GOES: (i) a radiação fotossinteticamente ativa 
+(Photosynthetically Active Radiation - PAR), correspondente à faixa espectral de 
+400-700 nm utilizada pelos organismos fotossintetizantes, com valores típicos entre 
+0 e 500 W m$^{-2}$; (ii) a radiação solar de onda curta incidente na superfície 
+(Downward Shortwave Radiation at Surface), que representa o total de energia solar 
+disponível após atenuação atmosférica, com máximos superiores a 800 W m$^{-2}$ em 
+regiões de baixa cobertura de nuvens e aerossóis; e (iii) a radiação solar de onda 
+curta refletida no topo da atmosfera (Reflected Shortwave Radiation at TOA), indicador 
+do albedo planetário, com valores elevados (superiores a 400 W m$^{-2}$) sobre regiões 
+de alta refletividade como nuvens, gelo e áreas desérticas.
 
 \section{Revisão de Estudos Anteriores}
 
@@ -81,9 +101,9 @@ A partir da comparação entre a climatologia mensal do período de 1981--2010 e
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\textwidth]{image.png}
+\includegraphics[width=0.6\textwidth]{fig/image.png}
 \caption[Distribuição de precipitação observada durante os períodos chuvosos.]
-{(a) Distribuição mensal da precipitação observada durante os períodos chuvosos de 2013--2014 e 2014--2015, em comparação com a climatologia de 1981--2010. (b) Precipitação acumulada anual, mostrando que o ano hidrológico de 2014 apresentou valores próximos aos limites inferiores da variabilidade climatológica. Extraído de \cite{coelho2016}}
+{(a) Distribuição mensal da precipitação observada durante os períodos chuvosos de 2013--2014 e 2014--2015, em comparação com a climatologia de 1981--2010. (b) Precipitação acumulada, mostrando que o ano hidrológico de 2014 apresentou valores próximos aos limites inferiores da variabilidade climatológica. Extraído de \cite{coelho2016}}
 \label{fig:coelho_boxplot_cumul}
 \end{figure}
 
@@ -91,18 +111,20 @@ A análise da precipitação acumulada anual demonstra que o déficit pluviomét
 
 Além dos eventos hidrológicos extremos, estudos recentes têm destacado o papel do aquecimento regional e da urbanização na modulação do clima local. No contexto urbano, diversas pesquisas têm evidenciado a intensificação das ilhas de calor urbanas em grandes regiões metropolitanas brasileiras, associada à expansão da área construída, à redução da cobertura vegetal e às alterações nas propriedades radiativas da superfície \citep{Campelo, Almeida}. Esses processos contribuem para o aumento das temperaturas locais e podem interagir com os regimes de precipitação, intensificando impactos térmicos e hidrológicos.
 
-No que se refere à radiação solar incidente na superfície, produtos derivados de sensoriamento remoto têm sido amplamente empregados para complementar redes observacionais com cobertura espacial limitada. Conjuntos de dados como o CHIRPS, no caso da precipitação, e produtos de irradiância solar derivados de satélites geoestacionários e orbitais polares têm permitido análises consistentes da variabilidade espacial e temporal das variáveis climáticas em diferentes escalass \citep{funk2015}. No entanto, ainda são limitados os estudos que integram de forma sistemática dados observacionais e produtos de satélite para a análise conjunta de temperatura, precipitação e radiação solar em diferentes regiões do Brasil.
+No que se refere à radiação solar incidente na superfície, produtos derivados de 
+sensoriamento remoto têm sido amplamente empregados para complementar redes observacionais com cobertura espacial limitada. Para São Paulo, \citet{yamasoe2017} analisaram 11 anos (2005--2015) de medidas de irradiância solar global descendente e estimaram os efeitos radiativos climatológicos de aerossóis e nuvens sobre a superfície. Os autores utilizaram o código de transferência radiativa LibRadtran para separar o efeito direto dos aerossóis do efeito das nuvens, demonstrando que, climatologicamente, as nuvens podem ser até 4 vezes mais efetivas que os aerossóis na atenuação da radiação solar. O efeito radiativo de onda curta das nuvens apresentou redução máxima de aproximadamente 170~W/m$^{2}$ em janeiro e mínima de 37~W/m$^{2}$ em julho, enquanto o efeito direto dos aerossóis foi máximo na primavera, atingindo cerca de 50~W/m$^{2}$ em meados de setembro devido ao transporte de fumaça de queimadas da Amazônia. Durante o restante do ano, o efeito médio dos aerossóis foi de aproximadamente 20~W/m$^{2}$, atribuído a fontes urbanas locais.
+
+Para o Rio Grande do Norte, \citet{medeiros2017} realizaram a calibração da equação de Ångström-Prescott\footnote{A equação de Ångström-Prescott relaciona a radiação solar global incidente na superfície ($H$) com a radiação solar no topo da atmosfera ($H_0$) e a duração de insolação ($n$) relativa ao fotoperíodo ($N$), sendo expressa por: $H/H_0 = a + b(n/N)$, onde $a$ e $b$ são coeficientes empíricos que devem ser calibrados localmente para representar adequadamente as condições atmosféricas da região. O coeficiente 
+$a$ representa fisicamente a fração de radiação difusa em relação a $H_0$ em dias completamente 
+nublados, enquanto $b$ quantifica a fração adicional de radiação transmitida em função da duração de insolação.} para estimativa de radiação solar diária em quatro estações meteorológicas do estado (Natal, Macau, Apodi e Caicó) durante o período de 2008--2013. Os autores reportaram que mais de 90\% da área do estado é classificada como semiárida. O desempenho da equação calibrada foi considerado satisfatório, com erro médio (MBE) inferior a 1,50~MJ~m$^{-2}$~dia$^{-1}$, coeficiente de correlação de Pearson em torno de 0,90 e índice de concordância de Willmott superior a 0,90. Os resultados demonstraram que a calibração local dos coeficientes da equação de Ångström-Prescott é essencial, uma vez que os valores obtidos diferiram significativamente dos valores recomendados pela FAO, refletindo as características atmosféricas específicas da região semiárida.
+
+Em escala temporal mais longa, \citet{yamasoe2021} analisaram 56 anos (1961--2016) de irradiação solar na superfície, duração de insolação, amplitude térmica diurna e fração de cobertura de nuvens em São Paulo. Os autores identificaram uma tendência negativa (\textit{dimming}) de 1961 até o início dos anos 1980, consistente com o observado em outras partes do mundo. Entretanto, diferentemente do \textit{brightening} observado em países industrializados ocidentais nas décadas recentes, a tendência negativa persistiu em São Paulo, com taxa de $-0,13$~MJ~m$^{-2}$ por década ($p = 0,006$).
+
+Produtos de irradiância solar derivados de satélites geoestacionários, como o GOES, e de reanálises globais, como o ERA5-Land, representam ferramentas essenciais para estudos regionais de variabilidade e tendências climáticas, permitindo análises consistentes em diferentes escalas temporais e espaciais. No entanto, ainda são limitados os estudos que integram de forma sistemática dados observacionais e produtos de satélite e reanálise para a análise conjunta de temperatura, precipitação e radiação solar em diferentes regiões do 
+Brasil.
 
 Diante desse cenário, torna-se evidente a necessidade de estudos que abordem simultaneamente múltiplas variáveis climáticas, considerando diferentes regimes climáticos e combinando dados observacionais e produtos de sensoriamento remoto. Essa abordagem integrada é fundamental para ampliar a compreensão da variabilidade climática regional e subsidiar avaliações mais robustas sobre tendências e impactos associados às mudanças climáticas no território brasileiro.
-
-\section{Justificativa}
-
-A seleção dos estados de São Paulo e Rio Grande do Norte fundamenta-se na representatividade de distintos regimes climáticos brasileiros, bem como nas diferenças de uso e cobertura da terra associadas a contextos socioambientais contrastantes. A análise comparativa entre essas regiões permite investigar a variabilidade climática sob diferentes condições atmosféricas, hidrológicas e de superfície.
-
-O estado de São Paulo apresenta clima predominantemente subtropical, elevada heterogeneidade de usos do solo e uma das redes mais densas de estações meteorológicas do país, possibilitando análises robustas e avaliações consistentes de produtos de satélite e reanálises. Estudos indicam que a cobertura da terra exerce influência significativa na modulação da temperatura do ar, evidenciando o papel da vegetação na regulação térmica regional \citep{abreu2019}.
-
-O estado do Rio Grande do Norte caracteriza-se por clima semiárido a tropical, elevada variabilidade pluviométrica e forte dependência de recursos hídricos limitados, sendo particularmente vulnerável a eventos extremos de secaa \citep{marengo2017}. A comparação entre esses estados permite identificar padrões de mudanças climáticas em contextos regionais distintos e ampliar a compreensão dos processos associados à variabilidade climática no Brasil.
-
+\newpage
 \section{Objetivos}
 
 \subsection{Objetivo Geral}
@@ -112,7 +134,8 @@ Analisar a variação temporal de variáveis meteorológicas nos estados de São
 \subsection{Objetivos Específicos}
 
 \begin{itemize}
-\item Caracterizar os padrões de precipitação, temperatura e radiação solar utilizando dados do INMET, ANA, CHIRPS, GOES e ERA5-Land;
+\item Caracterizar os padrões de precipitação, temperatura e radiação solar incidente 
+  em superfície utilizando dados do Instituto Nacional de Meteorologia (INMET), Agência Nacional de Águas e Saneamento Básico (ANA), Climate Hazards Group InfraRed Precipitation with Station data (CHIRPS), Geostationary Operational Environmental Satellite (GOES) e European ReAnalysis 5th Generation (ERA5-Land);
 \item Avaliar a qualidade dos dados por meio de validação entre fontes observacionais e produtos de satélite e reanálise;
 \item Identificar e quantificar tendências climáticas por meio de métodos estatísticos;
 \item Determinar as normais climatológicas e avaliar desvios em relação aos valores de referência;
