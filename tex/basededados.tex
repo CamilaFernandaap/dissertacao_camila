@@ -37,7 +37,7 @@ Essa diferença expressiva na distribuição espacial das estações é ilustrad
 
     \textbf{GOES (Geostationary Operational Environmental Satellite):} A variável de irradiância solar global horizontal (GHI) foi obtida a partir de estimativas derivadas dos satélites GOES-13, GOES-16 e GOES-19, produzidas pelo sistema GOES-R Series Advanced Baseline Imager (ABI) e disponibilizadas pela NOAA/NESDIS/STAR por meio do produto Surface and Insolation Product (EPS v2.0). O produto fornece dados horários, com resolução espacial nominal de aproximadamente $0{,}05^\circ \times 0{,}05^\circ$, cobrindo o período de janeiro de 2014 a fevereiro de 2025.
     
-    \textbf{CLARA-A3 (CM SAF cLoud, Albedo and surface RAdiation dataset – Edition 3):} Para complementar as estimativas de radiação solar global, foram utilizados dados do produto CLARA-A3, que integra medições do instrumento CERES (Clouds and the Earth’s Radiant Energy System) com informações de albedo de superfície e propriedades de nuvens derivadas do sensor AVHRR (Advanced Very High Resolution Radiometer). Os dados do CLARA-A3 foram adquiridos por meio do portal do CM SAF/EUMETSAT (Satellite Application Facility on Climate Monitoring / European Organisation for the Exploitation of Meteorological Satellites), com resolução espacial de $0{,}25^\circ \times 0{,}25^\circ$, resolução temporal diária e cobertura global.
+    \textbf{CLARA-A3 (CM SAF cloud, Albedo and surface RAdiation dataset – Edition 3):} Para complementar as estimativas de radiação solar global, foram utilizados dados do produto CLARA-A3, que integra medições do instrumento CERES (Clouds and the Earth’s Radiant Energy System) com informações de albedo de superfície e propriedades de nuvens derivadas do sensor AVHRR (Advanced Very High Resolution Radiometer). Os dados do CLARA-A3 foram adquiridos por meio do portal do CM SAF/EUMETSAT (Satellite Application Facility on Climate Monitoring / European Organisation for the Exploitation of Meteorological Satellites), com resolução espacial de $0{,}25^\circ \times 0{,}25^\circ$, resolução temporal diária e cobertura global.
     
     As medições do CLARA-A3 são obtidas a bordo dos satélites da série NOAA e Metop, que carregam os instrumentos CERES e AVHRR. A cobertura temporal do produto varia conforme o tipo de dado, mas para este estudo foi considerada a série de 1990 a 2025 para cobrir tanto o intervalo válido do INMET, 2004--2025 (com coletas visualizadas a partir deste ano para boa parte das estações automáticas)
 
@@ -46,6 +46,57 @@ Essa diferença expressiva na distribuição espacial das estações é ilustrad
     \textbf{CHIRPS (Climate Hazards Group InfraRed Precipitation with Station Data):} Para ampliar a cobertura espacial da precipitação, especialmente em regiões com escassez de estações pluviométricas da rede da ANA, utilizou-se a coleção diária do produto CHIRPS. O conjunto de dados combina estimativas por sensoriamento remoto infravermelho com observações em superfície, apresentando resolução espacial de aproximadamente $0{,}05^\circ \times 0{,}05^\circ$ (cerca de 5 km) e cobertura quase global. Os dados foram acessados por meio da plataforma Google Earth Engine (GEE).
     
     \textbf{ERA5-Land (ECMWF Reanalysis 5th Generation):} Como fonte complementar para validação da temperatura média do ar, foram utilizados dados da reanálise ERA5-Land, produzida pelo European Centre for Medium-Range Weather Forecasts (ECMWF) no âmbito do programa Copernicus Climate Change Service (C3S). A base fornece estimativas horárias, com resolução espacial de aproximadamente $0{,}1^\circ \times 0{,}1^\circ$ (cerca de 9 km), cobrindo o período de 1981 até o presente.
+
+
+\section{Estimativa das variáveis por satélite e reanálise}
+
+A utilização de produtos de satélite e reanálise como fontes de dados meteorológicos 
+requer compreender os fundamentos físicos e algorítmicos pelos quais as variáveis de 
+interesse são estimadas, uma vez que tais estimativas diferem  das medições diretas realizadas por instrumentos em superfície.
+
+\subsection{Temperatura do ar - ERA5-Land}
+
+O ERA5-Land não é um produto de sensoriamento remoto direto, mas sim o resultado de um sistema de assimilação de dados (\textit{data assimilation}) que combina um modelo numérico de previsão do tempo com observações heterogêneas distribuídas globalmente, incluindo radiossondas, estações de superfície, aeronaves e medições satelitais \citep{hersbach2020era5}. O processo de assimilação empregado é o 4D-Var (\textit{Four-Dimensional Variational Assimilation}), que minimiza a diferença entre 
+o estado do modelo e as observações disponíveis dentro de uma janela temporal \citep{rabier2005}.
+
+A temperatura do ar à superfície no ERA5-Land é derivada especificamente de uma simulação do modelo de superfície terrestre HTESSEL (\textit{Hydrology Tiled ECMWF 
+Scheme for Surface Exchanges over Land}), forçado pelas saídas atmosféricas do ERA5 padrão com resolução horizontal aproximada de $0{,}25^\circ$, mas reamostrado para $0{,}1^\circ$ por interpolação bilinear \citep{munoz2021era5}. O modelo resolve o balanço de energia na superfície, levando em conta trocas de calor sensível e latente, fluxos de calor no solo e a influência da cobertura da terra, o que resulta em estimativas de temperatura próximas da superfície ($T_{2\,\text{m}}$).
+
+\subsection{Precipitação - CHIRPS}
+
+O CHIRPS integra estimativas de precipitação derivadas de sensoriamento remoto no infravermelho 
+termal com observações pluviométricas em superfície, por meio de uma metodologia em múltiplas etapas \citep{funk2015}. A premissa central baseia-se na relação estatística entre a temperatura de brilho no topo das nuvens (\textit{Cloud Top Temperature} -- CTT), estimada por satélites geoestacionários, e a taxa de precipitação observada em superfície: nuvens convectivas de grande desenvolvimento vertical apresentam topos mais frios, que por sua vez estão frequentemente associados a maior intensidade de precipitação \citep{joyce2004cmorph}.
+
+O algoritmo combina: (i) uma climatologia de precipitação de alta resolução, o CHPclim; (ii) estimativas pentadais de precipitação derivadas de sensores infravermelhos 
+a bordo de satélites geoestacionários como o GOES, Meteosat e GMS; e (iii) dados pluviométricos de redes de superfície globais (GHCN, FAO, entre outras), que são incorporados por meio de interpolação por krigagem para corrigir sistematicamente o viés das estimativas por satélite \citep{funk2015}. A fusão entre observações e 
+estimativas de satélite é realizada respeitando a estrutura de covariância espacial dos campos de precipitação, resultando em um produto com resolução de $0{,}05^\circ \times 0{,}05^\circ$ e cobertura temporal diária desde 1981 \citep{harrison2022chirps}.
+
+\subsection{Radiação solar global - GOES (EPS v2.0)}
+
+A estimativa da irradiância solar global horizontal (GHI) a partir dos satélites da série GOES fundamenta-se na relação entre o albedo de topo da atmosfera, estimado a 
+partir de medições de radiância no espectro visível e infravermelho próximo pelo instrumento ABI (\textit{Advanced Baseline Imager}), e a fração de radiação solar transmitida até a superfície \citep{laszlo2020}. O produto EPS v2.0 (\textit{Enterprise Shortwave Radiation Budget -- Surface and Insolation Products}) emprega o algoritmo DSSR (\textit{Downward Surface Shortwave Radiation}), baseado no método de índice de transmitância atmosférica.
+
+O princípio físico central consiste em estimar o índice de clareza atmosférica $k_t$, definido como a razão entre a irradiância solar na superfície e a irradiância solar 
+extraterrestre no topo da atmosfera, por meio da reflectância observada pelo sensor orbital \citep{pinker1992}. Esse índice sintetiza os efeitos atenuantes da atmosfera, incluindo absorção e espalhamento por gases, aerossóis e nuvens, e é utilizado para estimar a GHI diretamente:
+
+\begin{equation}
+    \text{GHI} = k_t \cdot E_0 \cdot \cos\theta_z,
+\end{equation}
+
+\noindent onde $E_0$ é a irradiância solar extraterrestre corrigida para a distância Terra-Sol e $\theta_z$ é o ângulo zenital solar \citep{ineichen2016}.
+
+A separação entre o sinal de nuvens e o sinal de superfície é realizada a partir de composições temporais de reflectância mínima (\textit{clear-sky compositing}), que permitem estimar o albedo da superfície subjacente livre de nuvens \citep{frouin2021}. 
+A precisão do produto é afetada principalmente pela presença de aerossóis, neblina e cirros subtópicos, que tendem a introduzir subestimativas da atenuação atmosférica real.
+
+\subsection{Radiação solar global - CLARA-A3}
+
+O produto CLARA-A3 estima a irradiância solar incidente na superfície (SIS) a partir de medições do sensor AVHRR (\textit{Advanced Very High Resolution Radiometer}) 
+a bordo dos satélites de órbita polar da série NOAA e Metop, combinadas com parametrizações do campo de nuvens e da atmosfera \citep{karlsson2023claraA3}. 
+
+O algoritmo de recuperação da SIS é baseado no método de transferência radiativa simplificada, em que a irradiância na superfície é estimada a partir de um modelo do 
+campo radiativo em função das propriedades ópticas das nuvens (fração de cobertura, profundidade óptica, fase termodinâmica) e dos parâmetros atmosféricos (vapor d'água, 
+ozônio, aerossóis) derivados de climatologias auxiliares \citep{mueller2012}. As propriedades de nuvens são estimadas pelo algoritmo PPS (\textit{Polar Platform 
+System}), específico para plataformas de órbita polar, e as estimativas de SIS são validadas contra redes de medição em superfície como a BSRN (\textit{Baseline Surface Radiation Network}) \citep{karlsson2023claraA3}.
 
 \section{Tratamento e qualidade dos dados}
 
@@ -99,7 +150,13 @@ Para a propagação das incertezas, adotaram-se as seguintes estimativas:
     
     Para o ERA5-Land, a incerteza total combina as componentes temporal e espacial em quadratura: 
     
-    \[\sigma_{\text{ERA5}} = \frac{\sqrt{(\sigma_{\text{temporal}}}}{{\sqrt{n}^2 + \sigma_{\text{espacial}}^2}}\].
+    \[
+    \sigma_{ERA5} =
+    \sqrt{
+    \left(\frac{\sigma_{\text{diária}}}{\sqrt{n}}\right)^2 +
+    \sigma_{\text{espacial}}^2
+    }
+    \]
     
     \item \textbf{Radiação solar global:} 
     
